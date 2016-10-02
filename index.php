@@ -9,13 +9,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Full Slider - Start Bootstrap Template</title>
+    <title>HistorietasMX</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
     <link href="css/full-slider.css" rel="stylesheet">
+    <link href="css/comix.css" rel="stylesheet">
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#" style="padding-top: 0px;"> <img src="img/logo2.png" height="50" width="130"> </a>
+                <img src="img/logo2.png" height="50" width="130">
                 <br>
             </div>
             
@@ -49,11 +49,12 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li style="margin-top: 12px; margin-right: 6px; margin-left: 6px">
-                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#Acerca" style="padding-top:0px; padding-bottom:0px;">Acerca de</button>
+                        <button class="comic comic_btn" data-toggle="modal" data-target="#Acerca">Acerca de</button>
                     </li>
                     <li style="margin-top: 12px; margin-right: 6px; margin-left: 6px">
-                        <button type="button" class="btn btn-info btn-lg btn-transparent" data-toggle="modal" data-target="#Ingresar" style="padding-top:0px; padding-bottom:0px;">Ingresar</button>
+                        <button class="comic comic_btn" data-toggle="modal" data-target="#Ingresar" style="color:#fefc00">Entrale!</button>
                     </li>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -63,14 +64,18 @@
 
     <!-- Full Page Image Background Carousel Header -->
     <header id="myCarousel" class="carousel slide">
-                
-                <img src="img/facebook.jpeg" height="40" width="40" style="position:fixed; z-index:3; right:10em; bottom:1em">
-                <img src="img/instagram.png" height="40" width="40" style="position:absolute; z-index:3; right:13em; bottom:1em">
-                <img src="img/twitter.png" height="40" width="40" style="position:absolute; z-index:3; right:16em; bottom:1em">
-                <img src="img/logo_editorial.png" style="position:absolute; z-index:3; right:2em; bottom:1em">
+
+                <a href="muestra.php">
+                    <img src="img/access.png" height="850" width="850" class="img-responsive"  style="position:fixed; z-index:3; top:5em; left:5%"> </a> 
+                <a href="https://www.facebook.com/Historietasmx-332032027147432/" target="_blank"><img src="img/facebook.jpeg" height="40" width="40" style="position:fixed; z-index:3; right:10em; bottom:1em"></a>
+                <a href="https://www.instagram.com/historietas.mx/" target="_blank"><img src="img/instagram.png" height="40" width="40" style="position:absolute; z-index:3; right:13em; bottom:1em"></a>
+                <a href="https://twitter.com/historietas_mx" target="_blank"><img src="img/twitter.png" height="40" width="40" style="position:absolute; z-index:3; right:16em; bottom:1em"></a>
+                <a href="https://es.pinterest.com/historietasMX/" target="_blank"><img src="img/pin.png" height="40" width="40" style="position:absolute; z-index:3; right:19em; bottom:1em"></a>
+                <a href="https://www.toukanmango.com/" target ="_blank"><img src="img/logo_editorial.png" style="position:absolute; z-index:3; right:2em; bottom:1em"></a>
 
         <!-- Wrapper for Slides -->
         <div class="carousel-inner">
+
 
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
@@ -112,29 +117,28 @@
               <div class="modal-body">
                     
                 <div class="col-md-7">
-                    <img src="img/39.jpg">
+                    <img src="img/39.jpg" width="100%">
                 </div>
 
                 <br>
-                ACERCA DE <br><br>
-                <div class="col-md-5" style="height: 35em; overflow: scroll; background-color:#000; color:#fff">
-                <br>                        
+                <p><h1 class="comic">Acerca de... </h1></p><br>
 
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse viverra arcu lorem. Aenean pharetra nunc mi, in pharetra ante ultrices vulputate. Duis volutpat odio in feugiat molestie. Maecenas a feugiat dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sed diam aliquam, iaculis velit at, accumsan odio. Ut viverra pharetra nisi vitae finibus. Phasellus varius consectetur mattis. Fusce ornare dui quis tortor lacinia volutpat. Maecenas vehicula ante id posuere pretium. Phasellus a cursus ante, nec dictum dolor. Quisque mauris tellus, condimentum ac velit nec, sollicitudin congue massa. Nullam augue nunc, mattis ut tempus sed, imperdiet eu enim. Integer et felis magna.
+                    <div class="col-md-5 comix" style="height: 31em; overflow: scroll; background-color:#ff544e; color:#fff">
+                            
+                            <br>                        
+                            <img src="img/logo2.png" width="100%">
 
-                        Praesent in magna ultricies, porttitor ex non, interdum elit. Vestibulum dignissim sollicitudin tellus quis elementum. Aliquam feugiat augue non semper suscipit. Nam gravida ligula et interdum volutpat. In hac habitasse platea dictumst. Aenean viverra feugiat nibh, at malesuada quam aliquet sed. Cras nec malesuada nisl. Mauris ultricies faucibus urna, ut rhoncus turpis pretium quis. Nam venenatis neque in enim ultrices euismod. Nulla in quam metus. Etiam at erat tortor.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse viverra arcu lorem. Aenean pharetra nunc mi, in pharetra ante ultrices vulputate. Duis volutpat odio in feugiat molestie. Maecenas a feugiat dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sed diam aliquam, iaculis velit at, accumsan odio. Ut viverra pharetra nisi vitae finibus. Phasellus varius consectetur mattis. Fusce ornare dui quis tortor lacinia volutpat. Maecenas vehicula ante id posuere pretium. Phasellus a cursus ante, nec dictum dolor. Quisque mauris tellus, condimentum ac velit nec, sollicitudin congue massa. Nullam augue nunc, mattis ut tempus sed, imperdiet eu enim. Integer et felis magna.
 
-                        Praesent maximus neque sed dolor malesuada, vel dictum nunc aliquam. Maecenas sed orci vitae lacus sodales sollicitudin. Etiam vulputate erat a tellus sodales, et gravida tellus malesuada. Mauris feugiat ante sem, a congue urna lobortis eget. Duis justo eros, pharetra malesuada placerat viverra, egestas ut risus. Sed eget euismod odio. Pellentesque ullamcorper at turpis vitae dignissim. Sed neque quam, bibendum eu lacus id, elementum egestas urna. Praesent arcu quam, iaculis et efficitur at, ornare sit amet nisi. Nam elementum nibh a ullamcorper semper. Nulla metus eros, fermentum sed aliquet eget, rutrum in velit.
+                            Praesent in magna ultricies, porttitor ex non, interdum elit. Vestibulum dignissim sollicitudin tellus quis elementum. Aliquam feugiat augue non semper suscipit. Nam gravida ligula et interdum volutpat. In hac habitasse platea dictumst. Aenean viverra feugiat nibh, at malesuada quam aliquet sed. Cras nec malesuada nisl. Mauris ultricies faucibus urna, ut rhoncus turpis pretium quis. Nam venenatis neque in enim ultrices euismod. Nulla in quam metus. Etiam at erat tortor.
 
-                        Mauris sed leo et ante tristique interdum quis euismod turpis. Donec quis nisl et ex sollicitudin euismod. Morbi vel metus est. Sed hendrerit, dui quis accumsan condimentum, velit sapien mollis turpis, eu mollis augue ex nec ligula. Vivamus neque ex, vestibulum vel velit nec, blandit pharetra leo. Praesent vestibulum, odio consectetur rutrum aliquam, mi ligula rhoncus nisi, blandit condimentum ligula lacus in dui. Maecenas ultrices velit sit amet mauris ornare posuere. Integer non nisi id ligula porttitor suscipit sed vel odio. Aliquam erat volutpat. Aliquam fermentum nunc nisi, eu tempor mauris scelerisque quis. Integer et feugiat est, et suscipit neque. Etiam non leo eget ligula volutpat lobortis. Praesent ac metus tincidunt, vulputate erat in, laoreet quam. Quisque eros felis, faucibus et ligula at, pellentesque consectetur orci.
-
-                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla leo dolor, consectetur quis aliquet a, tristique ut arcu. Aenean sit amet elementum nisl, vel molestie arcu. Aliquam nec enim lacus. Donec tempus sollicitudin justo, pharetra feugiat libero ultricies finibus. Mauris tincidunt odio eros, non pretium erat convallis id. Praesent id arcu nulla.
-                </div>
+                            Praesent maximus neque sed dolor malesuada, vel dictum nunc aliquam. Maecenas sed orci vitae lacus sodales sollicitudin. Etiam vulputate erat a tellus sodales, et gravida tellus malesuada. Mauris feugiat ante sem, a congue urna lobortis eget. Duis justo eros, pharetra malesuada placerat viverra, egestas ut risus. Sed eget euismod odio. Pellentesque ullamcorper at turpis vitae dignissim. Sed neque quam, bibendum eu lacus id, elementum egestas urna. Praesent arcu quam, iaculis et efficitur at, ornare sit amet nisi. Nam elementum nibh a ullamcorper semper. Nulla metus eros, fermentum sed aliquet eget, rutrum in velit.
+                    </div>
 
               </div>
 
               <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-success comic" data-dismiss="modal">¡Lo tengo!</button>
               </div>
             </div>
 
@@ -152,31 +156,41 @@
               <div class="modal-body">
                     
                 <div class="col-md-7">
-                    <img src="img/0.jpg">
+                    <img src="img/0.jpg" width="100%">
                 </div>
 
                 <br>
-                INGRESA <br><br>
-                <div class="col-md-5">
-                    
+                <p><h1 class="comic">Entrale! </h1></p><br>
+
+                <div class="col-md-5 comix" style="height: 31em; overflow: scroll; background-color:#ff544e; color:#fff">
+                    <br>
+
                     <form>
                       <div class="form-group">
                         <label for="email">Correo:</label>
-                        <input type="email" class="form-control" id="email">
+                        <input type="email" class="form-control" id="email" required>
                       </div>
                       <div class="form-group">
                         <label for="pwd">Contraseña:</label>
-                        <input type="password" class="form-control" id="pwd">
+                        <input type="password" class="form-control" id="pwd" required>
                       </div>
-                      <button type="submit" class="btn btn-default">Ingresar    </button>
+                      <button class="comic comic_btn" style="color:#fefc00">Ingresar</button>
                     </form>
+
+                    <br>
+                    <hr>
+
+
+                    <p class="comix" text-align="center" style="font-size:18px;">¿Aún no tienes cuenta?</p>
+
+                      <a href="registro.php" class="comic comic_btn" style="color:#1866b1; font-size:25px;">REGISTRATE</button>
 
                 </div>
 
               </div>
 
               <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
               </div>
             </div>
 
