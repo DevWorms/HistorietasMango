@@ -1,3 +1,11 @@
+<?php
+    error_reporting(0);
+    require_once '../controladores/sesion/sesion.php';
+    require_once '../controladores/funciones_catalogo/funciones_catalogo.php';
+    session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +29,17 @@
     <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css"> 
 </head>
 
+
+<style>
+    body { 
+    background: url(Catalogo/backMag.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+</style>
+
 <body>
 
     <!-- Navigation -->
@@ -34,7 +53,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" style="padding-top: 0px;"> <img src="../img/logo2.png" height="50" width="130"> </a>
+                <a class="navbar-brand" href="index.php" style="padding-top: 0px;"> <img src="../img/logo2.png" height="50" width="130"> </a>
                 <br>
             </div>
             
@@ -50,7 +69,7 @@
                         <button class="comic comic_btn" data-toggle="modal" data-target="#Acerca" style="color:#a1ddfc" onclick="window.location.href='cuenta.php'">Mi cuenta</button>
                     </li>
                     <li style="margin-top: 12px; margin-right: 6px; margin-left: 6px">
-                        <button class="comic comic_btn" data-toggle="modal" data-target="#Ingresar" style="color:#ffffff">Salir</button>
+                        <button class="comic comic_btn" data-toggle="modal" data-target="#Ingresar" style="color:#ffffff" onclick="window.location.href='../controladores/sesion/cerrar_sesion.php'">Salir</button>
                     </li>
                 </ul>
             </div>
@@ -63,9 +82,8 @@
     <!--    CUERPO  -->
       
 
-      <object data="../Prueba/Chambeadoras.pdf" type="application/pdf" width="100%" height="100%" style="height:100vh;">
-        alt : <a href="../Prueba/Chambeadoras.pdf">test.pdf</a>
-      </object>
+      <?php echo MostrarRevista($_GET["id_revista"]) ?>
+
                 
     <!--    -->
 

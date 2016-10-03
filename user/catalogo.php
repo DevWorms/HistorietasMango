@@ -1,3 +1,10 @@
+<?php
+    error_reporting(0);
+    require_once '../controladores/sesion/sesion.php';
+    require_once '../controladores/funciones_catalogo/funciones_catalogo.php';
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +62,7 @@
                         <button class="comic comic_btn" data-toggle="modal" data-target="#Acerca" style="color:#a1ddfc" onclick="window.location.href='cuenta.php'">Mi cuenta</button>
                     </li>
                     <li style="margin-top: 12px; margin-right: 6px; margin-left: 6px">
-                        <button class="comic comic_btn" data-toggle="modal" data-target="#Ingresar" style="color:#ffffff">Salir</button>
+                        <button class="comic comic_btn" data-toggle="modal" data-target="#Ingresar" style="color:#ffffff" onclick="window.location.href='../controladores/sesion/cerrar_sesion.php'">Salir</button>
                     </li>
                 </ul>
             </div>
@@ -75,271 +82,23 @@
         <p class="comic" align="center" style="font-size:30px">NOVEDADES</p>
         <div class="gallery js-flickity">
           
-          <div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%; box-shadow: 10px 10px 5px rgba(51, 51, 51, 0.6);"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div>
-          <div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div>
+          <?php echo MostrarNovedades($_GET["id_catalogo"]) ?>
 
         </div>
 
         <br><br><br>
 
-        <p class="comic" align="center" style="font-size:30px">LAS MÁS LEÍDAS</p>
-        
+        <p class="comic" align="center" style="font-size:30px">LAS MÁS LEÍDAS</p>        
         <div class="gallery js-flickity">
           
-          <div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div>
-          <div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div>
-
         </div>
 
         <br><br><br>
 
-        <p class="comic" align="center" style="font-size:30px">RECOMENDACIONES</p>
-        
+        <p class="comic" align="center" style="font-size:30px">RECOMENDACIONES</p>        
         <div class="gallery js-flickity">
           
-          <div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div>
-          <div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div><div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
-              <div class="container">
-                  <div id="super" class="comix">
-                    <h4><b>Revista 1</b></h4>
-                    <p>Algo de información de la revista</p>
-                  </div>
-              </div>
-          </div>
-
+        
         </div>
 
         <br><br><br>

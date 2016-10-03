@@ -165,16 +165,16 @@
                 <div class="col-md-5 comix" style="height: 31em; overflow: scroll; background-color:#ff544e; color:#fff">
                     <br>
 
-                    <form>
+                    <form  method="post" id="login_form" action='controladores/sesion/iniciar_sesion.php'>
                       <div class="form-group">
                         <label for="email">Correo:</label>
-                        <input type="email" class="form-control" id="email" required>
+                        <input type="email" class="form-control" id="email" name="email" required>
                       </div>
                       <div class="form-group">
                         <label for="pwd">Contraseña:</label>
-                        <input type="password" class="form-control" id="pwd" required>
+                        <input type="password" class="form-control" id="pwd" name="pwd" required>
                       </div>
-                      <button class="comic comic_btn" style="color:#fefc00">Ingresar</button>
+                      <button class="comic comic_btn" id="btn_acceder" name="btn_acceder" style="color:#fefc00">Ingresar</button>
                     </form>
 
                     <br>

@@ -1,3 +1,11 @@
+<?php
+    error_reporting(0);
+    require_once '../controladores/sesion/sesion.php';
+    require_once '../controladores/funciones_usuario/funciones_usuario.php';
+    session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +63,7 @@
                         <button class="comic comic_btn"><a href="muestra.php" style="text-decoration:none; color:#fefc00" onclick="window.history.back()">Regresar</a></button>
                     </li>
                     <li style="margin-top: 12px; margin-right: 6px; margin-left: 6px">
-                        <button class="comic comic_btn" data-toggle="modal" data-target="#Ingresar" style="color:#ffffff">Salir</button>
+                        <button class="comic comic_btn" data-toggle="modal" data-target="#Ingresar" style="color:#ffffff" onclick="window.location.href='../controladores/sesion/cerrar_sesion.php'">Salir</button>
                     </li>
                 </ul>
             </div>
@@ -75,23 +83,40 @@
         
         <h2 class="comic">Información de usuario</h2>
 
-        <h3 class="comix" style="color:">Nombre: @USER</h2>
+        <?php
+
+          if($_SESSION["Premium"] == 0)
+            echo '<h1 class="comic" style="color:#BB0006">¡Ya no cuentas con crédito disponible, te invitamos a pagar otro mes de membresía!</h1>';
+
+        ?>
+
+        <h3 class="comix">
+          
+          <?php echo "Nombre: " . $_SESSION["Nombre"];   ?>
+          <br>
+          <?php echo "Meses disponibles: " . $_SESSION["Premium"];   ?>
+          <br>
+          Caducidad de cuenta: <?php echo MostrarCaducidad($_SESSION["Id"]);   ?>
+        
+        </h3>
 
           <hr>
-          <form>
+          <form  method="post" id="correo_form" action='../controladores/funciones_usuario/cambiar_correo.php'>
             <div class="form-group">
-              <label for="email">Correo Asociado:</label>
-              <input type="email" class="form-control" id="email" required>
+                <label for="email">Correo Asociado:</label>
+                <input type="email" class="form-control" name="mail" id="mail" required value="<?php echo $_SESSION["Correo"]; ?>">
             </div>
-            <button class="comic comic_btn" style="color:#ff0006">Cambiar correo.</button>
+            <button class="comic comic_btn" id="btn_aceptar" name="btn_aceptar" style="color:#ff0006">Cambiar correo.</button>
           </form>
+
             <br><br>
-          <form>
+          
+          <form  method="post" id="pwd_form" action='../controladores/funciones_usuario/cambiar_contrasena.php'>
             <div class="form-group">
               <label for="email">Cambiar contraseña:</label>
-              <input type="password" class="form-control" id="pwd" required>
+              <input type="password" class="form-control" name="pwd" id="pwd" required>
             </div>
-            <button class="comic comic_btn" style="color:#ff0006">Cambiar contraseña.</button>
+            <button class="comic comic_btn" id="btn_aceptar" name="btn_aceptar"  style="color:#ff0006">Cambiar contraseña.</button>
           </form>
 
 

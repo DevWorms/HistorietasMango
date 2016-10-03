@@ -20,16 +20,15 @@
         STYLE
     -->
     <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css"> 
-    <style type="text/css">
-        
-        html { 
-          background: url(Prueba/fondo.png) no-repeat ; 
-          -webkit-background-size: cover;
-          -moz-background-size: cover;
-          -o-background-size: cover;
-          background-size: cover;
-        }
-    </style>
+    <style>
+    body { 
+    background: url(img/backMag.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+</style>
 
 </head>
 
@@ -82,46 +81,7 @@
                 
     <!--    -->
 
-    <!-- Modal -->
-        <div id="Acerca" class="modal fade" role="dialog">
-          <div class="modal-dialog modal-lg">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-
-              <div class="modal-body">
-                    
-                <div class="col-md-7">
-                    <img src="img/39.jpg">
-                </div>
-
-                <br>
-                ACERCA DE <br><br>
-                <div class="col-md-5" style="height: 35em; overflow: scroll; background-color:#000; color:#fff">
-                <br>                        
-
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse viverra arcu lorem. Aenean pharetra nunc mi, in pharetra ante ultrices vulputate. Duis volutpat odio in feugiat molestie. Maecenas a feugiat dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sed diam aliquam, iaculis velit at, accumsan odio. Ut viverra pharetra nisi vitae finibus. Phasellus varius consectetur mattis. Fusce ornare dui quis tortor lacinia volutpat. Maecenas vehicula ante id posuere pretium. Phasellus a cursus ante, nec dictum dolor. Quisque mauris tellus, condimentum ac velit nec, sollicitudin congue massa. Nullam augue nunc, mattis ut tempus sed, imperdiet eu enim. Integer et felis magna.
-
-                        Praesent in magna ultricies, porttitor ex non, interdum elit. Vestibulum dignissim sollicitudin tellus quis elementum. Aliquam feugiat augue non semper suscipit. Nam gravida ligula et interdum volutpat. In hac habitasse platea dictumst. Aenean viverra feugiat nibh, at malesuada quam aliquet sed. Cras nec malesuada nisl. Mauris ultricies faucibus urna, ut rhoncus turpis pretium quis. Nam venenatis neque in enim ultrices euismod. Nulla in quam metus. Etiam at erat tortor.
-
-                        Praesent maximus neque sed dolor malesuada, vel dictum nunc aliquam. Maecenas sed orci vitae lacus sodales sollicitudin. Etiam vulputate erat a tellus sodales, et gravida tellus malesuada. Mauris feugiat ante sem, a congue urna lobortis eget. Duis justo eros, pharetra malesuada placerat viverra, egestas ut risus. Sed eget euismod odio. Pellentesque ullamcorper at turpis vitae dignissim. Sed neque quam, bibendum eu lacus id, elementum egestas urna. Praesent arcu quam, iaculis et efficitur at, ornare sit amet nisi. Nam elementum nibh a ullamcorper semper. Nulla metus eros, fermentum sed aliquet eget, rutrum in velit.
-
-                        Mauris sed leo et ante tristique interdum quis euismod turpis. Donec quis nisl et ex sollicitudin euismod. Morbi vel metus est. Sed hendrerit, dui quis accumsan condimentum, velit sapien mollis turpis, eu mollis augue ex nec ligula. Vivamus neque ex, vestibulum vel velit nec, blandit pharetra leo. Praesent vestibulum, odio consectetur rutrum aliquam, mi ligula rhoncus nisi, blandit condimentum ligula lacus in dui. Maecenas ultrices velit sit amet mauris ornare posuere. Integer non nisi id ligula porttitor suscipit sed vel odio. Aliquam erat volutpat. Aliquam fermentum nunc nisi, eu tempor mauris scelerisque quis. Integer et feugiat est, et suscipit neque. Etiam non leo eget ligula volutpat lobortis. Praesent ac metus tincidunt, vulputate erat in, laoreet quam. Quisque eros felis, faucibus et ligula at, pellentesque consectetur orci.
-
-                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla leo dolor, consectetur quis aliquet a, tristique ut arcu. Aenean sit amet elementum nisl, vel molestie arcu. Aliquam nec enim lacus. Donec tempus sollicitudin justo, pharetra feugiat libero ultricies finibus. Mauris tincidunt odio eros, non pretium erat convallis id. Praesent id arcu nulla.
-                </div>
-
-              </div>
-
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-
+    
     <!-- Modal -->
         <div id="Ingresar" class="modal fade" role="dialog">
           <div class="modal-dialog modal-lg">
@@ -132,31 +92,41 @@
               <div class="modal-body">
                     
                 <div class="col-md-7">
-                    <img src="img/0.jpg">
+                    <img src="img/0.jpg" width="100%">
                 </div>
 
                 <br>
-                INGRESA <br><br>
-                <div class="col-md-5">
-                    
-                    <form>
+                <p><h1 class="comic">Entrale! </h1></p><br>
+
+                <div class="col-md-5 comix" style="height: 31em; overflow: scroll; background-color:#ff544e; color:#fff">
+                    <br>
+
+                    <form  method="post" id="login_form" action='controladores/sesion/iniciar_sesion.php'>
                       <div class="form-group">
                         <label for="email">Correo:</label>
-                        <input type="email" class="form-control" id="email">
+                        <input type="email" class="form-control" id="email" name="email" required>
                       </div>
                       <div class="form-group">
                         <label for="pwd">Contraseña:</label>
-                        <input type="password" class="form-control" id="pwd">
+                        <input type="password" class="form-control" id="pwd" name="pwd" required>
                       </div>
-                      <button type="submit" class="btn btn-default">Ingresar    </button>
+                      <button class="comic comic_btn" id="btn_acceder" name="btn_acceder" style="color:#fefc00">Ingresar</button>
                     </form>
+
+                    <br>
+                    <hr>
+
+
+                    <p class="comix" text-align="center" style="font-size:18px;">¿Aún no tienes cuenta?</p>
+
+                      <a href="registro.php" class="comic comic_btn" style="color:#1866b1; font-size:25px;">REGISTRATE</button>
 
                 </div>
 
               </div>
 
               <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
               </div>
             </div>
 

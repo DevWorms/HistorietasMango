@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>HistorietasMX - Catálogo</title>
+    <title>HistorietasMX - Registro</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -117,7 +117,7 @@
   
 
     </div>
-        
+
     <!--    END BODY WEB    -->
 
 
