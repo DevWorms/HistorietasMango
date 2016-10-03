@@ -76,7 +76,7 @@
         <div class="gallery js-flickity">
           
           <div class="card">
-              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%"></a>
+              <a href="revista.php"><img src="Revistas/1_Chambeadoras/Chambeadoras.jpg" alt="Avatar" style="width:100%; box-shadow: 10px 10px 5px rgba(51, 51, 51, 0.6);"></a>
               <div class="container">
                   <div id="super" class="comix">
                     <h4><b>Revista 1</b></h4>
