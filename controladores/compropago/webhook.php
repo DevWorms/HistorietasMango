@@ -2,7 +2,7 @@
     require_once '../datos/ConexionBD.php';
 	$pdo = ConexionBD::obtenerInstancia()->obtenerBD();
 	
-	$sentenciaUpdate = $pdo->prepare("UPDATE usuarios SET premium = '1' WHERE nombre_usuario = '$customer_name' AND correo_usuario = '$customer_email' ")
+	//$sentenciaUpdate = $pdo->prepare("UPDATE usuarios SET premium = '1' WHERE nombre_usuario = '$customer_name' AND correo_usuario = '$customer_email' ");
 	
     /*
     * Agrega la URL donde se encuentre el webhook en:
@@ -17,7 +17,37 @@
     $body = @file_get_contents('php://input'); 
     // Decodificando el objeto JSON
     $event_json = json_decode($body);          
+
     // Imprimiendo la respuesta, para probarlo (Para probar el webhook ir a: https://compropago.com/panel/webhooks) 
+    echo $event_json->{'id'}.'<br>';
+    echo $event_json->{'type'}.'<br>';
+    echo $event_json->order_info->{'order_id'}.'<br>';
+    echo $event_json->order_info->{'store'}.'<br>';
+    echo $event_json->order_info->{'order_price'}.'<br>';
+    echo $event_json->order_info->{'order_name'}.'<br>';
+    echo $event_json->customer->{'customer_name'}.'<br>';
+    echo $event_json->customer->{'customer_email'}.'<br>';
+	
+    // Almacenando los valores del JSON 
+    $status = $event_json->{'type'};
+    $product_id = $event_json->order_info->{'order_id'};
+    $store = $event_json->order_info->{'store'};
+    $product_price = $event_json->order_info->{'order_price'};
+    $product_name = $event_json->order_info->{'order_name'};
+    $customer_name = $event_json->customer->{'customer_name'};
+    $customer_email = $event_json->customer->{'customer_email'};
+	
+	echo "<br>Status: ". $status;
+	echo "<br>Product_id: ". $product_id;
+	echo "<br>Store: " . $store;
+	echo "<br>Product_price: " . $product_price;
+	echo "<br>Product_name: " . $product_name;
+	echo "<br>Customer_name: " . $customer_name;
+	echo "<br>Customer_email: " . $customer_email;
+	
+	/*
+	
+	// Imprimiendo la respuesta, para probarlo (Para probar el webhook ir a: https://compropago.com/panel/webhooks) 
     echo $event_json->data->object->{'id'}.'<br>';
     echo $event_json->{'type'}.'<br>';
     echo $event_json->data->object->payment_details->{'product_id'}.'<br>';
@@ -83,9 +113,13 @@
     */
 	
 	if($status == "charge.success"){
-		//$sentenciaUpdate = $pdo->prepare("UPDATE usuarios SET premium = '1' WHERE nombre_usuario = '$customer_name' AND correo_usuario = '$customer_email' ")
+		$sentenciaUpdate = $pdo->prepare("UPDATE usuarios SET premium = '1' WHERE nombre_usuario = '$customer_name' AND correo_usuario = '$customer_email' ");
 		$sentenciaUpdate->execute();
-		echo "<br><br><br>Actualizacion de la base de datos completa"
+		echo "<br><br>Correo:" . $customer_name . "<br>Email:" . $customer_email;
+		echo "<br><br><br>Actualizacion de la base de datos completa";
+	}else
+	{
+		echo "<br><br><br>Sin cambios en la base de datos...";
 	}
 ?>
 
