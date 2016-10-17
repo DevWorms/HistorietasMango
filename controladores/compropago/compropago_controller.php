@@ -55,16 +55,16 @@
 
 <body>
     <form action="https://compropago.com/comprobante" method="post" id="formaCompropago">
-        <input type="hidden" name="public_key" value="pk_test_58f3516932a4526084">
-        <input type="hidden" name="product_price" value="15.00">
-        <input type="hidden" name="product_name" value="Membresia 1 mes">
-        <input type="hidden" name="product_id" value="M1M">
+        <input type="hidden" name="public_key" value="<?php echo $public_key ; ?>">
+        <input type="hidden" name="product_price" value="<?php echo $product_price ; ?>">
+        <input type="hidden" name="product_name" value="<?php echo $product_name ; ?>">
+        <input type="hidden" name="product_id" value="<?php echo $product_id ; ?>">
         <input type="hidden" name="customer_name" value="<?php echo $customer_name ; ?>">
         <input type="hidden" name="customer_email" value="<?php echo $customer_email ; ?>">
-        <input type="hidden" name="customer_phone" value="">
-        <input type="hidden" name="image_url" value="">
-        <input type="hidden" name="success_url" value="http://www.starwars.com">
-        <input type="hidden" name="failed_url" value="http://www.ign.com">
+        <input type="hidden" name="customer_phone" value="<?php echo $customer_phone ; ?>">
+        <input type="hidden" name="image_url" value="<?php echo $image_url ; ?>">
+        <input type="hidden" name="success_url" value="<?php echo $success_url ; ?>">
+        <input type="hidden" name="failed_url" value="<?php echo $failed_url ; ?>">
         <!--
         <input type="image" src="https://compropago.com/assets/payment-green-btn.png" border="0" name="submit" alt="Pagar con ComproPago"> 
         -->

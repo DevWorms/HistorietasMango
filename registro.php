@@ -74,8 +74,8 @@
 
           <hr>
           <form action="controladores/compropago/compropago_controller.php" method="post">
-              <input type="hidden" name="public_key" value="pk_test_58f3516932a4526084">
-              <input type="hidden" name="product_price" value="15.00">
+              <input type="hidden" name="public_key" value="pk_test_962f27606164387129">
+              <input type="hidden" name="product_price" value="150.00">
               <input type="hidden" name="product_name" value="Membresia 1 mes">
               <input type="hidden" name="product_id" value="M1M">
                           
@@ -104,8 +104,8 @@
               </div>
               <input type="hidden" name="customer_phone" value="">
               <input type="hidden" name="image_url" value="">
-              <input type="hidden" name="success_url" value="http://www.starwars.com">
-              <input type="hidden" name="failed_url" value="http://www.ign.com">
+              <input type="hidden" name="success_url" value="http://www.historietas.mx">
+              <input type="hidden" name="failed_url" value="">
               <h2 class="comic">Formas de pago</h2>
               <hr>
               <input type="image" src="https://compropago.com/assets/payment-green-btn.png" border="0" name="submit" alt="Pagar con ComproPago">
