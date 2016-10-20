@@ -51,6 +51,8 @@
                         $_SESSION["Correo"] = $resultado['correo_usuario'];
                         $_SESSION["Llave"] = $resultado['claveApi'];
                         $_SESSION["Premium"] = $resultado['premium'];
+						$_SESSION["Edad"] = $resultado['edad'];
+						$_SESSION["Sexo"] = $resultado['sexo'];
                     session_write_close();
 
                     if($_SESSION["Premium"] == 0)
