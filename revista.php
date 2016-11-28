@@ -55,10 +55,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li style="margin-top: 12px; margin-right: 6px; margin-left: 6px">
-                        <button class="comic comic_btn"><a href="muestra.php" style="text-decoration:none; color:#fff">Regresar</a></button>
-                    </li>
-                    <li style="margin-top: 12px; margin-right: 6px; margin-left: 6px">
-                        <button class="comic comic_btn" data-toggle="modal" data-target="#Ingresar" style="color:#fefc00">Entrale!</button>
+                        <button class="comic comic_btn"><a href="muestra.php" style="text-decoration:none; color:#fff">Pa' atrás</a></button>
                     </li>
                 </ul>
             </div>
@@ -67,17 +64,18 @@
         <!-- /.container -->
     </nav>
 
-
-    <!--    CUERPO  -->
-      
-                <a href="https://www.facebook.com/Historietasmx-332032027147432/" target="_blank"><img src="img/facebook.jpeg" height="40" width="40" style="position:fixed; z-index:3; right:2em; bottom:1em"></a>
-                <a href="https://www.instagram.com/historietas.mx/" target="_blank"><img src="img/instagram.png" height="40" width="40" style="position:absolute; z-index:3; right:5em; bottom:1em"></a>
-                <a href="https://twitter.com/historietas_mx" target="_blank"><img src="img/twitter.png" height="40" width="40" style="position:absolute; z-index:3; right:8em; bottom:1em"></a>
-                <a href="https://es.pinterest.com/historietasMX/" target="_blank"><img src="img/pin.png" height="40" width="40" style="position:absolute; z-index:3; right:11em; bottom:1em"></a>
-
       <object data="Prueba/Chambeadoras.pdf" type="application/pdf" width="100%" height="100%" style="height:100vh;">
         alt : <a href="Prueba/Chambeadoras.pdf">test.pdf</a>
       </object>
+
+    <div style="background:#fff; text-align:center;">
+        <br>
+            <h1 class="comic">Quieres más?</h1>
+            <h3 class="comix">Todas las historietas dónde quieras y cuando quieras de <del>$80</del> a sólo <strong>$50</strong> pesitos mensuales</h1>
+        <br>
+
+        <a href="registro.php" target="_blank"><img src="img/atascate.png"></a>
+    </div>
                 
     <!--    -->
 

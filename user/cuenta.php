@@ -122,7 +122,7 @@
 
           <hr>
 
-          <h2 class="comic">Datos de pago</h2>
+          <h2 class="comic">Aquí se paga. "Hoy no fío mañana tampoco" </h2>
 
             <form>
               <div class="form-group">

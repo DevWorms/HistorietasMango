@@ -81,7 +81,7 @@
                           
               <div class="form-group">
                   <label for="customer_name">Nombre completo:</label>
-                  <input type="text" class="form-control" id="customer_name" name="customer_name" value="" required>
+                  <input type="text" class="form-control" id="customer_name" name="customer_name" value="" required width="100">
               </div>
               <div class="form-group">
                   <label for="customer_email">Correo electrónico:</label>
@@ -102,12 +102,17 @@
                       <option value="2">Hombre</option>
                   </select>
               </div>
+              <div class="form-group">
+                  <label>Soy mayor de 18 años:</label>
+                  <input type="radio" class="form-control" id="edad" name="edad" value="" required>
+              </div>
               <input type="hidden" name="customer_phone" value="">
               <input type="hidden" name="image_url" value="">
               <input type="hidden" name="success_url" value="http://www.historietas.mx">
               <input type="hidden" name="failed_url" value="">
-              <h2 class="comic">Formas de pago</h2>
               <hr>
+              <h2 class="comic" align="center">Pa gozar hay que pagar ¡No se haga!  </h2>
+              <h3 class="comic" align="center">¡Sólo <strong>$50</strong> pesitos mensuales!  </h3>
               <input type="image" src="https://compropago.com/assets/payment-green-btn.png" border="0" name="submit" alt="Pagar con ComproPago">
           </form>
             <!--  
