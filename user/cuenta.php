@@ -60,10 +60,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li style="margin-top: 12px; margin-right: 6px; margin-left: 6px">
-                        <button class="comic comic_btn"><a href="muestra.php" style="text-decoration:none; color:#fefc00" onclick="window.history.back()">Regresar</a></button>
+                        <button class="comic comic_btn"><a href="muestra.php" style="text-decoration:none; color:#fefc00" onClick="window.history.back()">Regresar</a></button>
                     </li>
                     <li style="margin-top: 12px; margin-right: 6px; margin-left: 6px">
-                        <button class="comic comic_btn" data-toggle="modal" data-target="#Ingresar" style="color:#ffffff" onclick="window.location.href='../controladores/sesion/cerrar_sesion.php'">Salir</button>
+                        <button class="comic comic_btn" data-toggle="modal" data-target="#Ingresar" style="color:#ffffff" onClick="window.location.href='../controladores/sesion/cerrar_sesion.php'">Salir</button>
                     </li>
                 </ul>
             </div>
@@ -118,11 +118,42 @@
             </div>
             <button class="comic comic_btn" id="btn_aceptar" name="btn_aceptar"  style="color:#ff0006">Cambiar contraseña.</button>
           </form>
-
+          <br>
+            <div class="form-group">
+                <p class="comic">Edad: <?php echo $_SESSION["Edad"];?></p>
+            </div>
+                <p class="comic">Sexo: <?php 
+				    if($_SESSION["Sexo"] == 2){
+						echo 'Hombre';
+					}else if($_SESSION["Sexo"] == 1)
+					{
+						echo 'Mujer' ;
+					}
+					
+				?></p>
 
           <hr>
+<<<<<<< HEAD
 
           <h2 class="comic">Aquí se paga. "Hoy no fío mañana tampoco" </h2>
+=======
+          <h2 class="comic">Formas de pago</h2>
+          <form action="https://compropago.com/comprobante" method="post">
+              <input type="hidden" name="public_key" value="pk_test_962f27606164387129">
+              <input type="hidden" name="product_price" value="150.00">
+              <input type="hidden" name="product_name" value="Membresia 1 mes">
+              <input type="hidden" name="product_id" value="M1M">
+              <input type="hidden" name="customer_name" value="<?php echo $_SESSION["Nombre"];?>">
+              <input type="hidden" name="customer_email" value="<?php echo $_SESSION["Correo"];?>">
+              <input type="hidden" name="customer_phone" value="">
+              <input type="hidden" name="image_url" value="">
+              <input type="hidden" name="success_url" value="http://www.historietas.mx">
+              <input type="hidden" name="failed_url" value="">
+              <input type="image" src="https://compropago.com/assets/payment-green-btn.png" border="0" name="submit" alt="Pagar con ComproPago">
+          </form>
+          <!--
+          <h2 class="comic">Datos de pago</h2>
+>>>>>>> origin/master
 
             <form>
               <div class="form-group">
@@ -147,6 +178,7 @@
               </div>
               <button class="comic comic_btn" style="color:#ff0006">Realizar pago.</button>
           </form>
+          -->
     </div>
   
 
