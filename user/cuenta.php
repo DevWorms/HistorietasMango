@@ -133,10 +133,8 @@
 				?></p>
 
           <hr>
-<<<<<<< HEAD
 
           <h2 class="comic">Aquí se paga. "Hoy no fío mañana tampoco" </h2>
-=======
           <h2 class="comic">Formas de pago</h2>
           <form action="https://compropago.com/comprobante" method="post">
               <input type="hidden" name="public_key" value="pk_test_962f27606164387129">
