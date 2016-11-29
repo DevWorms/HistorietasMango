@@ -73,13 +73,14 @@
         <h2 class="comic">Información de usuario</h2>
 
           <hr>
-          <form action="controladores/compropago/compropago_controller.php" method="post">
+          <form action="controladores/pagos/controller.php" method="post">
+              <!--
               <input type="hidden" name="public_key" value="pk_test_962f27606164387129">
               <input type="hidden" name="product_price" value="150.00">
               <input type="hidden" name="product_name" value="Membresia 1 mes">
               <input type="hidden" name="product_id" value="M1M">
-                          
-              <div class="form-group">
+              -->            
+        <div class="form-group">
                   <label for="customer_name">Nombre completo:</label>
                   <input type="text" class="form-control" id="customer_name" name="customer_name" value="" required>
               </div>
@@ -98,17 +99,34 @@
               <div class="form-group">
                   <label>Sexo:</label>
                   <select name="sexo">
+                      <option value="0">--</option>
                       <option value="1">Mujer</option>
                       <option value="2">Hombre</option>
                   </select>
               </div>
+              <!--
               <input type="hidden" name="customer_phone" value="">
               <input type="hidden" name="image_url" value="">
               <input type="hidden" name="success_url" value="http://www.historietas.mx">
               <input type="hidden" name="failed_url" value="">
+              -->
               <h2 class="comic">Formas de pago</h2>
               <hr>
-              <input type="image" src="https://compropago.com/assets/payment-green-btn.png" border="0" name="submit" alt="Pagar con ComproPago">
+              <!--
+              <input type="image" src="https://compropago.com/assets/payment-green-btn.png" border="0" name="submit" alt="Pagar con ComproPago">  -->
+            
+                <label>
+                  <input type="radio" name="formadepago" value="compropago" id="formadepago1_0" required>
+                  Compropago
+                </label>
+                <br>
+                <label>
+                  <input type="radio" name="formadepago" value="paypal" id="formadepago1_1">
+                  Paypal
+                </label>
+                <br><br>
+                <button class="comic comic_btn" style="color:#ff0006">Realizar pago</button>
+                <br><br><br>
           </form>
             <!--  
             <div class="form-group">

@@ -113,10 +113,25 @@
     */
 	
 	if($status == "charge.success"){
-		$sentenciaUpdate = $pdo->prepare("UPDATE usuarios SET premium = '1' WHERE nombre_usuario = '$customer_name' AND correo_usuario = '$customer_email' ");
-		$sentenciaUpdate->execute();
+		
+		$consultaUsuario = "SELECT * FROM usuarios WHERE correo_usuario = ? AND nombre_usuario = ?";
+        $sentenciaConsulta = $pdo->prepare($consultaUsuario);
+        $sentenciaConsulta->bindParam(1,$customer_email);
+        $sentenciaConsulta->bindParam(2,$customer_name);
+        $sentenciaConsulta->execute();                
+        $resultado = $sentenciaConsulta->fetch();
+		if($resultado){
+			$premium = $resultado['premium'];
+			$premium = ($premium + 1);
+			$sentenciaUpdate = $pdo->prepare("UPDATE usuarios SET premium = '$premium' WHERE nombre_usuario = '$customer_name' AND correo_usuario = '$customer_email' ");
+		    $sentenciaUpdate->execute();
+			echo "<br><br><br>Actualizacion de la base de datos completa";
+		}
+		else{
+			echo "<br><br>Registro no encontrado, no se actualizo la base de datos.";
+		}
 		echo "<br><br>Correo:" . $customer_name . "<br>Email:" . $customer_email;
-		echo "<br><br><br>Actualizacion de la base de datos completa";
+		
 	}else
 	{
 		echo "<br><br><br>Sin cambios en la base de datos...";

@@ -1,0 +1,8 @@
+
+ |  | 11:12:45pm | 19/11/2016
+
+1542 | Completed | 11:32:29pm | 27/11/2016
+1542 | Completed | 07:45:31am | 28/11/2016 -- Sin registro en la BD!!!
+1542 | Completed | 08:36:51am | 28/11/2016 -- Sin registro en la BD!!!
+3 | Completed | 08:39:53am | 28/11/2016 -- EXITO!!!
+3 | Completed | 05:11:09am | 29/11/2016 -- EXITO!!!
