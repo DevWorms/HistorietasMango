@@ -63,13 +63,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li style="margin-top: 12px; margin-right: 6px; margin-left: 6px">
-                        <button class="comic comic_btn"><a href="muestra.php" style="text-decoration:none; color:#fefc00" onclick="window.history.back()">Regresar</a></button>
+                        <button class="comic comic_btn"><a href="muestra.php" style="text-decoration:none; color:#fefc00" onclick="window.history.back()">Pa' atrás</a></button>
                     </li>
                     <li style="margin-top: 12px; margin-right: 6px; margin-left: 6px">
-                        <button class="comic comic_btn" data-toggle="modal" data-target="#Acerca" style="color:#a1ddfc" onclick="window.location.href='cuenta.php'">Mi cuenta</button>
+                        <button class="comic comic_btn" data-toggle="modal" data-target="#Acerca" style="color:#a1ddfc" onclick="window.location.href='cuenta.php'">Yo mero</button>
                     </li>
                     <li style="margin-top: 12px; margin-right: 6px; margin-left: 6px">
-                        <button class="comic comic_btn" data-toggle="modal" data-target="#Ingresar" style="color:#ffffff" onclick="window.location.href='../controladores/sesion/cerrar_sesion.php'">Salir</button>
+                        <button class="comic comic_btn" data-toggle="modal" data-target="#Ingresar" style="color:#ffffff" onclick="window.location.href='../controladores/sesion/cerrar_sesion.php'">Sáquese</button>
                     </li>
                 </ul>
             </div>

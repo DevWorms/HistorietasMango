@@ -71,7 +71,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li style="margin-top: 12px; margin-right: 6px; margin-left: 6px">
-                        <button class="comic comic_btn" data-toggle="modal" data-target="#Ingresar" style="color:#fefc00">Entrale!</button>
+                        <button class="comic comic_btn" data-toggle="modal" data-target="#Ingresar" style="color:#fefc00; border-color:#fff">Entrale!</button>    
                     </li>
 
                 </ul>
@@ -81,20 +81,41 @@
         <!-- /.container -->
     </nav>
 
-
-    <!--    CUERPO  -->
-
-
-                <a href="https://www.facebook.com/Historietasmx-332032027147432/" target="_blank"><img src="img/facebook.jpeg" height="40" width="40" style="position:fixed; z-index:3; right:10em; bottom:1em"></a>
-                <a href="https://www.instagram.com/historietas.mx/" target="_blank"><img src="img/instagram.png" height="40" width="40" style="position:absolute; z-index:3; right:13em; bottom:1em"></a>
-                <a href="https://twitter.com/historietas_mx" target="_blank"><img src="img/twitter.png" height="40" width="40" style="position:absolute; z-index:3; right:16em; bottom:1em"></a>
-                <a href="https://es.pinterest.com/historietasMX/" target="_blank"><img src="img/pin.png" height="40" width="40" style="position:absolute; z-index:3; right:19em; bottom:1em"></a>
-                <a href="https://www.toukanmango.com/" target ="_blank"><img src="img/logo_editorial.png" style="position:absolute; z-index:3; right:2em; bottom:1em"></a>
-
-
     <div class="col-md-12" style="text-align:center; position:center;">
-        <div id="muestras" style="text-align:center; position:center;">
-    <br><br><br><br><br><br>
+    <br><br>
+        
+        <h1 class="comic"> 
+            Te damos una embarradita!
+        </h1>
+        <br>
+
+        <div class="col-md-6">
+            <form action="controladores/compropago/compropago_controller.php" method="post">                          
+                  <div class="form-group">
+                      <label for="customer_name">Nombre completo:</label>
+                      <input type="text" class="form-control" id="nombre" name="nombre" value="" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="pwd">Correo electrónico:</label>
+                      <input type="email" class="form-control" id="mail" name="mail" required>
+                  </div>
+                  <button type="submit" class="btn btn-default comic" id="btnPublicar" style="background-color:#000; color:#fff">Enviar!</button>
+            </form>
+        </div>
+
+
+        <div class="col-md-6 comix" style="font-size:23px">
+            <strong>Échale un ojo</strong> a las revistas de muestra.<br>
+            No olvides regalarnos tus datos para que te echemos toda la información<br>
+            de <italic>historietas.mx</italic>
+        </div>
+
+
+        <div id="muestras" class="col-md-12" style="text-align:center; position:center;">
+        <hr>
+            <h3 class="comix"> 
+                Las de muestra, se vale tocar!
+            </h3>
           <ul>
             <li>
               <a href="revista.php" style="margin-bottom:2em; background:rgba(246, 243, 0, 0.24); color:#ff544e; text-decoration:none">
@@ -122,10 +143,19 @@
             </li>
           </ul>
       </div>
-  </div>
+    </div>
                 
     <!--    -->
-
+    <div>
+    <br>
+        <div class="col-md-12" style="text-align:center;">
+            <a href="https://www.facebook.com/Historietasmx-332032027147432/" target="_blank"><img src="img/facebook.jpeg" height="40" width="40"></a>
+            <a href="https://www.instagram.com/historietas.mx/" target="_blank"><img src="img/instagram.png" height="40" width="40"></a>
+            <a href="https://twitter.com/historietas_mx" target="_blank"><img src="img/twitter.png" height="40" width="40"></a>
+            <a href="https://es.pinterest.com/historietasMX/" target="_blank"><img src="img/pin.png" height="40" width="40"></a>
+        </div>
+    <br><br>
+    </div>
     
 
     <!-- Modal -->
@@ -146,8 +176,9 @@
 
                 <div class="col-md-5 comix" style="height: 31em; overflow: scroll; background-color:#ff544e; color:#fff">
                     <br>
-
+                    <h2>Inicia Sesión</h2>
                     <form  method="post" id="login_form" action='controladores/sesion/iniciar_sesion.php'>
+                        
                       <div class="form-group">
                         <label for="email">Correo:</label>
                         <input type="email" class="form-control" id="email" name="email" required>
@@ -165,7 +196,8 @@
 
                     <p class="comix" text-align="center" style="font-size:18px;">¿Aún no tienes cuenta?</p>
 
-                      <a href="registro.php" class="comic comic_btn" style="color:#1866b1; font-size:25px;">REGISTRATE</button>
+
+                      <button class="comic comic_btn" onclick="location.href='registro.php'" id="btn_acceder" name="btn_acceder" style="color:#1866b1">REGISTRATE</button>
 
                 </div>
 

@@ -25,7 +25,8 @@
 	$image_url = $_POST['image_url'];
 	$success_url = $_POST['success_url'];
 	$failed_url = $_POST['failed_url'];
-	$API = rand(0,100000);
+	
+	$API = md5(microtime() . rand());
 	
 	$sentenciaRegistro->execute();
 	/*
