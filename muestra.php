@@ -116,7 +116,7 @@
             <h3 class="comix"> 
                 Las de muestra, se vale tocar!
             </h3>
-          <ul>
+          <ul style="padding-left: 0px;">
             <li>
               <a href="revista.php" style="margin-bottom:2em; background:rgba(246, 243, 0, 0.24); color:#ff544e; text-decoration:none">
                 <h2><img src="Prueba/Erotika1.jpg" height="241" width="210"></h2>

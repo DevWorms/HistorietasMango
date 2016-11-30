@@ -97,7 +97,7 @@
         </p>
 
 
-          <ul>
+          <ul style="padding-left: 0px">
             <li>
               <a href="catalogo.php?id_catalogo=1" style="margin-bottom:2em; background:rgba(246, 243, 0, 0.24); text-decoration:none">
                 <h2><img src="../Prueba/Chambeadoras.jpg" height="241" width="210"></h2>
@@ -130,12 +130,6 @@
       </div>
   </div>
           
- 
-                <a href="https://www.facebook.com/Historietasmx-332032027147432/" target="_blank"><img src="../img/facebook.jpeg" height="40" width="40" style="position:fixed; z-index:3; right:2em; bottom:1em"></a>
-                <a href="https://www.instagram.com/historietas.mx/" target="_blank"><img src="../img/instagram.png" height="40" width="40" style="position:absolute; z-index:3; right:5em; bottom:1em"></a>
-                <a href="https://twitter.com/historietas_mx" target="_blank"><img src="../img/twitter.png" height="40" width="40" style="position:absolute; z-index:3; right:8em; bottom:1em"></a>
-                <a href="https://es.pinterest.com/historietasMX/" target="_blank"><img src="../img/pin.png" height="40" width="40" style="position:absolute; z-index:3; right:11em; bottom:1em"></a>
-
         <!-- Wrapper for Slides -->
         <div class="carousel-inner">
 
@@ -180,6 +174,14 @@
 
     </header>
 
+    <div>
+
+ 
+                <a href="https://www.facebook.com/Historietasmx-332032027147432/" target="_blank"><img src="../img/facebook.jpeg" height="40" width="40" style="position:fixed; z-index:3; right:2em; bottom:1em"></a>
+                <a href="https://www.instagram.com/historietas.mx/" target="_blank"><img src="../img/instagram.png" height="40" width="40" style="position:absolute; z-index:3; right:5em; bottom:1em"></a>
+                <a href="https://twitter.com/historietas_mx" target="_blank"><img src="../img/twitter.png" height="40" width="40" style="position:absolute; z-index:3; right:8em; bottom:1em"></a>
+                <a href="https://es.pinterest.com/historietasMX/" target="_blank"><img src="../img/pin.png" height="40" width="40" style="position:absolute; z-index:3; right:11em; bottom:1em"></a>
+    </div>
 
     <!-- jQuery -->
     <script src="../js/jquery.js"></script>

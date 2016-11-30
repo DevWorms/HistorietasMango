@@ -48,10 +48,19 @@
                     </li>            
                     <li>
                         <a href="#"  class="comic" style="color:#000000">Estadísticas</a>
-                    </li>
+                    </li>            
+                    <li>
+                        <a href="#"  class="comic" style="color:#000000">Agregar nueva muestra</a>
+                    </li>            
+                    <li>
+                        <a href="#"  class="comic" style="color:#000000">Modificar catálogo</a>
+                    </li>            
+                    <li>
+                        <a href="#"  class="comic" style="color:#000000">Nueva revista</a>
+                    </li>            
                 </ul>
                 <div class="container" style="text-align: right;">
-                    <button type="button" class="btn btn-danger btn-lg" style="margin-top: 2px;" onclick= "location.href='./class/cerrar_sesion.php'">Salir</button>
+                    <button type="button" class="btn btn-danger btn-lg" style="margin-top: 2px;" onclick= "location.href='./class/cerrar_sesion_a.php'">Salir</button>
         </div>
             </div>
             <!-- /.navbar-collapse -->
@@ -63,7 +72,7 @@
     <div class="container">
         <br><br>
 
-        <h2 style="text-align:center">Ingresa Revistas</h2>
+        <h2 style="text-align:center">Ingresa nueva revista</h2>
         <hr>
         <br>
 
