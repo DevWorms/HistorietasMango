@@ -16,10 +16,16 @@
         $resultado = $sentenciaSesion->fetch();
 		if ($resultado){
 			$premium = $resultado['premium'];
+			$variable_control = $premium;
 			$premium = ($premium + 1);
 			$sentenciaUpdate = $pdo->prepare("UPDATE usuarios SET premium = '$premium' WHERE id_usuario = '$id_Usuario'");
 		    $sentenciaUpdate->execute();
-			
+			if($variable_control == 0){
+				$sentenciaUpdate = $pdo->prepare("UPDATE wallett SET fecha_caducidad = NOW() WHERE id_usuario = '$id_Usuario'");
+		        $sentenciaUpdate->execute();
+			}
+			$sentenciaUpdate = $pdo->prepare("UPDATE wallett SET fecha_caducidad = DATE_ADD(fecha_caducidad, INTERVAL 30 DAY) WHERE id_usuario = '$id_Usuario'");
+			$sentenciaUpdate->execute();
 			$registro = $id_Usuario . " | " . $payment_status . " | " . $hora . " | " . $fecha . " -- EXITO!!!" . PHP_EOL;
 			file_put_contents('paypal_dump.txt',$registro,FILE_APPEND);
 			

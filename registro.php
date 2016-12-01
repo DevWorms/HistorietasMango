@@ -68,21 +68,16 @@
 
     <div class="col-md-12">
 
-      <div class="col-md-5">
+        <div class="col-md-5">
         
         <h2 class="comic">Información de usuario</h2>
 
           <hr>
+
           <form action="controladores/pagos/controller.php" method="post">
-              <!--
-              <input type="hidden" name="public_key" value="pk_test_962f27606164387129">
-              <input type="hidden" name="product_price" value="150.00">
-              <input type="hidden" name="product_name" value="Membresia 1 mes">
-              <input type="hidden" name="product_id" value="M1M">
-              -->            
-        <div class="form-group">
+              <div class="form-group">
                   <label for="customer_name">Nombre completo:</label>
-                  <input type="text" class="form-control" id="customer_name" name="customer_name" value="" required width="100">
+                  <input type="text" class="form-control" id="customer_name" name="customer_name" value="" required>
               </div>
               <div class="form-group">
                   <label for="customer_email">Correo electrónico:</label>
@@ -104,25 +99,13 @@
                       <option value="2">Hombre</option>
                   </select>
               </div>
-<<<<<<< HEAD
-              <!--
-=======
               <div class="form-group">
                   <label>Soy mayor de 18 años:</label>
-                  <input type="radio" class="form-control" id="edad" name="edad" value="" required>
+                  <input type="radio" class="form-control" id="radio_edad" name="radio_edad" value="" required>
               </div>
->>>>>>> origin/master
-              <input type="hidden" name="customer_phone" value="">
-              <input type="hidden" name="image_url" value="">
-              <input type="hidden" name="success_url" value="http://www.historietas.mx">
-              <input type="hidden" name="failed_url" value="">
-<<<<<<< HEAD
-              -->
-              <h2 class="comic">Formas de pago</h2>
               <hr>
-              <!--
-              <input type="image" src="https://compropago.com/assets/payment-green-btn.png" border="0" name="submit" alt="Pagar con ComproPago">  -->
-            
+              <h2 class="comic" align="center">Pa gozar hay que pagar ¡No se haga!  </h2>
+              <h3 class="comic" align="center">¡Sólo <strong>$50</strong> pesitos mensuales!  </h3>
                 <label>
                   <input type="radio" name="formadepago" value="compropago" id="formadepago1_0" required>
                   Compropago
@@ -135,71 +118,9 @@
                 <br><br>
                 <button class="comic comic_btn" style="color:#ff0006">Realizar pago</button>
                 <br><br><br>
-=======
-              <hr>
-              <h2 class="comic" align="center">Pa gozar hay que pagar ¡No se haga!  </h2>
-              <h3 class="comic" align="center">¡Sólo <strong>$50</strong> pesitos mensuales!  </h3>
-              <input type="image" src="https://compropago.com/assets/payment-green-btn.png" border="0" name="submit" alt="Pagar con ComproPago">
->>>>>>> origin/master
           </form>
-            <!--  
-            <div class="form-group">
-              <label for="name">Nombre completo:</label>
-              <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Correo electrónico:</label>
-              <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="pwd">Contraseña:</label>
-              <input type="password" class="form-control" id="pwd" required>
-            </div>
-            <br>
-          <h2 class="comic">Formas de pago</h2>
-            <hr>
-            
-              <div class="form-group">
-                <label for="text">Número de tarjeta:</label>
-                <input type="text" class="form-control" id="tarjeta" required>
-              </div>
-              <div class="form-group">
-                <label for="text">Vence:</label>
-                <input type="text" class="form-control" id="tarjeta" required style="width:15%; display:inline;">
-                <input type="text" class="form-control" id="tarjeta" required style="width:15%; display:inline;">
-                
-                <label for="text">CVV:</label>
-                <input type="text" class="form-control" id="tarjeta" required style="width:15%; display:inline;">
-              </div>            
-              <div class="form-group">
-                <label for="text">Nombre del titular:</label>
-                <input type="text" class="form-control" id="tarjeta" required>
-              </div>            
-              <div class="form-group">
-                <label for="text">Dirección de facturación:</label>
-                <input type="text" class="form-control" id="tarjeta" required>
-              </div>
-              <button class="comic comic_btn" style="color:#ff0006">Realizar pago.</button>
-        <br><br><br><br>
-               -->
-          <!--
-          </form>
-               <form action="https://compropago.com/comprobante" method="post">
-                   <input type="hidden" name="public_key" value="pk_test_58f3516932a4526084">
-                   <input type="hidden" name="product_price" value="15.00">
-                   <input type="hidden" name="product_name" value="Membresia 1 mes">
-                   <input type="hidden" name="product_id" value="M1M">
-                   <input type="hidden" name="customer_name" value="">
-                   <input type="hidden" name="customer_email" value="">
-                   <input type="hidden" name="customer_phone" value="">
-                   <input type="hidden" name="image_url" value="">
-                   <input type="hidden" name="success_url" value="http://www.starwars.com">
-                   <input type="hidden" name="failed_url" value="">
-                   <input type="image" src="https://compropago.com/assets/payment-green-btn.png" border="0" name="submit" alt="Pagar con ComproPago">
-               </form>
-          -->
          
-    </div>
+        </div>
   
 
     </div>

@@ -122,8 +122,16 @@
         $resultado = $sentenciaConsulta->fetch();
 		if($resultado){
 			$premium = $resultado['premium'];
+			$id_Usuario = $resultado['id_usuario'];
+			$variable_control = $premium;
 			$premium = ($premium + 1);
 			$sentenciaUpdate = $pdo->prepare("UPDATE usuarios SET premium = '$premium' WHERE nombre_usuario = '$customer_name' AND correo_usuario = '$customer_email' ");
+		    $sentenciaUpdate->execute();
+			if($variable_control == 0){
+				$sentenciaUpdate = $pdo->prepare("UPDATE wallett SET fecha_caducidad = NOW() WHERE id_usuario = '$id_Usuario'");
+		        $sentenciaUpdate->execute();
+			}
+			$sentenciaUpdate = $pdo->prepare("UPDATE wallett SET fecha_caducidad = DATE_ADD(fecha_caducidad, INTERVAL 30 DAY) WHERE id_usuario = '$id_Usuario'");
 		    $sentenciaUpdate->execute();
 			echo "<br><br><br>Actualizacion de la base de datos completa";
 		}

@@ -128,6 +128,8 @@
 					}else if($_SESSION["Sexo"] == 1)
 					{
 						echo 'Mujer' ;
+					}else{
+						echo '--';
 					}
 					
 				?></p>
