@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,19 +93,22 @@
         <br>
 
         <div class="col-md-6">
-            <form action="controladores/compropago/compropago_controller.php" method="post">                          
+            <form  method="post" name="formulario_muestra" id="formulario_muestra" action="controladores/suscripcion_usuario/SuscripcionUsuario.php">                          
                   <div class="form-group">
                       <label for="customer_name">Nombre completo:</label>
-                      <input type="text" class="form-control" id="nombre" name="nombre" value="" required>
+                      <input type="text" class="form-control" id="nombre" name="nombre" required>
                   </div>
                   <div class="form-group">
-                      <label for="pwd">Correo electrónico:</label>
+                      <label for="mail">Correo electrónico:</label>
                       <input type="email" class="form-control" id="mail" name="mail" required>
                   </div>
-                  <button type="submit" class="btn btn-default comic" id="btnPublicar" style="background-color:#000; color:#fff">Enviar!</button>
+                  <input type="hidden" name="donde" id="donde" value="muestra">
+                  <button type="submit" class="btn btn-default comic" id="btnPublicar" style="background-color:#000; color:#fff">       Enviar!
+                  </button>
             </form>
+            <?php echo $_SESSION['msg'];?>
         </div>
-
+        
 
         <div class="col-md-6 comix" style="font-size:23px">
             <strong>Échale un ojo</strong> a las revistas de muestra.<br>
@@ -144,8 +150,6 @@
           </ul>
       </div>
     </div>
-                
-    <!--    -->
     <div>
     <br>
         <div class="col-md-12" style="text-align:center;">

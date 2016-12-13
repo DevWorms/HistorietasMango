@@ -1,7 +1,7 @@
 <?php
     //registro del usuario en la base de datos
     require_once '../datos/ConexionBD.php';
-	
+	require_once '../suscripcion_usuario/SuscripcionUsuario.php';
 	$pdo = ConexionBD::obtenerInstancia()->obtenerBD();
 	
 	$sentenciaRegistro = $pdo->prepare("INSERT INTO usuarios (nombre_usuario,correo_usuario,contrasena,sexo,edad,premium,API) VALUES (:Usuario,:Correo,:Contrasena,:Sexo,:Edad,'0',:API)");
@@ -39,6 +39,10 @@
 	$sentenciaRegistroWallett = $pdo->prepare("INSERT INTO wallett (id_usuario,numero_tarjeta) VALUES (:id_usuario,'0')");
 	$sentenciaRegistroWallett->bindParam(':id_usuario', $custom);	
     $sentenciaRegistroWallett->execute();
+
+    //aqui solo nesecitamos el nombre y el mail para mailchimp, el metodo suscribe hace todo
+    $suscribir = new SuscripcionUsuario();
+    $suscribir->suscibe($customer_name,$customer_email);
 	
 ?>
 
