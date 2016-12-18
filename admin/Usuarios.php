@@ -1,147 +1,103 @@
-<?php
-    error_reporting(0);
-    require_once 'class/sesion.php';
-    include_once "Parse/mostrarusuarios.php";
-    session_start();
+
+<?php 
+    require_once 'class/Usuarios.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>APP-COCINA</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-
-</head>
-
-<body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+        <div class="row" style="width:100%">
+            <div class="col-xs-12 col-md-3"></div>
+            <div class="col-xs-12 col-md-6">
+                <h2>Administradores actuales</h2>
+                <form action="WebMaster.php?modulo=usuarios" method="post" name="form-searcAdminds" class="row">   
+                    <div class="col-md-9">
+                      <input type="text" name="busqueda_admin" id="busqueda_admin" placeholder="Busqeda" class="form-control">  
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-danger comic" style="font-weight: bold">
+                            Buscar <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </form>
+                <br>
+                <table class="table table-striped tabla-admins">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Contrase&ntilde;a</th>
+                        <tr>  
+                    </thead>
+                    <?php 
+                        $parametro = $_POST['busqueda_admin'];
+                        if(!isset($parametro)){
+                            $parametro = "";
+                        }
+                        $admins = new Usuarios();
+                        echo $admins->showAdministradores($parametro);
+                    ?> 
+                </table>
+                <button type="submit" class="btn btn-danger comic" style="font-weight: bold;float: right" data-toggle="modal" data-target="#nuevoAdmin_modal">
+                            Nuevo Administrador <i class="glyphicon glyphicon-plus"></i>
                 </button>
-                <a class="navbar-brand" href="WebMaster.php">App-Cocina</a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="Nuevo.php">Nuevo Platillo</a>
-                    </li>
-                    <li>
-                        <a href="Menu.php">Actualizar Menú</a>
-                    </li>
-                    <li>
-                        <a href="Usuarios.php">Usuarios</a>
-                    </li>
-                    <li>
-                        <a href="Configuracion.php">Configuración de Cuenta</a>
-                    </li>                 
-                    <li>
-                        <a href="#">Estadísticas</a>
-                    </li>
-                </ul>
-                <div class="container" style="text-align: right;">
-                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#ModalPush">Push Notification</button>
-                    <button type="button" class="btn btn-danger btn-lg" style="margin-top: 2px;" onclick= "location.href='./class/cerrar_sesion.php'">Salir</button>
-                </div>
-            </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Page Content -->
-    <div class="container">
-        <br><br><br>
-        <h2>Usuarios Registrados</h2>  
-                    
-        
-        <?php
-            echo mostrarUsuarios();
-        ?>
-
-        <hr>
-        <br><br><br><br>
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Editorial ToukanMango 2016</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer>
-
-    </div>
-    <!-- /.container -->
-
-        <!-- Ventana de Push Notification -->
-    <div id="ModalPush" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
+    <!-- Modal -->
+    <div class="modal fade" id="nuevoAdmin_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Servicio de "Push Notifications"</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title" id="myModalLabel">Agregar Nuevo Administrador</h3>
                 </div>
-
-                <div class="modal-body" style="padding-left: 50px">
-                
-                    <form class="form-horizontal" role="form" action="Parse/pushnotification.php" method="POST" enctype="multipart/form-data" >
-                        <div class="form-group">
-                            <div class="col-sm-10">
-                                <input class="form-control" type="text" id="push" name="push" placeholder="Ingresa el texto de tu notificación.">
-                                <br><br>
-                                <div  class="form-group" style="font-size:20px;">
-                                      <input type="checkbox" id="ios" name="ios" > Usuarios iOS
-                                </div>
-                                <div  class="form-group" style="font-size:20px;">
-                                      <input type="checkbox" id="android" name="android" > Usuarios Android
-                                </div>                                
-                                <div  class="form-group" style="font-size:20px;">
-                                      <input type="checkbox" id="free" name="free" > Usuarios Free
-                                </div>
-                                <div  class="form-group" style="font-size:20px;">
-                                      <input type="checkbox" id="vencimiento" name="vencimiento" > Vencimiento cercano de membresía
-                                </div>
-                             </div>
-                
-                        </div>
+                <form method="post" action="WebMaster.php?modulo=usuarios" style="width:90%;margin: 0 auto">
+                    <div class="modal-body">
                     
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-default" id="btnPublicar">Lanzar Push Notification</button>
-                        </div>
-
-                    </form>
+                        <b>Nombre Administrador</b>
+                        <input type="text" id="nombre" name="nombre" class="form-control" onblur="validaExp(this,'alfaNum')">
+                        <span style="font-weight:bold;color: red"></span>
+                        <b>Correo Administrador</b>
+                        <input type="text" id="correo" name="correo" class="form-control" onblur="validaExp(this,'mail')">
+                        <span style="font-weight:bold;color: red"></span>
+                        <b>Contraseña Administrador</b>
+                        <input type="text" id="contrasena" name="contrasena" class="form-control" onblur="validaExp(this,'alfaNum')">
+                        <span style="font-weight:bold;color: red"></span>
+                        <b>Repetir Contraseña</b>
+                        <input type="text" id="recontrasena" name="recontrasena" class="form-control" onblur="validaExp(this,'alfaNum')">
+                        <span style="font-weight:bold;color: red"></span>
+                        <input type="hidden" name="funcion" id="funcion" value="guardar">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default comic" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-warning comic">Guardar</button>
+                    </div>
+                </form>
             </div>
-
-          </div>
         </div>
+    </div>
+<style type="text/css">
+.tabla-admins{
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+</style>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
+<?php 
+    $funcion = $_POST['funcion'];
+        if(!isset($funcion)){
+            $funcion = "";
+        }else if($funcion == "guardar"){
+            $admins = new Usuarios();
+            $nombre = $_POST['nombre'];
+            $correo = $_POST['correo'];
+            $contrasena = $_POST['contrasena'];
+            $bolGuardo = $admins->saveAdmistrador($nombre,$correo,$contrasena);
+            if($bolGuardo == 1){
+            ?>
+                 <form method="post" action="WebMaster.php?modulo=usuarios" id="form-rload"></form>
+                <script type="text/javascript">
+                    document.getElementById("form-rload").submit();
+                </script>
+            <?php    
+            }
+            
+        }
+ ?>
