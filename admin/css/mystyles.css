@@ -9,3 +9,11 @@
 	max-height: 100px;
 	width: 75%;
 }
+
+.edit-cat{
+	font-weight: bold;
+	text-align:center
+}
+.edicion-catalogo{
+	display: none;
+}
