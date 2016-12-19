@@ -1,5 +1,11 @@
-.tabla-admins{
-	width: 100%;
+.catalogo{
+	background-color: rgba(42,38,38,1);
+	border-radius: 4px;
+	color: white;
+	padding: 0.5% 1%;
 }
 
-
+.imgCatalogo{
+	max-height: 100px;
+	width: 75%;
+}

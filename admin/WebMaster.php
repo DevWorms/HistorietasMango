@@ -54,7 +54,7 @@
                         <a href="WebMaster.php?modulo=muestras"  class="comic" style="color:#000000">Agregar nueva muestra</a>
                     </li>            
                     <li>
-                        <a href="#"  class="comic" style="color:#000000">Modificar catálogo</a>
+                        <a href="WebMaster.php?modulo=catalogos"  class="comic" style="color:#000000">Modificar catálogo</a>
                     </li>            
                     <li>
                         <a href="WebMaster.php?modulo=revistas"  class="comic" style="color:#000000">Nueva revista</a>
@@ -80,8 +80,11 @@
         }
         else if($pagina == 'muestras'){
             require_once "muestras.php";
-        }else if(! isset($pagina)){
-            echo "Hola mundo";
+        }else if($pagina == 'catalogos'){
+            require_once 'catalogos.php';
+        }
+        else if(! isset($pagina)){
+            echo "<br><br>Hola mundo";
         }
      ?>
 

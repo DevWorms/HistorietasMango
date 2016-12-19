@@ -6,6 +6,7 @@
             <div class="col-xs-12 col-md-3"></div>
             <div class="col-xs-12 col-md-6">
                 <h2>Administradores actuales</h2>
+                <hr>
                 <form action="WebMaster.php?modulo=usuarios" method="post" name="form-searcAdminds" class="row">   
                     <div class="col-md-9">
                       <input type="text" name="busqueda_admin" id="busqueda_admin" placeholder="Busqeda" class="form-control">  
