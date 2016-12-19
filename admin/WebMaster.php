@@ -1,6 +1,7 @@
 <?php
     error_reporting(0);
     session_start();
+    if(isset($_SESSION["Id"]) and $_SESSION["Id"] != "" and $_SESSION["Id"] !=0){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,4 +101,5 @@
 
 </body>
 
+<?php } ?>
 </html>

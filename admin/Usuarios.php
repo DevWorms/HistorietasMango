@@ -11,7 +11,7 @@
                       <input type="text" name="busqueda_admin" id="busqueda_admin" placeholder="Busqeda" class="form-control">  
                     </div>
                     <div class="col-md-3">
-                        <button type="submit" class="btn btn-danger comic" style="font-weight: bold">
+                        <button type="submit" class="btn btn-primary comic" style="font-weight: bold">
                             Buscar <i class="glyphicon glyphicon-search"></i>
                         </button>
                     </div>
@@ -47,20 +47,20 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h3 class="modal-title" id="myModalLabel">Agregar Nuevo Administrador</h3>
                 </div>
-                <form method="post" action="WebMaster.php?modulo=usuarios" style="width:90%;margin: 0 auto">
+                <form method="post" action="WebMaster.php?modulo=usuarios" style="width:90%;margin: 0 auto" onsubmit="return validaFormulario()">
                     <div class="modal-body">
                     
                         <b>Nombre Administrador</b>
-                        <input type="text" id="nombre" name="nombre" class="form-control" onblur="validaExp(this,'alfaNum')">
+                        <input type="text" id="nombre" name="nombre" class="form-control" onblur="validaExp(this,'alfaNum')" required>
                         <span style="font-weight:bold;color: red"></span>
                         <b>Correo Administrador</b>
-                        <input type="text" id="correo" name="correo" class="form-control" onblur="validaExp(this,'mail')">
+                        <input type="text" id="correo" name="correo" class="form-control" onblur="validaExp(this,'mail')" required>
                         <span style="font-weight:bold;color: red"></span>
                         <b>Contraseña Administrador</b>
-                        <input type="text" id="contrasena" name="contrasena" class="form-control" onblur="validaExp(this,'alfaNum')">
+                        <input type="text" id="contrasena" name="contrasena" class="form-control" onblur="validaExp(this,'alfaNum')" required>
                         <span style="font-weight:bold;color: red"></span>
                         <b>Repetir Contraseña</b>
-                        <input type="text" id="recontrasena" name="recontrasena" class="form-control" onblur="validaExp(this,'alfaNum')">
+                        <input type="text" id="recontrasena" name="recontrasena" class="form-control" onblur="validaExp(this,'alfaNum')" required>
                         <span style="font-weight:bold;color: red"></span>
                         <input type="hidden" name="funcion" id="funcion" value="guardar">
                     </div>
@@ -79,7 +79,23 @@
     overflow: hidden;
 }
 </style>
-
+ <script type="text/javascript">
+     function validaFormulario(){
+        var nombre = $("#nombre").val();
+        var correo = $("#correo").val();
+        var contrasena = $("#contrasena").val();
+        var nContrasena = $("#recontrasena").val();
+        if(nombre == "" || correo == ""  || contrasena  == "" || recontrasena == "" ){
+            alert("Asegurese de llenar todos los campos");
+            return false;
+        }
+        if(contrasena != nContrasena){
+            alert("Las contraseñas no coincided");
+            return false;
+        }
+        return true;
+     }
+ </script>
 <?php 
     $funcion = $_POST['funcion'];
         if(!isset($funcion)){
@@ -101,3 +117,4 @@
             
         }
  ?>
+

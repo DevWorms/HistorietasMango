@@ -23,19 +23,21 @@
             } else if (que == "num") {
                 if (!expNumero.test(quien.value)) {
                     quien.value = "";
-                    alert(" Este campo solo puede contener dígitos [valor numérico]");
+                    $(quien).next().html(" Este campo solo puede contener dígitos [valor numérico]");
                     $(quien).css("box-shadow", "2px 2px 3px red");
 
                 } else {
                     $(quien).css("box-shadow", "none");
+                    $(quien).next().html(""); 
                 }
             } else if (que == "letra") {
                 if (!expLetras.test(quien.value)) {
                     quien.value = "";
-                    alert("Este campo solo puede contener letras");
+                    $(quien).next().html("Este campo solo puede contener letras");
                     $(quien).css("box-shadow", "2px 2px 3px red");
                 } else {
                     $(quien).css("box-shadow", "none");
+                    $(quien).next().html(); 
                 }
 
             } else if (que == "alfaNum") {
@@ -50,18 +52,20 @@
             } else if (que == "rfc") {
                 if (!expRFC.test(quien.value)) {
                     quien.value = "";
-                    alert("El formato del RFC es incorrecto formato: [XXXX010101XXX]");
+                    $(quien).next().html("El formato del RFC es incorrecto formato: [XXXX010101XXX]");
                     $(quien).css("box-shadow", "2px 2px 3px red");
                 } else {
                     $(quien).css("box-shadow", "none");
+                    $(quien).next().html(); 
                 }
             } else if (que == "curp") {
                 if (!expCurp.test(quien.value)) {
                     quien.value = "";
-                    alert("El formato del CURP es incorrecto formato: [XXXX000000XXXXXX00]");
+                    $(quien).next().html("El formato del CURP es incorrecto formato: [XXXX000000XXXXXX00]");
                     $(quien).css("box-shadow", "2px 2px 3px red");
                 } else {
                     $(quien).css("box-shadow", "none");
+                    $(quien).next().html(); 
                 }
             } else if (que == "alfaEsp") {
                 var char = '';
@@ -77,18 +81,20 @@
                 }
                 if (validador == 0) {
                     quien.value = "";
-                    alert("Este campo solo puede contener valores [letras,números y espacios]");
+                    $(quien).next().html("Este campo solo puede contener valores [letras,números y espacios]");
                     $(quien).css("box-shadow", "2px 2px 3px red");
                 } else {
                     $(quien).css("box-shadow", "none");
+                    $(quien).next().html(); 
                 }
             } else if (que == "fecha") {
                 if (!validateMXDate(quien.value)) {
                     quien.value = "";
-                    alert("El valor de la fecha es incorrecto formato: [dd/mm/aaaa]");
+                    $(quien).next().html("El valor de la fecha es incorrecto formato: [dd/mm/aaaa]");
                     $(quien).css("box-shadow", "2px 2px 3px red");
                 } else {
                     $(quien).css("box-shadow", "none");
+                    $(quien).next().html(); 
                 }
             }
         }
