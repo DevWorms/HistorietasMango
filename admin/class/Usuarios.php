@@ -1,6 +1,4 @@
 <?php 
-	// no es ruta directa es relativa quien llama esta clase usuarios.php
-	require_once '../controladores/datos/ConexionBD.php';
 	class Usuarios{
 		private $pdo;
 		function Usuarios(){
@@ -22,6 +20,7 @@
 			}
 			$ejecuta->execute();
 			$rs =  $ejecuta->fetchAll();
+			
 			// solo devolvere <tr> para poder agregar estilos en el html}
 			$finalContent = "";
 			foreach ($rs as $row) {

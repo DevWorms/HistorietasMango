@@ -1,7 +1,6 @@
-
-<?php 
-    require_once 'class/Usuarios.php';
-?>
+       <?php 
+       require_once 'class/Usuarios.php';
+       ?>
         <div class="row" style="width:100%">
             <div class="col-xs-12 col-md-3"></div>
             <div class="col-xs-12 col-md-6">

@@ -37,7 +37,7 @@
                     $(quien).css("box-shadow", "2px 2px 3px red");
                 } else {
                     $(quien).css("box-shadow", "none");
-                    $(quien).next().html(); 
+                    $(quien).next().html("");
                 }
 
             } else if (que == "alfaNum") {
@@ -56,7 +56,7 @@
                     $(quien).css("box-shadow", "2px 2px 3px red");
                 } else {
                     $(quien).css("box-shadow", "none");
-                    $(quien).next().html(); 
+                    $(quien).next().html("");
                 }
             } else if (que == "curp") {
                 if (!expCurp.test(quien.value)) {
@@ -65,7 +65,7 @@
                     $(quien).css("box-shadow", "2px 2px 3px red");
                 } else {
                     $(quien).css("box-shadow", "none");
-                    $(quien).next().html(); 
+                    $(quien).next().html(""); 
                 }
             } else if (que == "alfaEsp") {
                 var char = '';
@@ -85,7 +85,7 @@
                     $(quien).css("box-shadow", "2px 2px 3px red");
                 } else {
                     $(quien).css("box-shadow", "none");
-                    $(quien).next().html(); 
+                    $(quien).next().html("");
                 }
             } else if (que == "fecha") {
                 if (!validateMXDate(quien.value)) {
@@ -94,7 +94,7 @@
                     $(quien).css("box-shadow", "2px 2px 3px red");
                 } else {
                     $(quien).css("box-shadow", "none");
-                    $(quien).next().html(); 
+                    $(quien).next().html("");
                 }
             }
         }

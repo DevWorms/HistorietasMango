@@ -17,3 +17,15 @@
 .edicion-catalogo{
 	display: none;
 }
+
+.miniNota{
+	font-weight: bold;
+	font-size: 80%;
+	color: red;
+}
+
+.back-miniRevista{
+	text-align: center;
+	font-size: 90%;
+	font-weight: bold;
+}

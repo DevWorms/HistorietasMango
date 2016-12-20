@@ -1,4 +1,5 @@
 <?php
+    require_once '../controladores/datos/ConexionBD.php';
     error_reporting(0);
     session_start();
     if(isset($_SESSION["Id"]) and $_SESSION["Id"] != "" and $_SESSION["Id"] !=0){
@@ -76,7 +77,7 @@
             require_once 'revistas.php';
         }
         else if($pagina == 'usuarios'){
-            require_once "usuarios.php";
+            require_once 'usuarios.php';
         }
         else if($pagina == 'muestras'){
             require_once "muestras.php";
@@ -103,6 +104,5 @@
 
 
 </body>
-
 <?php } ?>
 </html>
