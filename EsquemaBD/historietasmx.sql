@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-12-2016 a las 06:42:12
+-- Tiempo de generación: 22-12-2016 a las 08:17:16
 -- Versión del servidor: 5.6.26-log
 -- Versión de PHP: 5.6.23
 
@@ -59,10 +59,24 @@ CREATE TABLE `catalogo` (
 --
 
 INSERT INTO `catalogo` (`id_catalogo`, `nombre_catalogo`, `descripcion_catalogo`, `imagen_catalogo`) VALUES
-(1, 'Las Chambeadoras', 'Descripcion Catalogo 1 las Chambeadoras', 'cat1.png'),
-(2, 'Erótika', 'Descripcion Catlogo 2 weroticq', 'cant3.png'),
-(3, 'Catalago 3', 'Descripcion Cat 3', 'cant3.png'),
-(4, 'Test Vaquero Loco', 'Lobos VAQUEROS', 'unmillon.png');
+(1, 'Las Chambeadoras', 'Las chambeadoras Catalogo																																													', 'Boceto.png'),
+(2, 'Erótika', 'Descripcion Catlogo 2 weroticq', '07.jpg'),
+(3, 'Los Vaqueros', 'Este es un catalogo numero 3', 'onepiece1-598.jpg'),
+(4, 'Prueba Vaquera', 'Libros Vaqueros		', 'Portada_capitulo_651.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `muestras`
+--
+
+CREATE TABLE `muestras` (
+  `id_muestra` int(11) NOT NULL,
+  `titulo` varchar(100) NOT NULL DEFAULT '',
+  `descripcion` varchar(140) NOT NULL DEFAULT '',
+  `imagen` varchar(140) NOT NULL DEFAULT '',
+  `documento` varchar(140) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -88,7 +102,7 @@ CREATE TABLE `revistas` (
 INSERT INTO `revistas` (`id_revista`, `id_catalogo`, `nombre_revista`, `numero_revista`, `info_revista`, `img_revista`, `pdf_revista`, `activo`) VALUES
 (1, 2, 'Piel de Ébano en Apareamiento', 117, 'Prueba de información extra de la revista', 'Revistas/2_Erotika/img/Erotika1.jpg', 'Revistas/2_Erotika/pdf/Erotika1.pdf', 1),
 (2, 2, 'Olores Íntimos', 6, 'Otra información de la revista.', 'Revistas/2_Erotika/img/Erotika2.jpg', 'Revistas/2_Erotika/pdf/Erotika2.pdf', 1),
-(3, 1, 'La neta: ¡Que güena está Petra!', 237, 'Petra está bien buena.', 'Revistas/1_Chambeadoras/img/Chambeadoras.jpg', 'Revistas/1_Chambeadoras/pdf/Chambeadoras.pdf', 1);
+(3, 2, 'La neta: ¡Que güena está Petra!', 237, 'Petra está bien buena.', 'Revistas/1_Chambeadoras/img/Chambeadoras.jpg', 'Revistas/1_Chambeadoras/pdf/Chambeadoras.pdf', 1);
 
 -- --------------------------------------------------------
 
@@ -173,6 +187,12 @@ ALTER TABLE `catalogo`
   ADD PRIMARY KEY (`id_catalogo`);
 
 --
+-- Indices de la tabla `muestras`
+--
+ALTER TABLE `muestras`
+  ADD PRIMARY KEY (`id_muestra`);
+
+--
 -- Indices de la tabla `revistas`
 --
 ALTER TABLE `revistas`
@@ -207,12 +227,17 @@ ALTER TABLE `wallett`
 -- AUTO_INCREMENT de la tabla `administrador`
 --
 ALTER TABLE `administrador`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `catalogo`
 --
 ALTER TABLE `catalogo`
   MODIFY `id_catalogo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT de la tabla `muestras`
+--
+ALTER TABLE `muestras`
+  MODIFY `id_muestra` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `revistas`
 --
