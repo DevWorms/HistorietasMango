@@ -30,7 +30,10 @@
                if($response){
                	return true;
                }
+			}else{
+				echo "ERROR : ". $this->bolError();	
 			}
+
 			return false;
 		}
 	}

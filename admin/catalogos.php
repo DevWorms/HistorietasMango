@@ -1,7 +1,7 @@
 <div class="row" style="width: 100%;">
 	<div class="col-xs-12 col-md-3"></div>
 	<div class="col-xs-12 col-md-6">
-		<h2>Catálogos</h2>
+		<h1 class="comic">Catálogos</h1>
 		<hr>
 	</div>
 </div>
@@ -31,7 +31,7 @@
 				
 			</div>
 			<div class="col-xs-12 col-md-3" style="text-align: center">
-				<button class="btn btn-warning comic" onclick="showEdition(<?php echo $row['id_catalogo'] ?>)"><i class="glyphicon glyphicon-pencil"></i> Editar</button>
+				<button class="btn btn-danger comic" onclick="showEdition(<?php echo $row['id_catalogo'] ?>)"><i class="glyphicon glyphicon-pencil"></i> Editar</button>
 				<br><br>
 				<button class="btn btn-default comic" data-toggle="modal" data-target="#modal-cat-<?php echo $row['id_catalogo']; ?>"><i class=" glyphicon glyphicon-book"></i> Revistas</button>
 			</div>	
@@ -57,7 +57,7 @@
 				<input type="hidden" id="id_catalogo" name="id_catalogo" value="<?php echo $row['id_catalogo']?>">
 				<input type="hidden" name="funcion" id="funcion" value="guardar">
 				<br>
-				<button type="submit" class="btn btn-danger comic"><i class="glyphicon glyphicon-floppy-disk"></i> Guardar</button>
+				<button type="submit" class="btn btn-warning comic"><i class="glyphicon glyphicon-floppy-disk"></i> Guardar</button>
 			</div>	
 		</form>
 	</div>
@@ -65,40 +65,59 @@
 <br>
 <!-- Modal -->
     <div class="modal fade" id="modal-cat-<?php echo $row['id_catalogo']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabe<?php echo $row['id_catalogo']; ?>">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h3 class="modal-title" id="myModalLabe<?php echo $row['id_catalogo']; ?>">Catálogo:<?php echo $row['nombre_catalogo'];?></h3>
-                    <h4>&nbsp;&nbsp;&nbsp;Revistas Asociadas</h4>
+                    <h3 class="modal-title" id="myModalLabe<?php echo $row['id_catalogo']; ?>">
+                    Catálogo:<?php echo $row['nombre_catalogo'];?></h3>
+                    <span style="font-size:110%">&nbsp;&nbsp;&nbsp;Revistas Asociadas</span>
+                    <form action="WebMaster.php?modulo=catalogos" name="form-activa"  id="form-activa-<?php echo $row['id_catalogo']?>" style="float:right">
+                        <input type="hidden" name="activadas" id="activadas">
+                        <input type="hidden" name="desactivadas" id="desactivadas">
+                        <input type="hidden" name="eliminadas" id="eliminadas">
+                        <button type="button" class="btn btn-warning comic">
+                            Guardar <i class="glyphicon glyphicon-floppy-disk"></i>
+                        </button>
+                    </form>
+                    <button type="button" class="btn btn-danger comic" style="float:right;margin-right: 3px" >
+                            Cancelar <i class="glyphicon glyphicon-ban-circle"></i>
+                    </button>
+                    
+                    
                 	<hr>
                     <div class="row" style="width:100%">
                     <?php
                     	$pdo = ConexionBD::obtenerInstancia()->obtenerBD();
                     	$revista = new Revistas($pdo);
                     	$rsRevista = $revista->getRevisByCatalogo($row['id_catalogo']);
-                    	foreach ($rsRevista as $revi) {
-                    ?>
-                		<div class="col-xs-6 col-md-4 back-miniRevista">
-                		<?php 
-                		echo $revi['nombre_revista'];
-                		if(strlen ($revi['nombre_revista']) <= 16){
-                			echo "<br>";
-                		}
-                		?>
-
-                		<br>
-                		<img src="../user/<?php echo $revi['img_revista'];?>" class="img-thumbnail imgCatalogo">
-                		<br>
-                		No.<?php echo $revi['numero_revista'];?>
-                		<br>
-                		<a href="../user/<?php echo $revi['pdf_revista'];?>" class="btn btn-danger comic" target="_blank"><i class="glyphicon glyphicon-folder-open"></i> Ver</a>
+                    	foreach ($rsRevista as $revi) {?>
+                		<div class="col-xs-6 col-md-3 back-miniRevista">
+                    		<?php 
+                    		echo $revi['nombre_revista'];
+                    		if(strlen ($revi['nombre_revista']) <= 16){
+                    			echo "<br>";
+                    		}?>
+                    		<br>
+                    		<img src="../user/<?php echo $revi['img_revista'];?>" class="img-thumbnail imgCatalogo">
+                    		<br>
+                    		No.<?php echo $revi['numero_revista'];?>
+                    		<br>
+                    		<a href="../user/<?php echo $revi['pdf_revista'];?>" class="btn btn-warning comic" target="_blank"><i class="glyphicon glyphicon-folder-open"></i> </a>
+                            <button type="submit" class="btn btn-danger comic" onclick="pastDeleted(<?php echo $row['id_catalogo'].','.$revi['id_revista'];?>,this)">
+                                <i class=" glyphicon glyphicon-trash"></i>
+                            </button>
+                            <br> 
+                            <span class="comic">Inactivo/Activo</span>
+                            <br>
+                            <label class="switch">
+                              <input type="checkbox" id="r-<?php echo $revi['id_revista'].'"'; if($revi['activo']==1){ echo " checked";}?> onclick="pastActivated(<?php echo $row['id_catalogo'].','.$revi['id_revista'];?>,this)">
+                              <div class="slider round"></div>
+                            </label>
                 		</div>
-                    <?php } ?>
+                        <?php } ?>
                     </div>
                 </div>
-               
-
             </div>
         </div>
     </div>
@@ -108,6 +127,34 @@
 	function showEdition(who){
 		$("#cat-"+who).slideToggle(400);
 	}
+
+    function pastActivated(id_catalogo,id_revista,quien){
+        if($(quien).is(":checked")){
+            var activadas = $("#form-activa-"+id_catalogo+ " input[name='activadas']").val();
+            alert(activadas);
+            activadas += id_revista + ",";
+            $("#form-activa-"+id_catalogo+ " input[name='activadas']").val(activadas);
+        }else{
+            var desactivadas =$("#form-activa-"+id_catalogo+ " input[name='activadas']").val();
+            desactivadas += id_revista + ",";
+            $("#form-activa-"+id_catalogo+ " input[name='desactivadas']").val(desactivadas);
+        }
+
+    }
+    function pastDeleted(id_catalogo,id_revista, quien){
+        if(confirm("Estas seguro de querer eliminar esta revista?")){
+            var idsRevistas = $("#form-activa-"+id_catalogo+ " input[name='eliminadas']").val();
+            idsRevistas += id_revista + ",";
+            $("#form-activa-"+id_catalogo+ " input[name='eliminadas']").val(idsRevistas);
+            $(quien).parent("div").css({
+                'opacity': '0.3',
+                'background-color': '#F4EBEB',
+                'border-radius':'5px'
+            })
+            $(quien).attr("disabled",true); 
+        }
+        
+    }
 </script>
 
 <?php 
@@ -122,13 +169,14 @@
             $imagen = $_FILES['imagen_catalogo'];
             $id_catalogo = $_POST['id_catalogo'];
             $bolGuardo = 0;
+
             if($imagen["name"] == ""){
             	$imagen = "";
             	$bolGuardo = $catalogo->updateCatalogo($nombre,$descripcion,$imagen,$id_catalogo);
-            }else{
+                
+            }else{           
             	$cargar = new Archivos($imagen);
             	if($cargar->subirArchivo("files/catalogos/")){
-            		echo "subio el archivo";
             		$bolGuardo = $catalogo->updateCatalogo($nombre,$descripcion,$imagen["name"],$id_catalogo);
             	}
             }
@@ -137,6 +185,7 @@
             ?>
                 <form method="post" action="WebMaster.php?modulo=catalogos" id="form-rload-cat"></form>
                 <script type="text/javascript">
+
                     document.getElementById("form-rload-cat").submit();
                 </script>
             <?php    
