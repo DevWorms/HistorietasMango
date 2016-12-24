@@ -1,87 +1,45 @@
-<div class="container">
-        <br><br>
-        <h2 style="text-align:center">Ingresa nueva revista</h2>
-        <hr>
-        <br>
-        <div class="container-fluid">
-            <div class="row-fluid">
+<?php 
 
-
-                <!--  FORMULARIO PARA CREAR NUEVO PLATILLO  -->
-                <div class="span6">
-                    <form class="form-horizontal" role="form" action="Parse/nuevoplatillo.php" method="POST" enctype="multipart/form-data" >
-
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">Nombre:</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" id="nombre" name="nombre" ng-model="platillo" placeholder="Ingresa nombre de la revista" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">Catálogo:</label>
-                            <div class="col-sm-10">          
-                                <select id="nivel" class="form-control" name="nivel">
-                                    <option value="Principiante">Las Chambeadoras</option>
-                                    <option value="Intermedio">Erotika</option>
-                                </select><br>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">Número de revista:</label>
-                            <div class="col-sm-10">          
-                                <input class="form-control" id="porciones" name="porciones" placeholder="Ingresa porciones del platillo" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">Información adicional:</label>
-                            <div class="col-sm-10">          
-                                <textarea class="form-control" rows="5" id="procedimiento" name="procedimiento" ng-model="procedimiento" placeholder="Ingresa el procedimiento" required></textarea>
-                            </div>
-                        </div>                           
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">Etiquetas:</label>
-                            <div class="col-sm-10">          
-                                <textarea class="form-control" rows="5" id="etiquetas" name="etiquetas" placeholder="#tag1 #tag2 #tag3" required></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">Asociar a menú:</label>
-                            <div class="col-sm-10">          
-                                <select id="menu" class="form-control" name="menu">
-                                    <?php echo Asociar(); ?>
-                                </select>
-                                <br>
-                            </div>
-                        </div>
-
-                        <div>
-                            <input type="file" name="documento" id="documento"/><br><br>
-                        </div>
-
-                        <hr>
-                        
-                        <div  class="form-group" style="font-size:20px;">
-                              <input type="checkbox" id="activo" name="activo" checked> ¿Activo? (Si está activo, aparecerá inmediatamente en los dispositivos.)
-                        </div>
-
-                        <div class="form-group" style="text-align: right;">        
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-default" id="btnPublicar">Publicar Receta</button>
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
+ ?>
+<form action="WebMaster.php?modulo=revistas" method="post">
+    <div class="row">
+    <div class="col-xs-12 col-md-2"></div>
+        <div class="col-xs-12 col-md-4" style="text-align: center">
+            <h1 class="comic">Nueva Revista</h1>
+            <input type="text" id="nombre_revista" name="nombre_revista" placeholder="Nombre de la aevista" class="form-control"/>
+            <br>
+            <textarea type="text" id="info_revista" name="info_revista" placeholder="Información de la revista" class="form-control" rows="4"></textarea> 
+            <br>
+            <select class="form-control" id="catalogo" name="catalogo">
+            <?php 
+                $pdo = ConexionBD::obtenerInstancia()->obtenerBD();
+                $query = "SELECT id_catalogo,nombre_catalogo FROM catalogo";
+                $ejecuta = $pdo->prepare($query);
+                $ejecuta->execute();
+                $rs =  $ejecuta->fetchAll();
+                foreach ($rs as $row) {
+             ?>
+                <option value="<?php echo $row['id_catalogo'];?>">
+                    <?php echo $row['nombre_catalogo'];?>
+                </option>
+             <?php }?>
+            </select>
+            <br>
+            <input type="number" id="nombre_revista" name="nombre_revista" placeholder="Número revista" class="form-control"/>
+            <br>
+            <h4 class="comic">Activar</h4>
+            <input type="checkbox" id="activo" name="inactivo" class="form-control" placeholder="Activar" />
         </div>
-
-        <hr>
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Editorial ToukanMango 2016</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer>
+        <div class="col-xs-12 col-md-4" style="text-align:center">
+            <h4><br></h4>
+            <h4 class="comic">Imagen</h4>
+            <input type="file" class="form-control">
+            <h4 class="comic">PDF/Archivo</h4>
+            <input type="file" class="form-control">
+            <br>
+            <button class="btn btn-lg btn-warning comic" type="submit" >
+                <i class="glyphicon glyphicon-floppy-disk"></i> Guardar
+            </button>
+        </div>
+    </div
+</form> 
