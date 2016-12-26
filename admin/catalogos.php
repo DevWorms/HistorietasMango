@@ -1,3 +1,8 @@
+<style type="text/css">
+    html { 
+  overflow-y:scroll;
+}
+</style>
 <div class="row" style="width: 100%;">
 	<div class="col-xs-12 col-md-3"></div>
 	<div class="col-xs-12 col-md-6">
@@ -29,7 +34,6 @@
 			</div>
 			<div class="col-xs-12 col-md-4" style="text-align:center">
 				<img src="files/catalogos/<?php echo $row['imagen_catalogo'];?>" class="img-thumbnail imgCatalogo"/>
-				
 			</div>
 			<div class="col-xs-12 col-md-3" style="text-align: center">
 				<button class="btn btn-danger comic" onclick="showEdition(<?php echo $row['id_catalogo'] ?>)"><i class="glyphicon glyphicon-pencil"></i> Editar</button>
@@ -39,7 +43,7 @@
 		</div>
 	</div>
 </div>
-<div class="row edicion-catalogo" id="cat-<?php echo $row['id_catalogo']?>">
+<div class="row edicion-catalogo" id="cat-<?php echo $row['id_catalogo']?>" style="width: 98%">
 	<br>
 	<div class="col-xs-12 col-md-3"></div>
 	<div class="col-xs-12 col-md-6 edit-cat">
@@ -85,9 +89,13 @@
                     <button type="button" class="btn btn-danger comic" style="float:right;margin-right: 3px" data-toggle="tooltip" data-placement="bottom" title="Cancelar" onclick="cancelChanges(<?php echo $row['id_catalogo']; ?>)">
                          <i class="glyphicon glyphicon-ban-circle"></i>
                     </button>
-                    <a href="WebMaster.php?modulo=revistas" class="btn btn-success comic" style="float:right;margin-right: 3px" data-toggle="tooltip" data-placement="bottom" title="Nueva Revista">
-                            <i class="glyphicon glyphicon-plus"></i>
-                    </a>
+                    <form action="WebMaster.php?modulo=revistas" name="form-nueva-revista" method="post" style="float:right;margin-right: 3px">
+                    <input type="hidden" id="que_catalogo" name="que_catalogo" value="<?php echo $row['id_catalogo'];?>">
+                       <button type="submit" class="btn btn-success comic"  data-toggle="tooltip" data-placement="bottom" title="Nueva Revista">
+                                <i class="glyphicon glyphicon-plus"></i>
+                        </button> 
+                    </form>
+                    
 
                 	<hr>
                     <div class="row" style="width:100%">
@@ -103,11 +111,11 @@
                     			echo "<br>";
                     		}?>
                     		<br>
-                    		<img src="../user/<?php echo $revi['img_revista'];?>" class="img-thumbnail imgCatalogo">
+                    		<img src="files/revistas/img/<?php echo $revi['img_revista'];?>" class="img-thumbnail imgCatalogo">
                     		<br>
                     		No.<?php echo $revi['numero_revista'];?>
                     		<br>
-                    		<a id="rview-<?php echo $revi['id_revista']?>" href="../user/<?php echo $revi['pdf_revista'];?>" class="btn btn-warning comic" target="_blank"><i class="glyphicon glyphicon-folder-open"></i> </a>
+                    		<a id="rview-<?php echo $revi['id_revista']?>" href="files/revistas/documento/<?php echo $revi['pdf_revista'];?>" class="btn btn-warning comic" target="_blank"><i class="glyphicon glyphicon-folder-open"></i> </a>
                             <button id="rdel-<?php echo $revi['id_revista']?>" type="submit" class="btn btn-danger comic" onclick="pastDeleted(<?php echo $row['id_catalogo'].','.$revi['id_revista'];?>,this)">
                                 <i class=" glyphicon glyphicon-trash"></i>
                             </button>
