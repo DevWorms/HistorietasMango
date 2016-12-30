@@ -1,0 +1,44 @@
+#imagen { 
+    z-index: 1000;
+    width: 40%; 
+    height: 10em;
+    background-size: contain;           
+    background-image: url("../img/access_N.png");
+    background-repeat: no-repeat;
+    margin: 20px auto auto auto;
+}
+
+#imagen:hover { 
+    z-index: 1000;
+    width: 40%; 
+    height: 10em;
+    background-size: contain; 
+    background-image: url("../img/access_H.png");
+    background-repeat: no-repeat;
+}
+
+
+@media (min-width: 768px) {
+    #imagen { 
+        z-index: 1000;
+        width: 40%; 
+        height: 40em;
+        background-size: contain;           
+        background-image: url("../img/access_N.png");
+        background-repeat: no-repeat;
+        margin: auto;    
+    }
+
+    #imagen:hover { 
+        z-index: 1000;
+        width: 40%; 
+        height: 40em;
+        background-size: contain; 
+        background-image: url("../img/access_H.png");
+        background-repeat: no-repeat;
+    } 
+}
+
+.modal-footer .btn{
+    margin-top: 15px;
+}

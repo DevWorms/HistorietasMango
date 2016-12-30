@@ -16,28 +16,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/full-slider.css" rel="stylesheet">
     <link href="css/comix.css" rel="stylesheet">
-    
-
-    <style>
-        #imagen { 
-            z-index: 1000;
-            width: 40%; 
-            height: 40em;
-            background-size: contain;              
-            background-image: url("img/access_N.png");
-            background-repeat: no-repeat;
-            margin:auto;
-        }
-
-        #imagen:hover { 
-            z-index: 1000;
-            width: 40%; 
-            height: 40em;
-            background-size: contain; 
-            background-image: url("img/access_H.png");
-            background-repeat: no-repeat;
-        }
-    </style>
+    <link href="css/index.css" rel="stylesheet">
 
 </head>
 
@@ -88,15 +67,15 @@
                   <!-- Wrapper for slides -->
                   <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                      <img src="img/index1.jpg" alt="Chania">
+                      <img src="img/index1.jpg" class="img-responsive" alt="Chania">
                     </div>
 
                     <div class="item">
-                      <img src="img/index2.jpg" alt="Chania">
+                      <img src="img/index2.jpg" class="img-responsive" alt="Chania">
                     </div>
 
                     <div class="item">
-                      <img src="img/index3.jpg" alt="Flower">
+                      <img src="img/index3.jpg" class="img-responsive" alt="Flower">
                     </div>
                 </div>
 
@@ -122,7 +101,6 @@
             <a href="https://twitter.com/historietas_mx" target="_blank"><img src="img/twitter.png" height="40" width="40"></a>
             <a href="https://es.pinterest.com/historietasMX/" target="_blank"><img src="img/pin.png" height="40" width="40"></a>
         </div>
-    <br><br>
     </div>
 
     <!-- Modal -->
@@ -141,11 +119,11 @@
                 <br>
                 <p><h1 class="comic">Acerca de... </h1></p><br>
 
-                    <div class="col-md-5 comix" style="height: 31em; overflow: scroll; background-color:#ff544e; color:#fff">
+                    <div class="col-md-5 comix" style="height: 27em; overflow: hidden; background-color:#ff544e; color:#fff">
                             
-                            <br>                        
+                            <br>
                             <img src="img/logo2.png" width="100%">
-
+                            <br><br>
                             La picardía, el humor, la calentura, los albures y más, forman todos parte de ésta colección que estamos rescatando sólo para ti, diviértete leyendo todas y pasa un rato super entretenido... estamos seguros que te picarás con cada una de las historias
                     </div>
 
@@ -176,7 +154,7 @@
                 <br>
                 <p><h1 class="comic">Entrale! </h1></p><br>
 
-                <div class="col-md-5 comix" style="height: 31em; overflow: scroll; background-color:#ff544e; color:#fff">
+                <div class="col-md-5 comix" style="height: 29em; overflow: hidden; background-color:#ff544e; color:#fff">
                     <br>
                     <h2>Inicia Sesión</h2>
                     <form  method="post" id="login_form" action='controladores/sesion/iniciar_sesion.php'>
@@ -193,8 +171,6 @@
                     </form>
 
                     <br>
-                    <hr>
-
 
                     <p class="comix" text-align="center" style="font-size:18px;">¿Aún no tienes cuenta?</p>
 
@@ -223,7 +199,7 @@
 
                 <p><h1 class="comic" align="center">Aviso de Privacidad </h1></p><br>
 
-                    <div class="col-md-12" style="height: 31em; overflow: scroll; background-color:#ff544e; color:#fff; text-align:center">
+                    <div class="col-md-12" style="height: 31em; overflow-y: scroll; overflow-x: hidden; background-color:#ff544e; color:#fff; text-align:center">
                             
                             <br>                                                    
                                 De acuerdo a lo Previsto en la “Ley Federal de Protección de Datos Personales”, declara <strong>@EMPRESA</strong>, ser una empresa legalmente constituida de conformidad con las leyes mexicanas, con domicilio en <strong>@DOMICILIO</strong> y como responsable del tratamiento de sus datos personales, hace de su conocimiento que la información de nuestros clientes es tratada de forma estrictamente confidencial por lo que al proporcionar sus datos personales, tales como: 
@@ -254,7 +230,7 @@
                     </div>
 
               </div>
-
+                
               <div class="modal-footer">
                 <button type="button" class="btn btn-success comic" data-dismiss="modal">¡Lo tengo!</button>
               </div>
