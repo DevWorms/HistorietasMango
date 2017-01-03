@@ -15,20 +15,16 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/comix.css" rel="stylesheet">
 
-
-    <!--
-        STYLE
-    -->
     <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css"> 
     <style>
-    body { 
-    background: url(img/backMag.png) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-</style>
+        body { 
+            background: url(img/backMag.png) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+          }
+    </style>
 
 </head>
 
@@ -70,11 +66,11 @@
 
     <div style="background:#fff; text-align:center;">
         <br>
-            <h1 class="comic">Quieres más?</h1>
+            <h1 class="comic">¿Quieres más?</h1>
             <h3 class="comix">Todas las historietas dónde quieras y cuando quieras de <del>$80</del> a sólo <strong>$50</strong> pesitos mensuales</h1>
         <br>
 
-        <a href="registro.php" target="_blank"><img src="img/atascate.png"></a>
+        <a href="registro.php" target="_blank"><img src="img/atascate.png" id="atascate"></a>
     </div>
                 
     <!--    -->

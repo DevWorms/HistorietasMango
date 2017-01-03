@@ -20,7 +20,7 @@
 
 </head>
 
-<body>
+<body style="overflow-x: hidden;">
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
