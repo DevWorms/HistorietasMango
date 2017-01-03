@@ -15,19 +15,10 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css'>
     <link rel="stylesheet" href="css/style.css">
+    <link href="css/registro.css" rel="stylesheet">
     <link href="css/comix.css" rel="stylesheet">
 
 </head>
-
-<style>
-    body { 
-    background: url(img/backReg.png) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-</style>
 
 <body>
 
@@ -70,9 +61,9 @@
 
         <div class="col-md-5">
         
-        <h2 class="comic">Información de usuario</h2>
+        <h2 class="comic" id="mtitle">Información de usuario</h2>
 
-          <hr>
+          
 
           <form action="controladores/pagos/controller.php" method="post">
               <div class="form-group">
@@ -103,7 +94,7 @@
                   <label>Soy mayor de 18 años:</label>
                   <input type="radio" class="form-control" id="radio_edad" name="radio_edad" value="" required>
               </div>
-              <hr>
+              
               <h2 class="comic" align="center">Pa gozar hay que pagar ¡No se haga!  </h2>
               <h3 class="comic" align="center">¡Sólo <strong>$50</strong> pesitos mensuales!  </h3>
                 <label>
@@ -116,7 +107,9 @@
                   Paypal
                 </label>
                 <br><br>
-                <button class="comic comic_btn" style="color:#ff0006">Realizar pago</button>
+                <div align="center">
+                  <button class="comic comic_btn" style="color:#ff0006">Realizar pago</button>
+                </div>
                 <br><br><br>
           </form>
          
