@@ -17,8 +17,16 @@
 	font-family: historietamx;
 }
 
- .comic_btn	{
+.comic_btn	{
  	background-color: transparent;
  	border-color: #000;
- 	font-size: 20px;
- }
+ 	font-size: 15px;
+}
+
+@media (min-width: 768px) {
+	.comic_btn	{
+	 	background-color: transparent;
+	 	border-color: #000;
+	 	font-size: 20px;
+	}
+}

@@ -117,7 +117,7 @@
                 </div>
 
                 <br>
-                <p><h1 class="comic">Acerca de... </h1></p><br>
+                <p><h1 class="comic">Acerca de ...</h1></p><br>
 
                     <div class="col-md-5 comix" style="height: 27em; overflow: hidden; background-color:#ff544e; color:#fff">
                             
@@ -189,7 +189,7 @@
         </div>
 
     <!-- Modal -->
-        <div id="Aviso" class="modal fade" role="dialog">
+        <div id="Aviso" class="modal fade" role="dialog" style="overflow: hidden;">
           <div class="modal-dialog modal-lg">
 
             <!-- Modal content-->
