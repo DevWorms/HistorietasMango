@@ -65,3 +65,17 @@ h3 {
 		width: 200px;
 	}
 }
+
+/* Muestra.php */
+.letras{
+	font-size: 18px;
+	margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+	.letras{
+	font-size: 23px;
+	margin-top: 0px;
+	}	
+}
+

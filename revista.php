@@ -59,11 +59,9 @@
         </div>
         <!-- /.container -->
     </nav>
-
-      <object data="Prueba/Chambeadoras.pdf" type="application/pdf" width="100%" height="100%" style="height:100vh;">
-        alt : <a href="Prueba/Chambeadoras.pdf">test.pdf</a>
-      </object>
-
+          <object data="Prueba/Chambeadoras.pdf" type="application/pdf" width="100%" height="100%" style="height:100vh;">
+            alt : <a href="Prueba/Chambeadoras.pdf">test.pdf</a>
+          </object>
     <div style="background:#fff; text-align:center;">
         <br>
             <h1 class="comic">¿Quieres más?</h1>

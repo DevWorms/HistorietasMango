@@ -17,37 +17,10 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/comix.css" rel="stylesheet">
+    <link href="css/muestra.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-
-    <!--
-        STYLE
-    -->
     <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css"> 
-    <style type="text/css">
-        h2,p{   font-size:100%;     font-weight:normal; }
-        ul,li{  list-style:none;    }
-        ul li a{    text-decoration:none;   color:#000; background:rgba(255, 84, 78, 0.22);  display:block; height:24em; width:17em; padding:1em; -moz-box-shadow:5px 5px 7px rgba(33,33,33,1); -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7); box-shadow: 5px 5px 7px rgba(33,33,33,.7);  }
-        ul li{  margin-left:1em;     display:block; display: inline-block;}
-        ul li h2{   font-size:140%; font-weight:bold;  padding-bottom:10px;  }        
-        ul li a:hover,ul li a:focus{  box-shadow:10px 10px 7px rgba(0,0,0,.7); -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7); -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);  -webkit-transform: scale(1.25); -moz-transform: scale(1.25); -o-transform: scale(1.25);  position:relative;  z-index:5; }
-        ol{text-align:center;}
-        ol li{display:inline;padding-right:1em;}       
 
-        html { 
-          background: url(Prueba/fondo.png) no-repeat ; 
-          -webkit-background-size: cover;
-          -moz-background-size: cover;
-          -o-background-size: cover;
-          background-size: cover;
-        }
-    </style>
 
 </head>
 
@@ -87,8 +60,8 @@
     <div class="col-md-12" style="text-align:center; position:center;">
     <br><br>
         
-        <h1 class="comic"> 
-            Te damos una embarradita!
+        <h1 class="comic top-title"> 
+            ¡Te damos una embarradita!
         </h1>
         <br>
 
@@ -110,7 +83,7 @@
         </div>
         
 
-        <div class="col-md-6 comix" style="font-size:23px">
+        <div class="col-md-6 comix letras">
             <strong>Échale un ojo</strong> a las revistas de muestra.<br>
             No olvides regalarnos tus datos para que te echemos toda la información<br>
             de <italic>historietas.mx</italic>
@@ -120,7 +93,7 @@
         <div id="muestras" class="col-md-12" style="text-align:center; position:center;">
         <hr>
             <h3 class="comix"> 
-                Las de muestra, se vale tocar!
+                Las de muestra, ¡Se vale tocar!
             </h3>
           <ul style="padding-left: 0px;">
             <li>
@@ -178,7 +151,7 @@
                 <br>
                 <p><h1 class="comic">Entrale! </h1></p><br>
 
-                <div class="col-md-5 comix" style="height: 31em; overflow: scroll; background-color:#ff544e; color:#fff">
+                <div class="col-md-5 comix" style="height: 29em; overflow: hidden; background-color:#ff544e; color:#fff">
                     <br>
                     <h2>Inicia Sesión</h2>
                     <form  method="post" id="login_form" action='controladores/sesion/iniciar_sesion.php'>
@@ -195,11 +168,8 @@
                     </form>
 
                     <br>
-                    <hr>
-
 
                     <p class="comix" text-align="center" style="font-size:18px;">¿Aún no tienes cuenta?</p>
-
 
                       <button class="comic comic_btn" onclick="location.href='registro.php'" id="btn_acceder" name="btn_acceder" style="color:#1866b1">REGISTRATE</button>
 
@@ -214,6 +184,8 @@
 
           </div>
         </div>
+
+    <!-- Modal -->
 
 
     <!-- jQuery -->
