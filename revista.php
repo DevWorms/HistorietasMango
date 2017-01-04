@@ -68,7 +68,7 @@
             <h3 class="comix">Todas las historietas dónde quieras y cuando quieras de <del>$80</del> a sólo <strong>$50</strong> pesitos mensuales</h1>
         <br>
 
-        <a href="registro.php" target="_blank"><img src="img/atascate.png" id="atascate"></a>
+        <a href="registro.php"><img src="img/atascate.png" id="atascate"></a>
     </div>
                 
     <!--    -->

@@ -1,7 +1,7 @@
 #imagen { 
     z-index: 1000;
-    width: 40%; 
-    height: 10em;
+    width: 60%; 
+    height: 20em;
     background-size: contain;           
     background-image: url("../img/access_N.png");
     background-repeat: no-repeat;
@@ -10,8 +10,8 @@
 
 #imagen:hover { 
     z-index: 1000;
-    width: 40%; 
-    height: 10em;
+    width: 60%; 
+    height: 20em;
     background-size: contain; 
     background-image: url("../img/access_H.png");
     background-repeat: no-repeat;

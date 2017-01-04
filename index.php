@@ -93,7 +93,7 @@
             <button class="comic comic_btn" data-toggle="modal" data-target="#Acerca">Acerca de</button><br><br>        
         </div>
         <div class="col-md-6" style="text-align:center;">
-            <button class="comic comic_btn" data-toggle="modal" data-target="#Aviso">Pásele por acá! (Aviso de Privacidad y Términos de uso)</button> <br><br>       
+            <button class="comic comic_btn" data-toggle="modal" data-target="#Aviso">¡Pásele por acá! (Aviso de Privacidad y Términos de uso)</button> <br><br>       
         </div>
         <div class="col-md-3" style="text-align:center;">
             <a href="https://www.facebook.com/Historietasmx-332032027147432/" target="_blank"><img src="img/facebook.jpeg" height="40" width="40"></a>
@@ -117,7 +117,7 @@
                 </div>
 
                 <br>
-                <p><h1 class="comic">Acerca de ...</h1></p><br>
+                <p><h1 class="comic">Acerca de...</h1></p><br>
 
                     <div class="col-md-5 comix" style="height: 27em; overflow: hidden; background-color:#ff544e; color:#fff">
                             
