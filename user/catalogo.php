@@ -34,6 +34,16 @@
     -o-background-size: cover;
     background-size: cover;
   }
+
+  p {
+    font-size: 20px;
+  }
+
+  @media (min-width: 768px) {
+    p {
+      font-size: 30px;
+    }      
+  }
 </style>
 
 <body>
@@ -79,7 +89,7 @@
     <div class="col-md-12">
 
         <!-- Flickity HTML init -->
-        <p class="comic" align="center" style="font-size:30px">NOVEDADES</p>
+        <p class="comic" align="center">NOVEDADES</p>
         <div class="gallery js-flickity">
           
           <?php echo MostrarNovedades($_GET["id_catalogo"]) ?>
@@ -88,14 +98,14 @@
 
         <br><br><br>
 
-        <p class="comic" align="center" style="font-size:30px">LAS MÁS LEÍDAS</p>        
+        <p class="comic" align="center">LAS MÁS LEÍDAS</p>        
         <div class="gallery js-flickity">
           
         </div>
 
         <br><br><br>
 
-        <p class="comic" align="center" style="font-size:30px">RECOMENDACIONES</p>        
+        <p class="comic" align="center">RECOMENDACIONES</p>        
         <div class="gallery js-flickity">
           
         
