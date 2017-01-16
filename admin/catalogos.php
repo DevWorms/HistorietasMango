@@ -10,6 +10,8 @@
 		<hr>
 	</div>
 </div>
+
+
 <?php
     require_once 'class/Catalogos.php';
     require_once 'class/Archivos.php';
@@ -22,6 +24,8 @@
 	$rs =  $ejecuta->fetchAll();
 	foreach ($rs as $row) {
 ?>
+
+
 <div class="row" style="width: 100%">
 	<div class="col-xs-12 col-md-3"></div>
 	<div class="col-xs-12 col-md-6 catalogo">
@@ -43,6 +47,8 @@
 		</div>
 	</div>
 </div>
+
+
 <div class="row edicion-catalogo" id="cat-<?php echo $row['id_catalogo']?>" style="width: 98%">
 	<br>
 	<div class="col-xs-12 col-md-3"></div>

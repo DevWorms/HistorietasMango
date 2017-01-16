@@ -8,7 +8,7 @@
                 <hr>
                 <form action="WebMaster.php?modulo=usuarios" method="post" name="form-searcAdminds" class="row">   
                     <div class="col-md-9">
-                      <input type="text" name="busqueda_admin" id="busqueda_admin" placeholder="Busqeda" class="form-control">  
+                      <input type="text" name="busqueda_admin" id="busqueda_admin" placeholder="Busqueda" class="form-control">  
                     </div>
                     <div class="col-md-3">
                         <button type="submit" class="btn btn-primary comic" style="font-weight: bold">

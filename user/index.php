@@ -1,6 +1,7 @@
 <?php
     error_reporting(0);
     require_once '../controladores/sesion/sesion.php';
+    require_once '../controladores/funciones_catalogo/funciones_catalogo.php';
     session_start();
 ?>
 <!DOCTYPE html>
@@ -101,29 +102,29 @@
             <li>
               <a href="catalogo.php?id_catalogo=1" style="margin-bottom:2em; background:rgba(246, 243, 0, 0.24); text-decoration:none">
                 <h2><img src="../Prueba/Chambeadoras.jpg" height="241" width="210"></h2>
-                    <p><h4 class="comix" style="color:#ff0006;">Chambeadoras</h4></p>
-                    <p class="comic" style="color:#000;">Now that we know who you are, I know who I am. I'm not a mistake!.</p>
+                    <p><h4 class="comix" style="color:#ff0006;"> <?php echo MostrarNombreCatalogo(1); ?>  </h4></p>
+                    <p class="comic" style="color:#000;"> <?php echo MostrarDescrCatalogo(1); ?>  </p>
               </a>
             </li>
             <li>
               <a href="catalogo.php?id_catalogo=2" style="margin-bottom:2em; background:rgba(91, 192, 222, 0.25); text-decoration:none">
                 <h2><img src="../Prueba/Erotika1.jpg" height="241" width="210"></h2>
-                    <p><h4 class="comix" style="color:#ff0006;">Erótika</h4></p>
-                    <p class="comic" style="color:#000;">You know why, David? Because of the kids. They called me Mr Glass.</p>
+                    <p><h4 class="comix" style="color:#ff0006;"> <?php echo MostrarNombreCatalogo(2); ?>  </h4></p>
+                    <p class="comic" style="color:#000;"> <?php echo MostrarDescrCatalogo(2); ?>  </p>
               </a>
             </li>
             <li>
               <a href="catalogo.php?id_catalogo=3" style="margin-bottom:2em; text-decoration:none">
                 <h2><img src="../Prueba/Erotika2.jpg" height="241" width="210"></h2>
-                    <p><h4 class="comix" style="color:#ff0006;">Erótika</h4></p>
-                    <p class="comic" style="color:#000;">In a comic, you know how you can tell who the arch-villain's going to be?</p>
+                    <p><h4 class="comix" style="color:#ff0006;"> <?php echo MostrarNombreCatalogo(3); ?>  </h4></p>
+                    <p class="comic" style="color:#000;"> <?php echo MostrarDescrCatalogo(3); ?>  </p>
               </a>
             </li>
             <li>
               <a href="catalogo.php?id_catalogo=4" style="margin-bottom:2em; background:rgba(253, 179, 0, 0.27); text-decoration:none">
                 <h2><img src="../Prueba/Erotika1.jpg" height="241" width="210"></h2>
-                    <p><h4 class="comix" style="color:#ff0006;">Erótika</h4></p>
-                    <p class="comic" style="color:#000;">He's the exact opposite of the hero. And most times they're friends, like you and me!</p>
+                    <p><h4 class="comix" style="color:#ff0006;"> <?php echo MostrarNombreCatalogo(4); ?>  </h4></p>
+                    <p class="comic" style="color:#000;"> <?php echo MostrarDescrCatalogo(4); ?>  </p>
               </a>
             </li>
           </ul>

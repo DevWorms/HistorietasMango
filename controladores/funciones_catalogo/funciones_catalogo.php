@@ -65,4 +65,36 @@
             ';                      
 
         }
+
+        function MostrarNombreCatalogo($id_catalogo) {
+            global $pdo;
+
+            $operacion = "SELECT nombre_catalogo FROM catalogo WHERE id_catalogo = ?";
+
+            $sentencia = $pdo->prepare($operacion);
+            $sentencia->bindParam(1, $id_catalogo);
+            $sentencia->execute();
+            $resultado = $sentencia->fetch();
+ 
+            $catalogo = $resultado["nombre_catalogo"];  
+
+            echo $catalogo;                      
+
+        }
+
+        function MostrarDescrCatalogo($id_catalogo) {
+            global $pdo;
+
+            $operacion = "SELECT descripcion_catalogo FROM catalogo WHERE id_catalogo = ?";
+
+            $sentencia = $pdo->prepare($operacion);
+            $sentencia->bindParam(1, $id_catalogo);
+            $sentencia->execute();
+            $resultado = $sentencia->fetch();
+ 
+            $catalogo = $resultado["descripcion_catalogo"];  
+
+            echo $catalogo;                
+
+        }
 ?>

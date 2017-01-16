@@ -1,6 +1,3 @@
-<?php 
-  session_start();
- ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,7 +76,6 @@
                   <button type="submit" class="btn btn-default comic" id="btnPublicar" style="background-color:#000; color:#fff">       Enviar!
                   </button>
             </form>
-            <?php echo $_SESSION['msg'];?>
         </div>
         
 
