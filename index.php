@@ -18,7 +18,7 @@
     <link href="css/comix.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
 
-</head>
+	</head>
 
 <body style="overflow-x: hidden;">
 
@@ -175,6 +175,11 @@
                     <p class="comix" text-align="center" style="font-size:18px;">¿Aún no tienes cuenta?</p>
 
                       <button class="comic comic_btn" onclick="location.href='registro.php'" id="btn_acceder" name="btn_acceder" style="color:#1866b1">REGISTRATE</button>
+                    
+                    <br>
+                    <br>
+                        
+                    <p class="comix"><a href="recuperar.php">¿Olvidaste tu contraseña?</a></p>
 
                 </div>
 
