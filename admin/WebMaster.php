@@ -47,10 +47,7 @@
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="WebMaster.php?modulo=usuarios" class="comic" style="color:#000000">Usuarios</a>
-                    </li>            
-                    <li>
-                        <a href="#"  class="comic" style="color:#000000">Estadísticas</a>
-                    </li>            
+                    </li>              
                     <li>
                         <a href="WebMaster.php?modulo=muestras"  class="comic" style="color:#000000">Agregar nueva muestra</a>
                     </li>            
@@ -85,7 +82,7 @@
             require_once 'catalogos.php';
         }
         else if(! isset($pagina)){
-            echo "<br><br>Hola mundo";
+            require_once 'stats.php';
         }
      ?>
 
