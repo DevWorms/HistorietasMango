@@ -81,7 +81,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h3 class="modal-title" id="myModalLabe<?php echo $row['id_catalogo']; ?>">
-                    Catálogo:<?php echo $row['nombre_catalogo'];?></h3>
+                    Catálogo: <?php echo $row['nombre_catalogo'];?></h3>
                     <span style="font-size:110%">&nbsp;&nbsp;&nbsp;Revistas Asociadas</span>
                     <form action="WebMaster.php?modulo=catalogos" name="form-activa"  id="form-activa-<?php echo $row['id_catalogo']?>" style="float:right" method="post">
                         <input type="hidden" name="activadas" id="activadas">
@@ -117,7 +117,7 @@
                     			echo "<br>";
                     		}?>
                     		<br>
-                    		<img src="files/revistas/img/<?php echo $revi['img_revista'];?>" class="img-thumbnail imgCatalogo">
+                    		<img src="../user/<?php echo $revi['img_revista'];?>" class="img-thumbnail imgCatalogo">
                     		<br>
                     		No.<?php echo $revi['numero_revista'];?>
                     		<br>
@@ -259,7 +259,7 @@
                 
             }else{           
             	$cargar = new Archivos($imagen);
-            	if($cargar->subirArchivo("files/catalogos/")){
+            	if($cargar->subirArchivo("../user/Catalogo/img_cat/")){
             		$bolGuardo = $catalogo->updateCatalogo($nombre,$descripcion,$imagen["name"],$id_catalogo);
             	}
             }

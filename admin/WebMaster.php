@@ -47,10 +47,14 @@
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="WebMaster.php?modulo=usuarios" class="comic" style="color:#000000">Usuarios</a>
-                    </li>              
+                    </li>   
+                    
+                    <!--           
                     <li>
                         <a href="WebMaster.php?modulo=muestras"  class="comic" style="color:#000000">Agregar nueva muestra</a>
-                    </li>            
+                    </li>
+                    -->  
+
                     <li>
                         <a href="WebMaster.php?modulo=catalogos"  class="comic" style="color:#000000">Modificar catálogo</a>
                     </li>            
@@ -59,8 +63,8 @@
                     </li>            
                 </ul>
                 <div class="container" style="text-align: right;">
-                    <button type="button" class="btn btn-danger btn-lg" style="margin-top: 2px;" onclick= "location.href='./class/cerrar_sesion_a.php'">Salir</button>
-        </div>
+                    <button type="button" class="btn btn-danger btn-lg" style="margin-top: 2px;"> Salir</button>
+                </div>
             </div>
             <!-- /.navbar-collapse -->
         </div>

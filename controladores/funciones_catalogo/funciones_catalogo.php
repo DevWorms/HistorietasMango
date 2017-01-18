@@ -32,7 +32,6 @@
                                         <div class="container">
                                             <div id="super" class="comix">
                                                 <h4><b> #' . $numero_revista . " " . $nombre_revista . '</b></h4>
-                                                <p>' . $info_revista . '</p>
                                             </div>
                                         </div>
                                     </div>

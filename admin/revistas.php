@@ -54,9 +54,6 @@
 <div class="row">
     <div class="col-xs-12 col-md-8"></div>
     <div class="col-xs-12 col-md-3">
-        <a href="WebMaster.php?modulo=catalogos" class="comic btn btn-danger btn-lg">
-            Ir a catálogos<i class="glyphicon glyphicon-chevron-right"></i>
-        </a>
     </div>
 </div>
 <form method="post" action="WebMaster.php?modulo=revistas" id="form-rload-rev" ></form>
