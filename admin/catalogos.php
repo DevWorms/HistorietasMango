@@ -37,7 +37,7 @@
 				<h5><?php echo $row['descripcion_catalogo']; ?></h5>
 			</div>
 			<div class="col-xs-12 col-md-4" style="text-align:center">
-				<img src="files/catalogos/<?php echo $row['imagen_catalogo'];?>" class="img-thumbnail imgCatalogo"/>
+				<img src="../user/<?php echo $row['imagen_catalogo'];?>" class="img-thumbnail imgCatalogo"/>
 			</div>
 			<div class="col-xs-12 col-md-3" style="text-align: center">
 				<button class="btn btn-danger comic" onclick="showEdition(<?php echo $row['id_catalogo'] ?>)"><i class="glyphicon glyphicon-pencil"></i> Editar</button>
@@ -56,10 +56,10 @@
 		<form action="WebMaster.php?modulo=catalogos" method="post" name="form-upCat" class="row" enctype="multipart/form-data">
 			<div class="col-xs-12 col-md-6 edit-cat">
 				<label>Nombre del Catálogo</label>
-				<input type="text" id="nombre_catalogo" name="nombre_catalogo" class="form-control" placeholder="Nuevo Nombre" value="<?php echo $row['nombre_catalogo']; ?>" required onblur="validaExp(this,'alfaEsp')">
+				<input type="text" id="nombre_catalogo" name="nombre_catalogo" class="form-control" placeholder="Nuevo Nombre" value="<?php echo $row['nombre_catalogo']; ?>" required />
 				<span class="miniNota"></span>
 				<label>Descripción  del catálogo</label>
-				<textarea id="descripcion_catalogo" name="descripcion_catalogo" class="form-control" placeholder="Nueva Descripcion" required onblur="validaExp(this,'alfaEsp')"><?php echo $row['descripcion_catalogo']; ?></textarea>
+				<textarea id="descripcion_catalogo" name="descripcion_catalogo" class="form-control" placeholder="Nueva Descripcion" required><?php echo $row['descripcion_catalogo']; ?></textarea>
 				<span class="miniNota"></span>
 			</div>
 			<div class="col-xs-12 col-md-6 edit-cat">
@@ -117,11 +117,11 @@
                     			echo "<br>";
                     		}?>
                     		<br>
-                    		<img src="../user/<?php echo $revi['img_revista'];?>" class="img-thumbnail imgCatalogo">
+                    		<img src="<?php echo "../user/".$revi['img_revista'];?>" class="img-thumbnail imgCatalogo">
                     		<br>
                     		No.<?php echo $revi['numero_revista'];?>
                     		<br>
-                    		<a id="rview-<?php echo $revi['id_revista']?>" href="files/revistas/documento/<?php echo $revi['pdf_revista'];?>" class="btn btn-warning comic" target="_blank"><i class="glyphicon glyphicon-folder-open"></i> </a>
+                    		<a id="rview-<?php echo $revi['id_revista']?>" href="../user/<?php echo $revi['pdf_revista'];?>" class="btn btn-warning comic" target="_blank"><i class="glyphicon glyphicon-folder-open"></i> </a>
                             <button id="rdel-<?php echo $revi['id_revista']?>" type="submit" class="btn btn-danger comic" onclick="pastDeleted(<?php echo $row['id_catalogo'].','.$revi['id_revista'];?>,this)">
                                 <i class=" glyphicon glyphicon-trash"></i>
                             </button>
@@ -253,17 +253,8 @@
             $id_catalogo = $_POST['id_catalogo'];
             $bolGuardo = 0;
 
-            if($imagen["name"] == ""){
-            	$imagen = "";
-            	$bolGuardo = $catalogo->updateCatalogo($nombre,$descripcion,$imagen,$id_catalogo);
-                
-            }else{           
-            	$cargar = new Archivos($imagen);
-            	if($cargar->subirArchivo("../user/Catalogo/img_cat/")){
-            		$bolGuardo = $catalogo->updateCatalogo($nombre,$descripcion,$imagen["name"],$id_catalogo);
-            	}
-            }
-            
+            $bolGuardo = $catalogo->updateCatalogo($nombre,$descripcion,$imagen,$id_catalogo);
+
             if($bolGuardo == 1){
             ?>
                 

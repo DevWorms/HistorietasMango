@@ -1,7 +1,7 @@
 <?php
     require_once '../controladores/datos/ConexionBD.php';
-    error_reporting(0);
     session_start();
+    error_reporting(0);
     if(isset($_SESSION["Id"]) and $_SESSION["Id"] != "" and $_SESSION["Id"] !=0){
 ?>
 <!DOCTYPE html>
@@ -63,7 +63,12 @@
                     </li>            
                 </ul>
                 <div class="container" style="text-align: right;">
-                    <button type="button" class="btn btn-danger btn-lg" style="margin-top: 2px;"> Salir</button>
+                    <form method="post" id="logout_form" action="../controladores/sesion/cerrar_sesion_a.php">
+                        <button type="submit" class="btn btn-warning btn-lg" style="margin-top: 2px;"> 
+                            Cerrar Sesión
+                            <img src="../img/logout.png">
+                        </button> 
+                    </form>
                 </div>
             </div>
             <!-- /.navbar-collapse -->

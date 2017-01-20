@@ -2,5 +2,5 @@
 	session_start();
 	session_destroy();
 
-	header("Location: ../../admin/");
+	header("Location: ../../admin");
 ?>
