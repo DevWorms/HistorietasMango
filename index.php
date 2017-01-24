@@ -174,7 +174,7 @@
 
                     <p class="comix" text-align="center" style="font-size:18px;">¿Aún no tienes cuenta?</p>
 
-                      <button class="comic comic_btn" onclick="location.href='registro.php'" id="btn_acceder" name="btn_acceder" style="color:#1866b1">REGISTRATE</button>
+                      <button class="comic comic_btn" onclick="location.href='registro.php'" id="btn_acceder" name="btn_acceder" style="color:#1866b1">SUSCRÍBETE</button>
                     
                     <br>
                     <br>

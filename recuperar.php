@@ -56,16 +56,17 @@ function enviarCorreo($email,$pass){
 </head>
 
 <body>
-
+	<br><br>
     <form action="recuperar.php" method="post">
 	    <p class="comix" align="center">Para recuperar su contraseña, escriba el correo electronico con el que se registró.</p>
 	    <div class="form-group">
-            <input type="email" class="form-control" id="customer_email" name="customer_email" value="" required>
+            <input type="email" class="form-control" id="customer_email" name="customer_email" value="" required style="width: 50%;margin: 0 auto">
         </div>
         <div align="center">
             <button class="comic comic_btn" style="color:#ff0006">consultar</button>
         </div>
     </form>
+    <br>
 	<p class="comix" align="center"><?php echo $aviso;?>
 	</p>
 
