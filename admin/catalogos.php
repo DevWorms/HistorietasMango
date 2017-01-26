@@ -152,13 +152,15 @@
             //obtengo valor anterior
             var idsRevistas = $("#form-activa-"+id_catalogo+ " input[name='activadas']").val();
             //concatetno el nuevo
-            idsRevistas += "'"+ id_revista + "',";
+            idsRevistas += id_revista + ",";
             //agrego
             $("#form-activa-"+id_catalogo+ " input[name='activadas']").val(idsRevistas);
+            idsRevistas = "";
         }else{
             var idsRevistas = $("#form-activa-"+id_catalogo+ " input[name='desactivadas']").val();
-            idsRevistas += "'"+id_revista + "',";
+            idsRevistas += id_revista + ",";
             $("#form-activa-"+id_catalogo+ " input[name='desactivadas']").val(idsRevistas);
+            idsRevistas = "";
         }
 
     }
@@ -168,7 +170,7 @@
             //obtengo el valor anterior
             var idsRevistas = $("#form-activa-"+id_catalogo+ " input[name='eliminadas']").val();
             //guardo el nuevo valor
-            idsRevistas += "'"+id_revista + "',";
+            idsRevistas += id_revista + ",";
             //aplico estilso y deshabilito funciones que indica que sera eliminado
             $("#form-activa-"+id_catalogo+ " input[name='eliminadas']").val(idsRevistas);
             $(quien).parent("div").css({
@@ -241,7 +243,12 @@
 <?php 
 //  para hacelo mas ligero ocupo la propia pagina para ls escripts que ejecutan los 
 //  metodos de las clases por medio de un parametro llamaado funcion para saber que accion se hace
-    $funcion = $_POST['funcion'];
+
+    $funcion = "no-function";
+    if(isset($_POST['funcion'])){
+       $funcion = $_POST['funcion']; 
+    }
+    
         if(!isset($funcion)){
             $funcion = "";
         }else if($funcion == "guardar"){
@@ -271,12 +278,13 @@
             $activadas = $_POST['activadas'];
             $desactivadas = $_POST['desactivadas'];
             $eliminadas = $_POST['eliminadas'];
+
             $guardo = $saveRevista->saveCambiosDinamicos($activadas,$desactivadas,$eliminadas);
-            if($guardo == 3){
+            if($guardo == 1){
             ?>
                 <script type="text/javascript">
-                    alert("Se Se actualizaron las revistas correctamente");
-                    document.getElementById("form-rload-cat").submit();
+                    alert("Se actualizaron las revistas correctamente");
+                   document.getElementById("form-rload-cat").submit();
                 </script>
             <?php
             }

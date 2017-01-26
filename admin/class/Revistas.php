@@ -1,4 +1,7 @@
 	<?php 
+	mysqli_report(MYSQLI_REPORT_ALL);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 		class Revistas{
 			private $pdo;
 			function Revistas($objBd){
@@ -17,38 +20,57 @@
 			}
 
 			function saveCambiosDinamicos($activadas,$desactivadas,$eliminadas){
-				$validador = 0;
+				$validador = 1;
+
 				// le quitamos la coma del final a cada cadena
 				$activadas = trim($activadas,",");
 				$desactivadas = trim($desactivadas,",");
 				$eliminadas = trim($eliminadas,",");
-				echo $activadas;
-				echo $desactivadas;
+
+				//para recibir los numero limpios y aplicarlos los pasamos a lugares en array para iterarlos
+				$arr_act = explode(",", $activadas);
+				$arr_des = explode(",", $desactivadas);
+				$arr_del = explode(",", $eliminadas);
+
+
 				// primero eliminamos para no efectar cambios de activiacion a id inexistente
-				
-				$query = "DELETE FROM revistas WHERE id_revista in( ? )";
-				$ejecuta = $this->pdo->prepare($query);
-				$ejecuta->bindParam(1,$eliminadas);
-				if($ejecuta->execute()){
-					$validador += 1;
+
+				foreach ($arr_del as  $revista) {
+					$query = "DELETE FROM revistas WHERE id_revista in(?);";
+					$ejecuta = $this->pdo->prepare($query);
+					$ejecuta->bindParam(1,$revista);
+					if($ejecuta->execute()){
+						$validador *= 1;
+					}else{
+						$validador *= 0;
+					}
 				}
+				
 
 				// ahora desactivamos las que hayan sido desactivad primero
-				$query = "UPDATE revistas SET activo= 0 WHERE id_revista in( ? )";
-				$ejecuta = $this->pdo->prepare($query);
-				$ejecuta->bindParam(1,$desactivadas);
-				if($ejecuta->execute()){
-					$validador += 1;
+				foreach ($arr_des as $revista) {
+					$query = "UPDATE revistas SET activo= 0 WHERE id_revista in(?);";
+					$ejecuta = $this->pdo->prepare($query);
+					$ejecuta->bindParam(1,$revista);
+					if($ejecuta->execute()){
+						$validador *= 1;
+					}else{
+						$validador *= 0;
+					}
 				}
-
-
+				
 				// por ultimo activamos las que se pusiero nen true el check
-				$query = "UPDATE revistas SET activo= 1 WHERE id_revista in( ? )";
-				$ejecuta = $this->pdo->prepare($query);
-				$ejecuta->bindParam(1,$activadas);
-				if($ejecuta->execute()){
-					$validador += 1;
+				foreach ($arr_act as $revista) {
+					$query = "UPDATE revistas SET activo= 1 WHERE id_revista in(?);";				
+					$ejecuta = $this->pdo->prepare($query);
+					$ejecuta->bindParam(1,$revista);
+					if($ejecuta->execute()){
+						$validador *= 1;
+					}else{
+						$validador *= 0;
+					}
 				}
+				
 
 				return $validador;
 
