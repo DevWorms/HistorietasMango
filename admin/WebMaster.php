@@ -1,7 +1,7 @@
 <?php
     require_once '../controladores/datos/ConexionBD.php';
     session_start();
- 
+    error_reporting(0);
     if(isset($_SESSION["Id"]) and $_SESSION["Id"] != "" and $_SESSION["Id"] !=0){
 ?>
 <!DOCTYPE html>
