@@ -6,8 +6,12 @@ class SuscripcionUsuario{
         session_start();
         $email = $mail;
         $fname = $nombre;
-        $apiKey = '441e9eca3d6974c0f4f710e9e722d3c9-us5';
+        $apiKey = 'f4e0d310b13444aab692c20467f988ad-us5';
         $listId = '2470231f62';
+
+        // test credentials
+        $apiKey_test = 'ee731945e14aeb7be9407b3428d1d4be-us14';
+        $listId_test = '5e827d11b6';
 
         if (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
             $memberId = md5(strtolower($email));
@@ -19,7 +23,7 @@ class SuscripcionUsuario{
                 'status' => "subscribed", // "subscribed","unsubscribed","cleaned","pending"
                 'merge_fields' => [
                     'FNAME' => $fname,
-                    'MMERGE3' => '0'
+                    'LNAME' => 'NO'
                 ]
             ]);
             $ch = curl_init($url);
@@ -38,7 +42,7 @@ class SuscripcionUsuario{
 
             // store the status message based on response code
             if ($httpCode == 200) {
-                $_SESSION['msg'] = '<p style="color: #212121;font-weight:bold;font-size:120%">Te has suscrito a HistorietasMx</p>';
+                $_SESSION['msg'] = '<p style="color: #212121;font-weight:bold;font-size:120%">Te has suscrito</p>';
             } else {
                 switch ($httpCode) {
                     case 214:
@@ -48,16 +52,16 @@ class SuscripcionUsuario{
                         $msg = '<p style="color: #212121;font-weight:bold;font-size:120%">Ha ocurrido un problema, intentalo de nuevo</p>';
                         break;
                 }
-                $_SESSION['msg'] = '<p style="color: #212121;font-weight:bold;font-size:120%">' . $msg . '</p>';
+               $_SESSION['msg'] = '<p style="color: #212121;font-weight:bold;font-size:120%">' . $msg . '</p>';
             }
         } else {
-            $_SESSION['msg'] = '<p style="color: #212121;font-weight:bold;font-size:120%">Por favor ingresa una direccion de correo válida.</p>';
+           $_SESSION['msg'] = '<p style="color: #212121;font-weight:bold;font-size:120%">Por favor ingresa una direccion de correo válida.</p>';
+          
         }  
             }
     }
-//$fname = $_POST['nombre'];
-
-//$email = $_POST['mail'];
+    $fname = $_POST['nombre'];
+    $email = $_POST['mail'];
     if(isset($_POST['donde'])){
         $donde = $_POST['donde'];
         if($donde == "muestra"){
@@ -69,6 +73,4 @@ class SuscripcionUsuario{
             header('Location: ../../muestra.php');
         }  
     }
-    
-    
 ?>
