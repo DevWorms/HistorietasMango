@@ -1,4 +1,5 @@
 <?php 
+
     require_once 'class/Archivos.php';
     require_once 'class/Revistas.php';
  ?>
@@ -58,6 +59,7 @@
 </div>
 <form method="post" action="WebMaster.php?modulo=revistas" id="form-rload-rev" ></form>
 <?php 
+    error_reporting(E_ALL ^ E_NOTICE);  
     $funcion = $_POST['funcion'];
         if(!isset($funcion)){
             $funcion = "";
