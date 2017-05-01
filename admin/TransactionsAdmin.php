@@ -16,6 +16,7 @@
 		$dirCatalogos = "WebMaster.php?modulo=catalogos";
 		$dirRevistas = "WebMaster.php?modulo=revistas";
 		$dirUsuarios= "WebMaster.php?modulo=usuarios";
+		$dirMuestra = "WebMaster.php?modulo=muestras";
 		if($modulo == "buscarCat"){ // busca catalogos
 
 			$busqueda = $_POST['busquedaCat'];
@@ -117,6 +118,13 @@
             $url = $dirUsuarios;
 			$response = new Response($url,$bolGuardo);
 			$response->msjSuccess = "Administrador eliminado con éxito";
+			$response->redirect();
+		}else if($modulo == "buscaMuestra"){
+			$busqueda = $_POST['busquedaMuestra'];
+			$url = $dirMuestra."&searchMuestra=".$busqueda;
+
+			$response = new Response($url,true);
+			$response->msjSuccess = "Busqueda finalizada";
 			$response->redirect();
 		}
 

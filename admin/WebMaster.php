@@ -49,11 +49,11 @@
                         <a href="WebMaster.php?modulo=usuarios" class="comic" style="color:#000000">Usuarios</a>
                     </li>   
                     
-                    <!--           
+                    
                     <li>
-                        <a href="WebMaster.php?modulo=muestras"  class="comic" style="color:#000000">Agregar nueva muestra</a>
+                        <a href="WebMaster.php?modulo=muestras"  class="comic" style="color:#000000">Muestras</a>
                     </li>
-                    -->  
+                   
 
                     <li>
                         <a href="WebMaster.php?modulo=catalogos"  class="comic" style="color:#000000">Catálogos</a>
@@ -86,7 +86,7 @@
             require_once 'vista_usuarios.php';
         }
         else if($pagina == 'muestras'){
-            require_once "muestras.php";
+            require_once "vista_muestras.php";
         }else if($pagina == 'catalogos'){
             require_once 'vista_catalogos.php';
         }
