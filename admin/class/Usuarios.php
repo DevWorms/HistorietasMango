@@ -6,30 +6,39 @@
 		}
 
 		//Obtiene html con los administradores actuales
-		function  showAdministradores($parametro){
-			$parametro .="%"; 
-			$query = "";
-			if($parametro != ""){
-				$query = "SELECT nombre_usuario,correo_usuario,contrasena FROM administrador WHERE  correo_usuario LIKE ?  or nombre_usuario LIKE ?";
-				$ejecuta = $this->pdo->prepare($query);
-				$ejecuta->bindParam(1,$parametro);
-				$ejecuta->bindParam(2,$parametro);
-			}else{
-				$query = "SELECT nombre_usuario,correo_usuario,contrasena FROM administrador";
-				$ejecuta = $this->pdo->prepare($query);
+		function  buscaAdministradores($busqueda){
+			$query = "SELECT * FROM administrador WHERE ( ";
+			$palabras = explode(" ",$busqueda);
+			$cuantasPalabras = count($palabras);
+			$criterios = "";
+			for($cont =0; $cont < $cuantasPalabras ; $cont++){
+				$criterios .= " nombre_usuario LIKE ? OR ";
+				if($cont == ($cuantasPalabras -1 )){
+					$criterios .= " correo_usuario LIKE ? ";
+				}else{
+					$criterios .= " correo_usuario LIKE ? OR ";
+				}
+				
 			}
-			$ejecuta->execute();
-			$rs =  $ejecuta->fetchAll();
 			
-			// solo devolvere <tr> para poder agregar estilos en el html}
-			$finalContent = "";
-			foreach ($rs as $row) {
-				$nombre_usuario = $row['nombre_usuario'];
-				$correo_usuario = $row['correo_usuario'];
-				$contrasena = $row['contrasena'];
-				$finalContent .= "<tr><td>".$nombre_usuario."</td><td>".$correo_usuario."</td><td>".$contrasena."</td></tr>";
+			$query .= $criterios . ") ";
+			$stm = $this->pdo->prepare($query);
+
+			$palabrasPorCriterio = $cuantasPalabras * 2;
+			$position = 0;
+			for($c=1 ; $c <= $palabrasPorCriterio; $c++ ){
+				if((($c - 1)  % 4) == 0 ){
+					if($c != 1){
+						$position++;
+					}	
+				}
+				$tempParametro = '%'.$palabras[$position].'%';
+				$stm->bindParam($c,$tempParametro);	
 			}
-			return $finalContent;
+
+			$stm->execute();
+
+			return $stm->fetchAll();
 		}
 
 		function saveAdmistrador($nombre_usuario,$correo_usuario,$contrasena){
@@ -39,6 +48,13 @@
 			$ejecuta->bindParam(2,$correo_usuario);
 			$ejecuta->bindParam(3,$contrasena);
 			return $ejecuta->execute();
+		}
+
+		function eliminaAdmin($admin){
+			$query = "DELETE FROM administrador where id_usuario = ? ";
+			$stm = $this->pdo->prepare($query);
+			$stm->bindParam(1,$admin);
+			return $stm->execute();
 		}
 	}
 

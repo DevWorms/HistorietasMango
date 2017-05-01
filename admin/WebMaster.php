@@ -1,7 +1,6 @@
 <?php
-    require_once '../controladores/datos/ConexionBD.php';
+    error_reporting(E_ALL);
     session_start();
-    error_reporting(0);
     if(isset($_SESSION["Id"]) and $_SESSION["Id"] != "" and $_SESSION["Id"] !=0){
 ?>
 <!DOCTYPE html>
@@ -23,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/mystyles.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/humanity/jquery-ui.css">
 </head>
 
 <body>
@@ -56,7 +56,7 @@
                     -->  
 
                     <li>
-                        <a href="WebMaster.php?modulo=catalogos"  class="comic" style="color:#000000">Modificar catálogo</a>
+                        <a href="WebMaster.php?modulo=catalogos"  class="comic" style="color:#000000">Catálogos</a>
                     </li>            
                     <li>
                         <a href="WebMaster.php?modulo=revistas"  class="comic" style="color:#000000">Nueva revista</a>
@@ -80,15 +80,15 @@
     <?php 
         $pagina = $_GET['modulo'];
         if($pagina=="revistas"){
-            require_once 'revistas.php';
+            require_once 'vista_revistas.php';
         }
         else if($pagina == 'usuarios'){
-            require_once 'usuarios.php';
+            require_once 'vista_usuarios.php';
         }
         else if($pagina == 'muestras'){
             require_once "muestras.php";
         }else if($pagina == 'catalogos'){
-            require_once 'catalogos.php';
+            require_once 'vista_catalogos.php';
         }
         else if(! isset($pagina)){
             require_once 'stats.php';
@@ -103,12 +103,16 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 
-
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
      <!-- js Propios -->
     <script type="text/javascript" src="js/validator.js"></script>
-
+    <script type="text/javascript" src="js/functionality.js"></script>
 
 </body>
 <?php } ?>
+<?php 
+    //agregamos modal de respuesta
+    require_once 'response.php';
+?>
 </html>

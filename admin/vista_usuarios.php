@@ -1,4 +1,6 @@
        <?php 
+       require_once 'class/login_mysql.php';
+       require_once 'class/ConexionBD.php';
        require_once 'class/Usuarios.php';
        ?>
         <div class="row" style="width:100%">
@@ -6,7 +8,7 @@
             <div class="col-xs-12 col-md-6">
                 <h1 class="comic">Administradores actuales</h1>
                 <hr>
-                <form action="WebMaster.php?modulo=usuarios" method="post" name="form-searcAdminds" class="row">   
+                <form action="TransactionsAdmin.php?modulo=buscarAdmins" method="post" name="form-searcAdminds" class="row">   
                     <div class="col-md-9">
                       <input type="text" name="busqueda_admin" id="busqueda_admin" placeholder="Busqueda" class="form-control">  
                     </div>
@@ -26,16 +28,35 @@
                         <tr>  
                     </thead>
                     <?php 
-                        $parametro = $_POST['busqueda_admin'];
-                        if(!isset($parametro)){
-                            $parametro = "";
+                        $parametro = "";
+                        if(isset($_GET['busqueda_admin'])){
+                            $parametro = $_GET['busqueda_admin'];
                         }
                         $admins = new Usuarios();
-                        echo $admins->showAdministradores($parametro);
+                        $rs =  $admins->buscaAdministradores($parametro);
+                        foreach($rs as $row){
                     ?> 
+                        <tr>
+                            <td>
+                                <?php echo $row['nombre_usuario'];?>
+                            </td>
+                            <td>
+                                <?php echo $row['correo_usuario'];?>
+                            </td>
+                            <td>
+                                <?php echo $row['contrasena'];?>
+                            </td>
+                            <td>
+                                <a style="color: red;font-size: 18px" href="TransactionsAdmin.php?modulo=borrarAdmin&id=<?php echo $row['id_usuario'];?>">
+                                    <i class="glyphicon glyphicon-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </table>
                 <button type="submit" class="btn btn-danger comic" style="font-weight: bold;float: right" data-toggle="modal" data-target="#nuevoAdmin_modal">
-                            Nuevo Administrador <i class="glyphicon glyphicon-plus"></i>
+                    Nuevo Administrador 
+                    <i class="glyphicon glyphicon-plus"></i>
                 </button>
             </div>
         </div>
@@ -47,7 +68,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h3 class="modal-title" id="myModalLabel">Agregar Nuevo Administrador</h3>
                 </div>
-                <form method="post" action="WebMaster.php?modulo=usuarios" style="width:90%;margin: 0 auto" onsubmit="return validaFormulario()">
+                <form method="post" action="TransactionsAdmin.php?modulo=saveUsuario" style="width:90%;margin: 0 auto" onsubmit="return validaFormulario()">
                     <div class="modal-body">
                     
                         <b>Nombre Administrador</b>
@@ -79,42 +100,5 @@
     overflow: hidden;
 }
 </style>
- <script type="text/javascript">
-     function validaFormulario(){
-        var nombre = $("#nombre").val();
-        var correo = $("#correo").val();
-        var contrasena = $("#contrasena").val();
-        var nContrasena = $("#recontrasena").val();
-        if(nombre == "" || correo == ""  || contrasena  == "" || recontrasena == "" ){
-            alert("Asegurese de llenar todos los campos");
-            return false;
-        }
-        if(contrasena != nContrasena){
-            alert("Las contraseñas no coincided");
-            return false;
-        }
-        return true;
-     }
- </script>
-<?php 
-    $funcion = $_POST['funcion'];
-        if(!isset($funcion)){
-            $funcion = "";
-        }else if($funcion == "guardar"){
-            $admins = new Usuarios();
-            $nombre = $_POST['nombre'];
-            $correo = $_POST['correo'];
-            $contrasena = $_POST['contrasena'];
-            $bolGuardo = $admins->saveAdmistrador($nombre,$correo,$contrasena);
-            if($bolGuardo == 1){
-            ?>
-                 <form method="post" action="WebMaster.php?modulo=usuarios" id="form-rload"></form>
-                <script type="text/javascript">
-                    document.getElementById("form-rload").submit();
-                </script>
-            <?php    
-            }
-            
-        }
- ?>
+
 
