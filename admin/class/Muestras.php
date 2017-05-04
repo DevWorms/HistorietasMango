@@ -142,5 +142,15 @@
 			return $ejecuta->execute();
 			
 		}
+
+		//elimina una muestra
+		function eliminaMuestra($idMuesta){
+			$query = "DELETE FROM muestras WHERE id_muestra = ? ";
+
+			$stm = $this->pdo->prepare($query);
+			$stm->bindParam(1,$idMuesta);
+
+			return $stm->execute();
+		}
 	}
  ?>

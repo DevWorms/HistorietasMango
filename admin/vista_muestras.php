@@ -60,12 +60,15 @@ foreach ($rs as $row) {
                 <img src="../<?php echo $row['imagen'];?>" class="img-thumbnail imgCatalogo"/>
             </div>
             <div class="col-xs-12 col-md-3" style="text-align: center">
-            	<br>
                 <button class="btn btn-danger comic" onclick="showEdition(<?php echo $row['id_muestra'] ?>)"><i class="glyphicon glyphicon-pencil"></i> Editar</button>
                 <br><br>
                 <a class="btn btn-default comic" target="_blank" href="<?php echo "../".$row['documento'];?>">
                 	<i class="glyphicon glyphicon-bookmark"></i>
                 	Documento 
+                </a>
+                <br><br>
+                <a style="color: red" class="btn btn-default comic"  href="TransactionsAdmin.php?modulo=eliminaMu&id=<?php echo $row['id_muestra'];?>">
+                    <i class="glyphicon glyphicon-trash"></i> Eliminar
                 </a>
             </div>  
         </div>

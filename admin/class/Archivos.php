@@ -12,6 +12,8 @@
 			// la clase archivos trabaja con un parametro al llamarlo este sera sustituido por $_FILES["miArchivo"] 
 			$this->archivo = $file;
 			$this->destino = $ruta;
+
+
 		}
 
 		 function bolError(){

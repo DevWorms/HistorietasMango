@@ -1,5 +1,5 @@
 <?php 
-	error_reporting(E_ALL);
+	error_reporting(0);
 	require_once 'class/login_mysql.php';
 	require_once 'class/ConexionBD.php';
 	require_once 'class/Archivos.php';
@@ -180,6 +180,15 @@
 				$response->msjSuccess = "Se modifico la muestra";
 				$response->redirect();
            
+		}else if($modulo=="eliminaMu"){
+			$idMuestra = $_GET['id'];
+			$muestra = new Muestras();
+			$bolGuardo = $muestra->eliminaMuestra($idMuestra);
+			$url = $dirMuestra;
+			$response = new Response($url,$bolGuardo);
+			$response->msjSuccess = "Se eliminó la muestra";
+			$response->redirect();
+
 		}
 
 	}
