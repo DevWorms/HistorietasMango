@@ -1,5 +1,5 @@
 <?php
-    error_reporting(0);
+    error_reporting(E_ALL);
     session_start();
     if(isset($_SESSION["Id"]) and $_SESSION["Id"] != "" and $_SESSION["Id"] !=0){
 ?>
@@ -89,6 +89,8 @@
             require_once "vista_muestras.php";
         }else if($pagina == 'catalogos'){
             require_once 'vista_catalogos.php';
+        }else if($pagina == "upRevista"){
+            require_once 'vista_up_revista.php';
         }
         else if(! isset($pagina)){
             require_once 'stats.php';

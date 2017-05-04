@@ -16,6 +16,7 @@
 		// variables de direccionamiento de paginas
 		$dirCatalogos = "WebMaster.php?modulo=catalogos";
 		$dirRevistas = "WebMaster.php?modulo=revistas";
+		$dirUpRevistas = "WebMaster.php?modulo=upRevista";
 		$dirUsuarios= "WebMaster.php?modulo=usuarios";
 		$dirMuestra = "WebMaster.php?modulo=muestras";
 		if($modulo == "buscarCat"){ // busca catalogos
@@ -198,6 +199,34 @@
 			$response->msjSuccess = "Se eliminó el catalogo";
 			$response->redirect();
 			
+		}else if($modulo == "modificaRevista"){
+			$catalogo = $_POST['id_catalogo'];
+			$id_revista = $_POST['id_revista'];
+			$nombre_revista = $_POST['nombre_revista'];
+			$info_revista = $_POST['info_revista'];
+			$numero_revista = $_POST['numero_revista'];
+			$activo = "";
+			if(isset($_POST['activo'])){
+				$activo = $_POST['activo'];
+			}
+			
+			$imagen_revista = "";
+			$documento_revista = "";
+			if(isset($_FILES['imagen_revista'])){
+				$imagen_revista = $_FILES['imagen_revista'];
+			}
+
+			if($_FILES['documento_revista']){
+				$documento_revista = $_FILES['documento_revista'];
+			}	
+
+			$revista = new Revistas();
+			$op = $revista->updateRevista($catalogo, $nombre_revista, $numero_revista, $info_revista, $imagen_revista, $documento_revista, $activo,$id_revista);
+
+			$url = $dirUpRevistas . "&id_revista=".$id_revista;
+			$response = new Response($url,$op);
+			$response->redirect();
+
 		}
 
 	}

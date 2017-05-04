@@ -150,6 +150,7 @@ foreach ($rs as $row) {
                         <button id="rdel-<?php echo $revi['id_revista']?>" type="submit" class="btn btn-danger comic" onclick="pastDeleted(<?php echo $row['id_catalogo'].','.$revi['id_revista'];?>,this)">
                             <i class=" glyphicon glyphicon-trash"></i>
                         </button>
+                        <a style="color:white" class="btn btn-success" href="WebMaster.php?modulo=upRevista&id_revista=<?php echo $revi['id_revista'];?>"><i class="glyphicon glyphicon-pencil"></i></a>
                         <br> 
                         <span class="comic">Inactivo/Activo</span>
                         <br>
