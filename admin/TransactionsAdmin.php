@@ -7,6 +7,7 @@
 	require_once 'class/Revistas.php';
 	require_once 'class/Response.php';
 	require_once 'class/Usuarios.php';
+	require_once 'class/Muestras.php';
 	session_start();
 
     if(isset($_SESSION["Id"]) and $_SESSION["Id"] != "" and $_SESSION["Id"] !=0){
@@ -69,7 +70,7 @@
 			$response->msjSuccess = "Se agrego el catálogo";
 			$response->redirect();
 
-		}else if($modulo == "saverevistas"){// guarda una revista 
+		}else if($modulo == "saverevistas"){ // guarda una revista 
 				$nombre_revista = $_POST['nombre_revista'];
 				$info_revista = $_POST['info_revista'];
 				$catalogo = $_POST['catalogo'];
@@ -122,10 +123,63 @@
 		}else if($modulo == "buscaMuestra"){
 			$busqueda = $_POST['busquedaMuestra'];
 			$url = $dirMuestra."&searchMuestra=".$busqueda;
-
 			$response = new Response($url,true);
 			$response->msjSuccess = "Busqueda finalizada";
 			$response->redirect();
+		}else if($modulo == "registrarMuestra"){ // guarda una revista 
+				$nombre = $_POST['titulo'];
+				$descripcion = $_POST['descripcion'];
+
+				$activo = "";
+				if(isset($_POST['activo'])){
+					$activo = $_POST['activo'];
+				}
+				
+				$imagen = "";
+				$documento = "";
+				
+				if(isset($_FILES['imagen'])){
+					$imagen = $_FILES['imagen'];
+				}
+
+				if($_FILES['documento']){
+					$documento = $_FILES['documento'];
+				}	
+
+				$muestra = new Muestras();
+				$bolGuardo = $muestra->saveMuestra($nombre, $descripcion, $imagen, $documento, $activo);
+
+				$url = $dirMuestra . "&searchMuestra=" . $nombre;
+				$response = new Response($url,$bolGuardo);
+				$response->msjSuccess = "Se guardó la muestra";
+				$response->redirect();
+
+		}else if($modulo == "modificaMu"){ // guarda modificaciones muestra
+				$nombre = $_POST['titulo'];
+				$descripcion = $_POST['descripcion'];
+				$activo = "";
+				if(isset($_POST['activo'])){
+					$activo = $_POST['activo'];
+				}
+				
+				$imagen = "";
+				$documento = "";
+				if(isset($_FILES['imagen'])){
+					$imagen = $_FILES['imagen'];
+				}
+
+				if($_FILES['documento']){
+					$documento = $_FILES['documento'];
+				}	
+				$id_muestra = $_POST['id_muestra'];
+				$muestra = new Muestras();
+				$bolGuardo = $muestra->modificaMuestra($nombre, $descripcion, $imagen, $documento, $activo,$id_muestra);
+
+				$url = $dirMuestra . "&searchMuestra=" . $nombre;
+				$response = new Response($url,$bolGuardo);
+				$response->msjSuccess = "Se modifico la muestra";
+				$response->redirect();
+           
 		}
 
 	}

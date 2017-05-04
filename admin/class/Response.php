@@ -15,11 +15,14 @@
 			}
 			
 			$this->url = $url;
+
 		}
 
 		function redirect(){
 
 			$this->url = $this->getUrlBase() . $this->url; 
+			// ya que devuelven la busqueda con espacios quitamos los espacion blancos
+			$this->url = str_replace(" ","+",$this->url);
 			//validamos que sea url valido
 			if(filter_var($this->url, FILTER_VALIDATE_URL) == true){
 				//validacion para mensaje nulo pone default si el mensaje no esta vacio pone el llenado
@@ -43,8 +46,7 @@
 				$_SESSION["messageStatus"] = $mensajFinal;
 				$_SESSION['op']= $this->operacion;
 				
-				$redirection = "Location: " .$this->url;
-				
+				$redirection = "Location: " .$this->url ;
 				//redireccionamos
 				header($redirection);
 				

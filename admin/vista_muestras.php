@@ -57,10 +57,16 @@ foreach ($rs as $row) {
                     <h5><?php echo $row['descripcion']; ?></h5>
             </div>
             <div class="col-xs-12 col-md-4" style="text-align:center">
-                <img src="../user/<?php echo $row['imagen'];?>" class="img-thumbnail imgCatalogo"/>
+                <img src="../<?php echo $row['imagen'];?>" class="img-thumbnail imgCatalogo"/>
             </div>
             <div class="col-xs-12 col-md-3" style="text-align: center">
+            	<br>
                 <button class="btn btn-danger comic" onclick="showEdition(<?php echo $row['id_muestra'] ?>)"><i class="glyphicon glyphicon-pencil"></i> Editar</button>
+                <br><br>
+                <a class="btn btn-default comic" target="_blank" href="<?php echo "../".$row['documento'];?>">
+                	<i class="glyphicon glyphicon-bookmark"></i>
+                	Documento 
+                </a>
             </div>  
         </div>
     </div>
@@ -71,20 +77,24 @@ foreach ($rs as $row) {
     <br>
     <div class="col-xs-12 col-md-3"></div>
     <div class="col-xs-12 col-md-6 edit-cat">
-        <form action="TransactionsAdmin.php?modulo=modificaCat" method="post" name="form-upCat" class="row" enctype="multipart/form-data">
+        <form action="TransactionsAdmin.php?modulo=modificaMu" method="post" name="form-upMu" class="row" enctype="multipart/form-data">
             <div class="col-xs-12 col-md-6 edit-cat">
-                <label>Nombre del Catálogo</label>
+                <label>Nombre de la muestra</label>
                 <input type="text" id="titulo" name="titulo" class="form-control" placeholder="Nuevo Nombre" value="<?php echo $row['titulo']; ?>" required />
                 <span class="miniNota"></span>
-                <label>Descripción  del catálogo</label>
-                <textarea id="descripcion_catalogo" name="descripcion_catalogo" class="form-control" placeholder="Nueva Descripcion" required><?php echo $row['descripcion']; ?></textarea>
+                <label>Descripción  de la muesta</label>
+                <textarea id="descripcion" name="descripcion" class="form-control" placeholder="Nueva Descripcion" required><?php echo $row['descripcion']; ?></textarea>
                 <span class="miniNota"></span>
             </div>
             <div class="col-xs-12 col-md-6 edit-cat">
-                <label>Imagen del Catálogo</label>
-                <input type="file" id="imagen_catalogo" name="imagen_catalogo" class="form-control">
+                <label>Imagen de la muestra</label>
+                <input type="file" id="imagen" name="imagen" class="form-control">
+                <label>Documento de la muestra</label>
+                <input type="file" id="documento" name="documento" class="form-control">
                 <input type="hidden" id="id_muestra" name="id_muestra" value="<?php echo $row['id_muestra']?>">
-                <input type="hidden" name="funcion" id="funcion" value="guardar">
+                <br>
+                <label>Activa</label>
+                <input type="checkbox" id="activo" name="activo" class="form-control" <?php if($row['activo'] == 1){echo "checked";}?>>
                 <br>
                 <button type="submit" class="btn btn-warning comic"><i class="glyphicon glyphicon-floppy-disk"></i> Guardar</button>
             </div>  
@@ -104,19 +114,25 @@ foreach ($rs as $row) {
                 </h3>
             </div>
             <hr>
-            <form method="post" action="TransactionsAdmin.php?modulo=registraCat" name="formAddCat" enctype="multipart/form-data">
+            <form method="post" action="TransactionsAdmin.php?modulo=registrarMuestra" name="formAddMu" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2" align="center">
                         <label>
-                            Nombre del catalogo
+                            Nombre de la muestra
                         </label>
-                        <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Nombre del catálogo">
+                        <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Nombre de la muestra">
                         <br>
                         <label>Descripcion del catálogo</label>
-                        <textarea name="descripcion_catalogo" id="descripcion_catalogo" class="form-control" placeholder="Descripcion del catálogo"></textarea>
+                        <textarea name="descripcion" id="descripcion" class="form-control" placeholder="Descripcion de la muestra"></textarea>
                         <br>
-                        <label>Imagen del Catálogo</label>
-                        <input type="file" name="imagen_catalogo" id="imagen_catalogo" class="form-control">
+                        <label>Imagen de la muestra</label>
+                        <input type="file" name="imagen" id="imagen" class="form-control">
+                        <br>
+                        <label>Documento de la muestra</label>
+                        <input type="file" name="documento" id="documento" class="form-control">
+                        <br>
+                        <label>Activa</label>
+                        <input type="checkbox" id="activo" name="activo" class="form-control">
                         <br>
                         <button type="submit" class="btn btn-warning comic">
                             <i class="glyphicon glyphicon-floppy-disk"></i>
