@@ -64,6 +64,10 @@ foreach ($rs as $row) {
                 <button class="btn btn-danger comic" onclick="showEdition(<?php echo $row['id_catalogo'] ?>)"><i class="glyphicon glyphicon-pencil"></i> Editar</button>
                 <br><br>
                 <button class="btn btn-default comic" data-toggle="modal" data-target="#modal-cat-<?php echo $row['id_catalogo']; ?>"><i class=" glyphicon glyphicon-book"></i> Revistas</button>
+                <br><br>
+                <a style="color: red" class="btn btn-default comic"  href="TransactionsAdmin.php?modulo=eliminaCat&id=<?php echo $row['id_catalogo'];?>">
+                    <i class="glyphicon glyphicon-trash"></i> Eliminar
+                </a>
             </div>  
         </div>
     </div>

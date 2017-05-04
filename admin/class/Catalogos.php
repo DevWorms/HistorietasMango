@@ -111,10 +111,16 @@
 		}
 		// funcion que elimina un catalogo 
 		function eliminarCatalogo($id){
-			$query = "DELETE FROM catalogos where id_catalogo ) ? ";
+			$query = "DELETE FROM catalogo where id_catalogo = ? ";
 			$stm = $this->pdo->prepare($query);
-			$stm->bindParam($id);
-			return $stm->execute();
+			$stm->bindParam(1,$id);
+			$delete = new Archivos(null,null);
+			$path = "../user/".$this->getPathRevista($id);
+			$bolBorro = $delete->deleteFolderAndContent($path);
+			if(bolBorro){
+				return $stm->execute();
+			}
+			return false;
 		}
 		//obtiene el nombe de un catalogo y id 
 		function getNombre($catalogo){
@@ -152,6 +158,7 @@
 			}
 			return $catId;
 		}
+
 	}
 
  ?>

@@ -1,5 +1,5 @@
 <?php 
-	error_reporting(0);
+	error_reporting(E_ALL);
 	require_once 'class/login_mysql.php';
 	require_once 'class/ConexionBD.php';
 	require_once 'class/Archivos.php';
@@ -189,6 +189,15 @@
 			$response->msjSuccess = "Se eliminó la muestra";
 			$response->redirect();
 
+		}else if($modulo=="eliminaCat"){
+			$idCat = $_GET['id'];
+			$catalogos = new Catalogos();
+			$bolGuardo = $catalogos->eliminarCatalogo($idCat);
+			$url = $dirCatalogos;
+			$response = new Response($url,$bolGuardo);
+			$response->msjSuccess = "Se eliminó el catalogo";
+			$response->redirect();
+			
 		}
 
 	}
