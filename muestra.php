@@ -1,6 +1,9 @@
+<?php 
+  
+    require_once 'controladores/funciones_catalogo/funciones_muestra.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
-<?php session_start(); ?>
 <head>
 
     <meta charset="utf-8">
@@ -76,11 +79,6 @@
                   <button type="submit" class="btn btn-default comic" id="btnPublicar" style="background-color:#000; color:#fff">       Enviar!
                   </button>
             </form>
-            <p style="color:blue" class="comic">
-              <?php
-                echo $_SESSION['msg'] ;
-              ?>
-            </p>
         </div>
         
 
@@ -90,37 +88,13 @@
             de <italic>historietas.mx</italic>
         </div>
 
-
         <div id="muestras" class="col-md-12" style="text-align:center; position:center;">
         <hr>
             <h3 class="comix"> 
                 Las de muestra, ¡Se vale tocar!
             </h3>
           <ul style="padding-left: 0px;">
-            <li>
-              <a href="revista.php" style="margin-bottom:2em; background:rgba(246, 243, 0, 0.24); color:#ff544e; text-decoration:none">
-                <h2><img src="Prueba/Erotika1.jpg" height="241" width="210"></h2>
-                <p><h2 class="enlace comix">Erótika #1</h2></p>
-              </a>
-            </li>
-            <li>
-              <a href="revista.php" style="margin-bottom:2em; background:rgba(91, 192, 222, 0.25); color:#ff544e; text-decoration:none">
-                <h2><img src="Prueba/Chambeadoras.jpg" height="241" width="210"></h2>
-                <p><h2 class="enlace comix">Chambeadoras #2</h2></p>
-              </a>
-            </li>
-            <li>
-              <a href="revista.php" style="margin-bottom:2em;  color:#ff544e; text-decoration:none">
-                <h2><img src="Prueba/Erotika2.jpg" height="241" width="210"></h2>
-                <p><h2 class="enlace comix">Erótika #3</h2></p>
-              </a>
-            </li>
-            <li>
-              <a href="revista.php" style="margin-bottom:2em; background:rgba(253, 179, 0, 0.27); color:#ff544e; text-decoration:none">
-                <h2><img src="Prueba/Erotika1.jpg" height="241" width="210"></h2>
-                <p><h2 class="enlace comix">Erótika #4</h2></p>
-              </a>
-            </li>
+            <?php echo MostrarImagenes(); ?>
           </ul>
       </div>
     </div>
