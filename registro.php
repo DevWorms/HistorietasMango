@@ -43,7 +43,9 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li style="margin-top: 12px; margin-right: 6px; margin-left: 6px">
-                        <button class="comic comic_btn"><a href="muestra.php" style="text-decoration:none; color:#fefc00" onClick="window.history.back()">Regresar</a></button>
+                        <!--<span class="comic comic_btn">
+                        <a href="index.php" style="text-decoration:none; color:#fefc00">Pa atrás</a>
+                        </span>-->
                     </li>
                 </ul>
             </div>
@@ -62,9 +64,7 @@
         <div class="col-md-5">
         
         <h2 class="comic" id="mtitle">Información de usuario</h2>
-
           
-
           <form action="controladores/pagos/controller.php" method="post">
               <div class="form-group">
                   <label for="customer_name">Nombre completo:</label>
@@ -114,7 +114,10 @@
           </form>
          
         </div>
-  
+      
+
+          <img class="col-md-7"src="img/registrate.png">
+
 
     </div>
 
