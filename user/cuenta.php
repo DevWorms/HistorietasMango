@@ -160,9 +160,10 @@
               <input type="hidden" name="hosted_button_id" value="B7U9YLYQRFDKS">
               <input type="hidden" name="custom" value="<?php echo $_SESSION["Id"];?>"/>
               <input type="image" src="https://www.sandbox.paypal.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
-<img alt="" border="0" src="https://www.sandbox.paypal.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+              <img alt="" border="0" src="https://www.sandbox.paypal.com/es_XC/i/scr/pixel.gif" width="1" height="1">
           </form>
-          
+          <br>
+          <img src="../img/compra-segura.png" width="200">
           <!--
           <h2 class="comic">Datos de pago</h2>
 >>>>>>> origin/master

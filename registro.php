@@ -97,19 +97,29 @@
               
               <h2 class="comic" align="center">Pa gozar hay que pagar ¡No se haga!  </h2>
               <h3 class="comic" align="center">¡Sólo <strong>$50</strong> pesitos mensuales!  </h3>
-                <label>
-                  <input type="radio" name="formadepago" value="compropago" id="formadepago1_0" required>
-                  Compropago
-                </label>
-                <br>
-                <label>
-                  <input type="radio" name="formadepago" value="paypal" id="formadepago1_1">
-                  Paypal
-                </label>
-                <br><br>
-                <div align="center">
-                  <button class="comic comic_btn" style="color:#ff0006">Realizar pago</button>
+              <br><br>
+                <div class="row">
+                  <div class="col-md-6">
+                     <label>
+                      <input type="radio" name="formadepago" value="compropago" id="formadepago1_0" required>
+                      <img type="image" src="https://compropago.com/assets/payment-green-btn.png" border="0"  alt="Pagar con ComproPago">
+                    </label>
+                    <br>
+                    <label>
+                      <input type="radio" name="formadepago" value="paypal" id="formadepago1_1">
+                      <img type="image" src="https://www.sandbox.paypal.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0"  alt="PayPal, la forma más segura y rápida de pagar en línea."/>
+                    </label>
+                  </div>
+                  
+                  <div class="col-md-6">
+                     <img width="200" src="img/compra-segura.png">
+                  </div>
                 </div>
+                <br>
+                <div class="col-md-6" align="center">
+                    <button class="comic comic_btn" style="color:#ff0009">Realizar pago</button>
+                  </div>
+             
                 <br><br><br>
           </form>
          
