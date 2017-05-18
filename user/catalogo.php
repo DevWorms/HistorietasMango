@@ -68,6 +68,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+
+                    <li style="margin-top: 12px; margin-right: 6px; margin-left: 6px">
+                        <button class="comic comic_btn" data-toggle="modal" data-target="#Acerca" style="color:#a1ddfc" onclick="window.location.href='index.php'">Pa atrás</button>
+                    </li>
+
                     <li style="margin-top: 12px; margin-right: 6px; margin-left: 6px">
                         <button class="comic comic_btn" data-toggle="modal" data-target="#Acerca" style="color:#a1ddfc" onclick="window.location.href='cuenta.php'">Yo Mero</button>
                     </li>
