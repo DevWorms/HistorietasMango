@@ -94,7 +94,18 @@
     </div>
                 
     <!--    -->
-
+<!-- Leyenda mayoria de edad -->
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <div class="row">
+        <div class="col-md-12 col-xs-12 comic" align="center">
+            Esta web contiene historietas con alto contenido sexual y su acceso está prohibido a menores de edad de acuerdo a la legislación vigente en cada país y región.
+        </div>
+    </div>
+    <br>
     
     <!-- Modal -->
         <div id="Ingresar" class="modal fade" role="dialog">
@@ -158,12 +169,12 @@
     <script>
     $(document).ready(function(){
 
-         $('#modal-mayoriaEdad').modal({
+         /*$('#modal-mayoriaEdad').modal({
             keyboard: false,
             backdrop: 'static'
         }); 
 
-        $('#modal-mayoriaEdad').modal('show');
+        $('#modal-mayoriaEdad').modal('show');*/
         
         $('.carousel').carousel({
             interval: 3000 //changes the speed

@@ -71,11 +71,11 @@
                     </div>
 
                     <div class="item">
-                      <img src="img/index2.jpg" class="img-responsive" alt="Chania">
+                      <img src="img/banner-fondo-2.jpg" class="img-responsive" alt="Chania">
                     </div>
 
                     <div class="item">
-                      <img src="img/index3.jpg" class="img-responsive" alt="Flower">
+                      <img src="img/home-banner-3.png" class="img-responsive" alt="Flower">
                     </div>
                 </div>
 
@@ -86,8 +86,8 @@
             </div>        
         </a>
     </header>
-
-    <div>
+   
+    <div style="margin-top:0.75em ">
     <br>
         <div class="col-md-3" style="text-align:center;">
             <button class="comic comic_btn" data-toggle="modal" data-target="#Acerca">Acerca de</button><br><br>        
@@ -102,7 +102,13 @@
             <a href="https://es.pinterest.com/historietasMX/" target="_blank"><img src="img/pin.png" height="40" width="40"></a>
         </div>
     </div>
-
+    <!-- Leyenda mayoria de edad -->
+    <div class="row">
+        <div class="col-md-12 col-xs-12 comic" align="center">
+            Esta web contiene historietas con alto contenido sexual y su acceso está prohibido a menores de edad de acuerdo a la legislación vigente en cada país y región.
+        </div>
+    </div>
+    <br>
     <!-- Modal -->
         <div id="Acerca" class="modal fade" role="dialog">
           <div class="modal-dialog modal-lg">
@@ -119,19 +125,27 @@
                 <br>
                 <p><h1 class="comic">Acerca de...</h1></p><br>
 
-                    <div class="col-md-5 comix" style="height: 27em; overflow: hidden; background-color:#ff544e; color:#fff">
+                    <div class="col-md-5 comix" style="height: 28em; overflow: hidden; background-color:#ff544e; color:#fff">
                             
                             <br>
                             <img src="img/logo2.png" width="100%">
                             <br><br>
-                            La picardía, el humor, la calentura, los albures y más, forman todos parte de ésta colección que estamos rescatando sólo para ti, diviértete leyendo todas y pasa un rato super entretenido... estamos seguros que te picarás con cada una de las historias
+                            La picardía, el humor, la calentura, los albures y más, forman todos parte de ésta colección que estamos rescatando sólo para ti, diviértete leyendo todas y pasa un rato super entretenido... estamos seguros que te picarás con cada una de las historias.
+                             <br><br>
+                            <!-- Leyenda mayoria de edad -->
+                            <div class="row">
+                                <div class="col-md-12 col-xs-12 comic" align="center">
+                                    <small>Esta web contiene historietas con alto contenido sexual y su acceso está prohibido a menores de edad de acuerdo a la legislación vigente en cada país y región.</small>
+                                </div>
+                            </div>
+                            <br><br>
                     </div>
-
               </div>
 
               <div class="modal-footer">
                 <button type="button" class="btn btn-success comic" data-dismiss="modal">¡Lo tengo!</button>
               </div>
+
             </div>
 
           </div>
@@ -272,12 +286,12 @@
     <script>
     $(document).ready(function(){
 
-        $('#modal-mayoriaEdad').modal({
+        /*$('#modal-mayoriaEdad').modal({
             keyboard: false,
             backdrop: 'static'
         }); 
 
-        $('#modal-mayoriaEdad').modal('show');
+        $('#modal-mayoriaEdad').modal('show');*/
 
         $('.carousel').carousel({
             interval: 3000 //changes the speed

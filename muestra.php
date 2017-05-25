@@ -68,16 +68,17 @@
 
         <div class="col-md-6">
             <form  method="post" name="formulario_muestra" id="formulario_muestra" action="Transactions.php?modulo=boletin">                          
-                  <div class="form-group">
+                 <!-- <div class="form-group">
                       <label for="customer_name">Nombre completo:</label>
                       <input type="text" class="form-control" id="nombre" name="nombre" required>
                   </div>
                   <div class="form-group">
                       <label for="mail">Correo electrónico:</label>
                       <input type="email" class="form-control" id="mail" name="mail" required>
-                  </div>
-                  <button type="submit" class="btn btn-default comic" id="btnPublicar" style="background-color:#000; color:#fff">       Enviar!
-                  </button>
+                  </div>-->
+                  <br><br>
+                  <a href="https://goo.gl/d6KYgK" class="btn btn-default comic btn-lg" id="btnPublicar" style="background-color:#000; color:#fff">       Enviar!
+                  </a>
             </form>
         </div>
         
@@ -100,14 +101,21 @@
       </div>
     </div>
     <div>
-    <br>
+    <br><br>
         <div class="col-md-12" style="text-align:center;">
             <a href="https://www.facebook.com/Historietasmx-332032027147432/" target="_blank"><img src="img/facebook.jpeg" height="40" width="40"></a>
             <a href="https://www.instagram.com/historietas.mx/" target="_blank"><img src="img/instagram.png" height="40" width="40"></a>
             <a href="https://twitter.com/historietas_mx" target="_blank"><img src="img/twitter.png" height="40" width="40"></a>
             <a href="https://es.pinterest.com/historietasMX/" target="_blank"><img src="img/pin.png" height="40" width="40"></a>
         </div>
-    <br><br>
+        <br><br>
+        <!-- Leyenda mayoria de edad -->
+        <div class="row">
+            <div class="col-md-12 col-xs-12 comic" align="center">
+                Esta web contiene historietas con alto contenido sexual y su acceso está prohibido a menores de edad de acuerdo a la legislación vigente en cada país y región.
+            </div>
+        </div>
+        <br>
     </div>
     
 
@@ -195,7 +203,7 @@
         interval: 3000 //changes the speed
     })
     $(document).ready(function(){
-        if($("#modal-success") != null){
+       /* if($("#modal-success") != null){
             $("#modal-success").dialog({
                 autoOpen: true,
                 show: {
@@ -221,7 +229,7 @@
             backdrop: 'static'
         }); 
 
-        $('#modal-mayoriaEdad').modal('show');
+        $('#modal-mayoriaEdad').modal('show');*/
 
     });
     </script>
