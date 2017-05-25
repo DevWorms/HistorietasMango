@@ -3,7 +3,7 @@
 class SuscripcionUsuario{
     
     function suscibe($nombre,$mail){
-        session_start();
+        $msj = "";
         $email = $mail;
         $fname = $nombre;
         $apiKey = 'f4e0d310b13444aab692c20467f988ad-us5';
@@ -41,36 +41,31 @@ class SuscripcionUsuario{
             curl_close($ch);
 
             // store the status message based on response code
-            if ($httpCode == 200) {
-                $_SESSION['msg'] = '<p style="color: #212121;font-weight:bold;font-size:120%">Te has suscrito</p>';
-            } else {
-                switch ($httpCode) {
-                    case 214:
-                        $msg = '<p style="color: #212121;font-weight:bold;font-size:120%">Te has suscrito</p>';
-                        break;
-                    default:
-                        $msg = '<p style="color: #212121;font-weight:bold;font-size:120%">Ha ocurrido un problema, intentalo de nuevo</p>';
-                        break;
-                }
-               $_SESSION['msg'] = '<p style="color: #212121;font-weight:bold;font-size:120%">' . $msg . '</p>';
+ 
+
+            switch ($httpCode) {
+                case 200:
+                    $msj= '<p style="color: #212121;font-weight:bold;font-size:120%">Te has suscrito</p>';
+                break;
+
+                case 214:
+                    $msj = '<p style="color: #212121;font-weight:bold;font-size:120%">Te has suscrito</p>';
+                break;
+
+                default:
+                    $msj = '<p style="color: #212121;font-weight:bold;font-size:120%">Ha ocurrido un problema, intentalo de nuevo</p>';
+                break;
             }
+
+            
         } else {
-           $_SESSION['msg'] = '<p style="color: #212121;font-weight:bold;font-size:120%">Por favor ingresa una direccion de correo válida.</p>';
+
+           $msj= '<p style="color: #212121;font-weight:bold;font-size:120%">Por favor ingresa una direccion de correo válida.</p>';
           
-        }  
-            }
+        } 
+
+        return $msj; 
     }
-    $fname = $_POST['nombre'];
-    $email = $_POST['mail'];
-    if(isset($_POST['donde'])){
-        $donde = $_POST['donde'];
-        if($donde == "muestra"){
-            $nombre = $_POST["nombre"];
-            echo $nombre;
-            $mail=$_POST["mail"];
-            $objeto = new SuscripcionUsuario();
-            $objeto->suscibe($nombre,$mail);
-            header('Location: ../../muestra.php');
-        }  
-    }
+}
+   
 ?>

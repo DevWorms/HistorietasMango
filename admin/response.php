@@ -19,11 +19,12 @@
 	}
 
 </style>
+
 <?php 
 	if (session_status() == PHP_SESSION_NONE) {
     	session_start();
-    	echo "INICIAR SECION";
 	}
+
 	$op = 0;
 	if(isset($_SESSION['messageStatus'],$_SESSION['op'])){
 		$mensaje = $_SESSION['messageStatus'];

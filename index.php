@@ -204,34 +204,34 @@
 
                 <p><h1 class="comic" align="center">Aviso de Privacidad </h1></p><br>
 
-                    <div class="col-md-12" style="height: 31em; overflow-y: scroll; overflow-x: hidden; background-color:#ff544e; color:#fff; text-align:center">
+                    <div class="col-md-12" style="height: 31em; overflow-y: scroll; overflow-x: hidden; background-color:#ff544e; color:#fff; text-align:justify;">
                             
-                            <br>                                                    
-                                De acuerdo a lo Previsto en la “Ley Federal de Protección de Datos Personales”, declara <strong>@EMPRESA</strong>, ser una empresa legalmente constituida de conformidad con las leyes mexicanas, con domicilio en <strong>@DOMICILIO</strong> y como responsable del tratamiento de sus datos personales, hace de su conocimiento que la información de nuestros clientes es tratada de forma estrictamente confidencial por lo que al proporcionar sus datos personales, tales como: 
-                                 <br><br>
-                                1.     Nombre Y/O Razón Social.<br>
-                                2.     Dirección.<br>
-                                3.     Registro Federal de Contribuyentes.<br>
-                                4.     Teléfonos de Oficina y móviles<br>
-                                5.     Correo Electrónico.
-                                 <br><br>
-                                Estos serán utilizados única y exclusivamente para los siguientes fines:  
-                                 
-                                1.     Campañas de Publicidad.<br>
-                                2.     Campañas de Fidelidad.<br>
-                                3.     Información y Prestación de Servicios.<br>
-                                4.     Actualización de la Base de Datos.<br>
-                                5.     Cualquier finalidad análoga o compatible con las anteriores.<br>
-                                 <br><br>
-                                Para prevenir el acceso no autorizado a sus datos personales y con el fin de  asegurar que la información sea utilizada para los fines establecidos en este aviso de privacidad, hemos establecido diversos procedimientos con la finalidad de evitar el uso o divulgación no autorizados de sus datos, permitiéndonos tratarlos debidamente.  Así mismo, le informamos que sus datos personales pueden ser Transmitidos para ser tratados por personas distintas a esta empresa.   Todos sus datos personales son tratados de acuerdo a la legislación aplicable y vigente en el país, por ello le informamos que usted tiene en todo momento los derechos (ARCO) de acceder, rectificar, cancelar u oponerse al tratamiento que le damos a sus datos personales; derecho que podrá hacer valer a través del Área de Privacidad encargada de la seguridad de datos personales en el Teléfono 2451.4070.
-                                  <br><br>
-                                A través de estos canales usted podrá actualizar sus datos y especificar el medio por el cual desea recibir información, ya que en caso de no contar con esta especificación de su parte, Tempco México, S.A. de C.V., establecerá libremente el canal que considere pertinente para enviarle información.  Este aviso de privacidad podrá ser modificado por <strong>@EMPRESA</strong>, dichas modificaciones serán oportunamente informadas a través de correo electrónico, teléfono, página web o cualquier otro medio de comunicación que Tempco México, S.A. de C.V., determine para tal efecto. 
-                                           <br><br><br>                      
-                                 
-                                 
-                                ATENTAMENTE
-                                @EL_QUE_SUSCRIBE
+                            De acuerdo a lo Previsto en la “Ley Federal de Protección de Datos Personales”, declara Devolada Virtual SAPI de CV, ser una empresa legalmente constituida de conformidad con las leyes mexicanas, con domicilio en <b>Ximilpa No. 26 Col Tlalpan Centro, Delegación Tlalpan, CDMX. C.P. 14000</b> y como responsable del tratamiento de sus datos personales, hace de su conocimiento que la información de nuestros clientes es tratada de forma estrictamente confidencial por lo que al proporcionar sus datos personales, tales como: 
+
+                            <br> <br>
+                            <ol>
+                                <li>Nombre Y/O Razón Social.</li>
+                                <li>Dirección.</li>
+                                <li>Registro Federal de Contribuyentes.</li>
+                                <li>Teléfonos de Oficina y móviles</li>
+                                <li>Correo Electrónico.</li>
+                                <li>Datos bancarios.</li>
+                            </ol>
+
+                            <br><br>
+
+                            Estos serán utilizados única y exclusivamente para los siguientes fines: 
+                            <br><br>
+                            <ol>
+                                <li>Campañas de Publicidad.</li>
+                                <li>Campañas de Fidelidad.</li>
+                                <li>Información y Prestación de Servicios.</li>
+                                <li>Actualización de la Base de Datos.</li>
+                                <li>Cualquier finalidad análoga o compatible con las anteriores.</li>
+                            </ol>
                                 <br><br>
+                            Para prevenir el acceso no autorizado a sus datos personales y con el fin de asegurar que la información sea utilizada para los fines establecidos en este aviso de privacidad, hemos establecido diversos procedimientos con la finalidad de evitar el uso o divulgación no autorizados de sus datos, permitiéndonos tratarlos debidamente. Así mismo, le informamos que sus datos personales pueden ser Transmitidos para ser tratados por personas distintas a esta empresa. Todos sus datos personales son tratados de acuerdo a la legislación aplicable y vigente en el país, por ello le informamos que usted tiene en todo momento los derechos (ARCO) de acceder, rectificar, cancelar u oponerse al tratamiento que le damos a sus datos personales; derecho que podrá hacer valer a través del Área de Privacidad encargada de la seguridad de datos personales enviando un correo a hola@historietas.mx
+
                     </div>
 
               </div>
@@ -244,8 +244,23 @@
           </div>
         </div>
 
-
-
+    
+    <!-- MODAL PARA MAYORIA DE EDAD -->
+    <div id="modal-mayoriaEdad" class="modal fade" role="dialog" style="overflow: hidden;">
+          <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-body" align="center">
+                <p><h1 class="comic" align="center">Muy importante! ¿Eres mayor de edad? 18+</h1></p><br>
+                    <div style="width: 850px;height: 350px;border: 1px solid black"></div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary comic" data-dismiss="modal">Soy Mayor de edad</button>
+                <a href="index.php" class="btn btn-danger comic">No soy Mayor de edad</a>
+              </div>
+            </div>
+          </div>
+    </div>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -255,9 +270,21 @@
 
     <!-- Script to Activate the Carousel -->
     <script>
-    $('.carousel').carousel({
-        interval: 3000 //changes the speed
-    })
+    $(document).ready(function(){
+
+        $('#modal-mayoriaEdad').modal({
+            keyboard: false,
+            backdrop: 'static'
+        }); 
+
+        $('#modal-mayoriaEdad').modal('show');
+
+        $('.carousel').carousel({
+            interval: 3000 //changes the speed
+        })
+    });
+    
+
     </script>
 
 </body>

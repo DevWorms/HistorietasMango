@@ -1,5 +1,6 @@
 <?php 
-  
+    session_start();
+    error_reporting(0);  
     require_once 'controladores/funciones_catalogo/funciones_muestra.php';
 ?>
 <!DOCTYPE html>
@@ -20,7 +21,7 @@
     <link href="css/muestra.css" rel="stylesheet">
 
     <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css"> 
-
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/humanity/jquery-ui.css">
 
 </head>
 
@@ -66,7 +67,7 @@
         <br>
 
         <div class="col-md-6">
-            <form  method="post" name="formulario_muestra" id="formulario_muestra" action="controladores/suscripcion_usuario/SuscripcionUsuario.php">                          
+            <form  method="post" name="formulario_muestra" id="formulario_muestra" action="Transactions.php?modulo=boletin">                          
                   <div class="form-group">
                       <label for="customer_name">Nombre completo:</label>
                       <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -75,7 +76,6 @@
                       <label for="mail">Correo electrónico:</label>
                       <input type="email" class="form-control" id="mail" name="mail" required>
                   </div>
-                  <input type="hidden" name="donde" id="donde" value="muestra">
                   <button type="submit" class="btn btn-default comic" id="btnPublicar" style="background-color:#000; color:#fff">       Enviar!
                   </button>
             </form>
@@ -84,7 +84,8 @@
 
         <div class="col-md-6 comix letras">
             <strong>Échale un ojo</strong> a las revistas de muestra.<br>
-            No olvides regalarnos tus datos para que te echemos toda la información<br>
+            <a  href="https://goo.gl/d6KYgK" target="_blank">No olvides regalarnos tus datos</a>
+            &nbsp;para que te echemos toda la información<br>
             de <italic>historietas.mx</italic>
         </div>
 
@@ -159,7 +160,9 @@
 
           </div>
         </div>
-
+    <?php
+        //require_once 'admin/response.php'; 
+     ?>
     <!-- Modal -->
 
 
@@ -168,12 +171,34 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <!-- Script to Activate the Carousel -->
     <script>
     $('.carousel').carousel({
         interval: 3000 //changes the speed
     })
+    $(document).ready(function(){
+        if($("#modal-success") != null){
+            $("#modal-success").dialog({
+                autoOpen: true,
+                show: {
+                      effect: "bounce",
+                      duration: 500
+                    },
+                hide: {
+                      effect: "clip",
+                      duration: 500
+                    },
+                 position: { 
+                            my: "center", 
+                            at: "center", 
+                            of: window 
+                    },
+                width: screen.width * 0.35,
+                resizable:false
+            });
+        }
+    });
     </script>
 
 </body>

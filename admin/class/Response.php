@@ -64,6 +64,11 @@
 			);
 
 			$urls = explode("TransactionsAdmin",$origen);
+
+			if(count($urls) <= 1){
+
+				$urls = explode("Transactions",$origen);
+			}
 			$base = $urls[0];
 
 			return $base;
