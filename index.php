@@ -119,7 +119,7 @@
               <div class="modal-body">
                     
                 <div class="col-md-7">
-                    <img src="img/39.jpg" width="100%">
+                    <img src="img/rAcercaDe.jpg" width="100%">
                 </div>
 
                 <br>
