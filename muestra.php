@@ -160,6 +160,23 @@
 
           </div>
         </div>
+
+         <!-- MODAL PARA MAYORIA DE EDAD -->
+    <div id="modal-mayoriaEdad" class="modal fade" role="dialog" style="overflow: hidden;">
+          <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-body" align="center">
+                <p><h1 class="comic" align="center">Muy importante! ¿Eres mayor de edad? 18+</h1></p><br>
+                    <div style="width: 850px;height: 350px;border: 1px solid black"></div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary comic" data-dismiss="modal">Soy Mayor de edad</button>
+                <a href="index.php" class="btn btn-danger comic">No soy Mayor de edad</a>
+              </div>
+            </div>
+          </div>
+    </div>
     <?php
         //require_once 'admin/response.php'; 
      ?>
@@ -198,6 +215,14 @@
                 resizable:false
             });
         }
+
+        $('#modal-mayoriaEdad').modal({
+            keyboard: false,
+            backdrop: 'static'
+        }); 
+
+        $('#modal-mayoriaEdad').modal('show');
+
     });
     </script>
 
