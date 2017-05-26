@@ -1,6 +1,6 @@
 <?php 
-    session_start();
-    error_reporting(0);  
+    //session_start();
+    error_reporting(E_ALL);  
     require_once 'controladores/funciones_catalogo/funciones_muestra.php';
 ?>
 <!DOCTYPE html>
@@ -67,8 +67,8 @@
         <br>
 
         <div class="col-md-6">
-            <form  method="post" name="formulario_muestra" id="formulario_muestra" action="Transactions.php?modulo=boletin">                          
-                 <!-- <div class="form-group">
+             <!-- <form  method="post" name="formulario_muestra" id="formulario_muestra" action="Transactions.php?modulo=boletin">                          
+                <div class="form-group">
                       <label for="customer_name">Nombre completo:</label>
                       <input type="text" class="form-control" id="nombre" name="nombre" required>
                   </div>
@@ -79,7 +79,7 @@
                   <br><br>
                   <a href="https://goo.gl/d6KYgK" class="btn btn-default comic btn-lg" id="btnPublicar" style="background-color:#000; color:#fff">       Enviar!
                   </a>
-            </form>
+            <!--</form>-->
         </div>
         
 
