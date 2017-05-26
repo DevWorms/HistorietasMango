@@ -77,7 +77,8 @@
                       <input type="email" class="form-control" id="mail" name="mail" required>
                   </div>-->
                   <br><br>
-                  <a href="https://goo.gl/d6KYgK" class="btn btn-default comic btn-lg" id="btnPublicar" style="background-color:#000; color:#fff">       Enviar!
+                  <a href="https://goo.gl/d6KYgK" class="btn btn-default comic btn-lg" id="btnPublicar" style="background-color:#000; color:#fff" target="_blank">    
+                     Enviar!
                   </a>
             <!--</form>-->
         </div>
