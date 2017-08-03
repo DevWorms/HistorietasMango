@@ -90,53 +90,59 @@
                       <option value="2">Hombre</option>
                   </select>
               </div>
-              <div class="form-group">
+
+              <div class="form-group" align="center">
                   <label>Soy mayor de 18 años:</label>
-                  <input type="radio" class="form-control" id="radio_edad" name="radio_edad" value="" required>
+                  <input type="radio" id="radio_edad" name="radio_edad" value="" required>
               </div>
               
               <h2 class="comic" align="center">Pa gozar hay que pagar ¡No se haga!  </h2>
-              <h3 class="comic" align="center">¡Sólo <strong>$50</strong> pesitos mensuales!  </h3>
+              <h3 class="comic" align="center">¡Sólo <strong>$50</strong> pesitos mensuales! </h3>
               <br><br>
-                <div class="row">
-                  <div class="col-md-6">
-                     <label>
-                      <input type="radio" name="formadepago" value="compropago" id="formadepago1_0" required>
-                      <img type="image" src="https://compropago.com/assets/payment-green-btn.png" border="0"  alt="Pagar con ComproPago">
-                    </label>
-                    <br>
-                    <label>
-                      <input type="radio" name="formadepago" value="paypal" id="formadepago1_1">
-                      <img type="image" src="https://www.sandbox.paypal.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0"  alt="PayPal, la forma más segura y rápida de pagar en línea."/>
-                    </label>
-                  </div>
-                  
-                  <div class="col-md-6">
-                     <img width="200" src="img/compra-segura.png">
-                  </div>
-                </div>
-                <br>
+
+              <div class="row">
                 <div class="col-md-6" align="center">
-                    <button class="comic comic_btn" style="color:#ff0009">Realizar pago</button>
-                  </div>
+                  <input type="image" src="https://compropago.com/assets/payment-green-btn.png" alt="Pagar con ComproPago">
+                  <br><br>
+                  <input type="image" src="https://www.sandbox.paypal.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" alt="PayPal">
+                  <br>
+                  
+                </div>
+                <!-- <div class="col-md-6">
+                   <label>
+                    <input type="radio" name="formadepago" value="compropago" id="formadepago1_0" required>
+                    <img type="image" src="https://compropago.com/assets/payment-green-btn.png" border="0"  alt="Pagar con ComproPago">
+                  </label>
+                  <br>
+                  <label>
+                    <input type="radio" name="formadepago" value="paypal" id="formadepago1_1">
+                    <img type="image" src="https://www.sandbox.paypal.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0"  alt="PayPal, la forma más segura y rápida de pagar en línea."/>
+                  </label>
+                </div> -->
+                
+                <div class="col-md-6" align="center">
+                   <img class="compra-segura" src="img/compra-segura.png">
+                </div>
+              </div>
+                <br>
+
+              <div class="col-md-12" align="center">
+                <button class="comic comic_btn" style="color:#ff0009">Realizar pago</button>
+              </div>
              
-                <br><br><br>
+              <br><br><br>
           </form>
          
         </div>
-      
-
-          <img class="col-md-7"src="img/registrate.png">
-
+    
+        <img class="col-md-7 image-sp"src="img/registrate2.png">
 
     </div>
     <!-- Leyenda mayoria de edad -->
-    <div class="row">
-        <div class="col-md-12 col-xs-12 comic" align="center">
-            Esta web contiene historietas con alto contenido sexual y su acceso está prohibido a menores de edad de acuerdo a la legislación vigente en cada país y región.
-        </div>
+   
+    <div class="col-md-12 col-xs-12 comic" align="center" style="margin-bottom: 15  px;">
+        Esta web contiene historietas con alto contenido sexual y su acceso está prohibido a menores de edad de acuerdo a la legislación vigente en cada país y región.
     </div>
-    <br>
     <!--    END BODY WEB    -->
     <!-- MODAL PARA MAYORIA DE EDAD -->
     <div id="modal-mayoriaEdad" class="modal fade" role="dialog" style="overflow: hidden;">

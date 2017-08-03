@@ -1,50 +1,90 @@
-body { 
+body
+{
     background-color: #c8bfe7;
     -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
 }
 
-#mtitle{
-		font-size: 23px;
-		text-align: center;
-		margin-bottom: 30px;
-	}
+#mtitle
+{
+    font-size: 23px;
 
-h2 {
-		font-size: 20px;
-	}
-h3 {
-		font-size: 18px;
-	}	
+    margin-bottom: 30px;
 
-#radio_edad {
-    	border: 0px;
-		width: 100%;
-		height: 1.5em;
+    text-align: center;
+}
+
+h2
+{
+    font-size: 20px;
+}
+h3
+{
+    font-size: 18px;
+}
+
+#radio_edad
+{
+    width: 14%;
+    height: 1.4em;
+
+    border: 0;
+}
+
+@media (min-width: 768px)
+{
+    h2
+    {
+        font-size: 30px;
+    }
+    h3
+    {
+        font-size: 24px;
+    }
+    #mtitle
+    {
+        font-size: 30px;
+
+        margin-bottom: 30px;
+
+        text-align: left;
+    }
+}
+
+@media (min-width: 1024px)
+{
+    body
+    {
+        background: url(../img/index1.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+           -moz-background-size: cover;
+             -o-background-size: cover;
+                background-size: cover;
+    }
+}
+
+
+.image-sp
+{
+    height: 500px;
+}
+.compra-segura
+{
+    width: 200px;
+    margin-top: 15px;
+}
+
+@media screen and (min-width: 800px)
+{
+    .image-sp
+    {
+        height: 1000px;
     }
 
-@media (min-width: 768px){
-	h2 {
-		font-size: 30px;
-	}
-	h3 {
-		font-size: 24px;
-	}
-	#mtitle{
-		font-size: 30px;
-		text-align: left;
-		margin-bottom: 30px;
-	}
-}
-
-@media (min-width: 1024px) {
-    body { 
-        background: url(../img/index1.jpg) no-repeat center center fixed; 
-	    -webkit-background-size: cover;
-	    -moz-background-size: cover;
-	    -o-background-size: cover;
-	    background-size: cover;    
+    .compra-segura
+    {
+        margin-top: -45px;
     }
 }

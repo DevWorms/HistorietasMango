@@ -59,64 +59,64 @@
     </nav>
 
     <div class="col-md-12" style="text-align:center; position:center;">
-    <br><br>
-        
-        <h1 class="comic top-title"> 
-            ¡Te damos una embarradita!
-        </h1>
-        <br>
+      <br><br>
+      <h1 class="comic top-title"> 
+        ¡Te damos una embarradita!
+      </h1>
+      <br>
+      
+      <div class="col-md-6 comix letras">
+          <strong>Échale un ojo</strong> a las revistas de muestra.<br>
+          <a  href="https://goo.gl/d6KYgK" target="_blank">No olvides regalarnos tus datos</a>
+          &nbsp;para que te echemos toda la información<br>
+          de <italic>historietas.mx</italic>
+      </div>
 
-        <div class="col-md-6">
-             <!-- <form  method="post" name="formulario_muestra" id="formulario_muestra" action="Transactions.php?modulo=boletin">                          
+      <div class="col-md-6">
+           <!-- <form  method="post" name="formulario_muestra" id="formulario_muestra" action="Transactions.php?modulo=boletin">                          
+              <div class="form-group">
+                    <label for="customer_name">Nombre completo:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
                 <div class="form-group">
-                      <label for="customer_name">Nombre completo:</label>
-                      <input type="text" class="form-control" id="nombre" name="nombre" required>
-                  </div>
-                  <div class="form-group">
-                      <label for="mail">Correo electrónico:</label>
-                      <input type="email" class="form-control" id="mail" name="mail" required>
-                  </div>-->
-                  <br><br>
-                  <a href="https://goo.gl/d6KYgK" class="btn btn-default comic btn-lg" id="btnPublicar" style="background-color:#000; color:#fff" target="_blank">    
-                     Enviar!
-                  </a>
-            <!--</form>-->
-        </div>
-        
-
-        <div class="col-md-6 comix letras">
-            <strong>Échale un ojo</strong> a las revistas de muestra.<br>
-            <a  href="https://goo.gl/d6KYgK" target="_blank">No olvides regalarnos tus datos</a>
-            &nbsp;para que te echemos toda la información<br>
-            de <italic>historietas.mx</italic>
-        </div>
-
-        <div id="muestras" class="col-md-12" style="text-align:center; position:center;">
-        <hr>
-            <h3 class="comix"> 
-                Las de muestra, ¡Se vale tocar!
-            </h3>
-          <ul style="padding-left: 0px;">
-            <?php echo MostrarImagenes(); ?>
-          </ul>
+                    <label for="mail">Correo electrónico:</label>
+                    <input type="email" class="form-control" id="mail" name="mail" required>
+                </div>-->
+                <br><br>
+                <a href="https://goo.gl/d6KYgK" class="btn btn-default comic btn-lg" id="btnPublicar" style="background-color:#000; color:#fff" target="_blank">    
+                   Enviar!
+                </a>
+          <!--</form>-->
       </div>
     </div>
-    <div>
+
+    
+    <div id="muestras" class="col-md-12" style="text-align:center; position:center;">
+      <hr>
+          <h3 class="comix"> 
+              Las de muestra, ¡Se vale tocar!
+          </h3>
+        <ul style="padding-left: 0px;">
+          <?php echo MostrarImagenes(); ?>
+        </ul>
+    </div>
+    
     <br><br>
-        <div class="col-md-12" style="text-align:center;">
-            <a href="https://www.facebook.com/Historietasmx-332032027147432/" target="_blank"><img src="img/facebook.jpeg" height="40" width="40"></a>
-            <a href="https://www.instagram.com/historietas.mx/" target="_blank"><img src="img/instagram.png" height="40" width="40"></a>
-            <a href="https://twitter.com/historietas_mx" target="_blank"><img src="img/twitter.png" height="40" width="40"></a>
-            <a href="https://es.pinterest.com/historietasMX/" target="_blank"><img src="img/pin.png" height="40" width="40"></a>
-        </div>
-        <br><br>
-        <!-- Leyenda mayoria de edad -->
-        <div class="row">
-            <div class="col-md-12 col-xs-12 comic" align="center">
-                Esta web contiene historietas con alto contenido sexual y su acceso está prohibido a menores de edad de acuerdo a la legislación vigente en cada país y región.
-            </div>
-        </div>
-        <br>
+    <div>
+      <div class="col-md-12" style="text-align:center;">
+          <a href="https://www.facebook.com/Historietasmx-332032027147432/" target="_blank"><img src="img/facebook.jpeg" height="40" width="40"></a>
+          <a href="https://www.instagram.com/historietas.mx/" target="_blank"><img src="img/instagram.png" height="40" width="40"></a>
+          <a href="https://twitter.com/historietas_mx" target="_blank"><img src="img/twitter.png" height="40" width="40"></a>
+          <a href="https://es.pinterest.com/historietasMX/" target="_blank"><img src="img/pin.png" height="40" width="40"></a>
+      </div>
+      <br><br>
+      <!-- Leyenda mayoria de edad -->
+      <div class="row">
+          <div class="col-md-12 col-xs-12 comic" align="center">
+              Esta web contiene historietas con alto contenido sexual y su acceso está prohibido a menores de edad de acuerdo a la legislación vigente en cada país y región.
+          </div>
+      </div>
+      <br>
     </div>
     
 
