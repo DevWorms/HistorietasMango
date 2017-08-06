@@ -82,7 +82,7 @@
     <!-- Full Page Image Background Carousel Header -->
     <header id="myCarousel" class="carousel slide">
 
-    <div class="col-md-12" style="text-align:center; position:center; z-index:3; position:fixed;">
+    <div class="col-md-12" style="text-align:center; position:center; z-index:3; position:absolute;">
         <div id="muestras" style="text-align:center; position:center;">
     <br><br><br>
 
@@ -152,9 +152,9 @@
 
     <div >
                 <a href="https://www.facebook.com/Historietasmx-332032027147432/" target="_blank"><img src="../img/facebook.jpeg" height="40" width="40" style="position:fixed; z-index:3; right:2em; bottom:1em"></a>
-                <a href="https://www.instagram.com/historietas.mx/" target="_blank"><img src="../img/instagram.png" height="40" width="40" style="position:absolute; z-index:3; right:5em; bottom:1em"></a>
-                <a href="https://twitter.com/historietas_mx" target="_blank"><img src="../img/twitter.png" height="40" width="40" style="position:absolute; z-index:3; right:8em; bottom:1em"></a>
-                <a href="https://es.pinterest.com/historietasMX/" target="_blank"><img src="../img/pin.png" height="40" width="40" style="position:absolute; z-index:3; right:11em; bottom:1em"></a>
+                <a href="https://www.instagram.com/historietas.mx/" target="_blank"><img src="../img/instagram.png" height="40" width="40" style="position:fixed; z-index:3; right:5em; bottom:1em"></a>
+                <a href="https://twitter.com/historietas_mx" target="_blank"><img src="../img/twitter.png" height="40" width="40" style="position:fixed; z-index:3; right:8em; bottom:1em"></a>
+                <a href="https://es.pinterest.com/historietasMX/" target="_blank"><img src="../img/pin.png" height="40" width="40" style="position:fixed; z-index:3; right:11em; bottom:1em"></a>
     </div>
 
 
