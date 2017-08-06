@@ -204,5 +204,7 @@
     <!-- jQuery -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js'></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>
