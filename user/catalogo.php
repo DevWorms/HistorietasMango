@@ -20,7 +20,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css'>
+    <link rel='stylesheet prefetch' href='https://unpkg.com/flickity@2/dist/flickity.min.css'>
     <link rel="stylesheet" href="css/style.css">
     <link href="../css/comix.css" rel="stylesheet">
 
@@ -126,8 +126,15 @@
 
     <!-- jQuery -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js'></script>
+    <script src='https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js'></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
+    <script>
+        /*
+        window.addEventListener( 'load', function() {
+            $('.main-carousel').flickity().resize();
+        });
+        */
+    </script>
 </body>
 </html>
