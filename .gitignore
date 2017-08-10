@@ -49,3 +49,7 @@ Temporary Items
 # Sublime -> workspace & project 
 *.sublime-workspace
 *.sublime-project
+
+.idea/
+admin/class/login_mysql.php
+controladores/datos/login_mysql.php

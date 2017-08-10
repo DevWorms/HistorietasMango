@@ -1,4 +1,4 @@
-<?php     
+<?php
     require_once 'controladores/funciones_catalogo/funciones_muestra.php';
     $id=$_GET["id"];
 ?>
@@ -20,10 +20,10 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/comix.css" rel="stylesheet">
 
-    <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css"> 
+    <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
     <style>
-        body { 
-            background: url(img/backMag.png) no-repeat center center fixed; 
+        body {
+            background: url(img/backMag.png) no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -64,9 +64,9 @@
                 <a href="index.php" style="padding-top: 0px;"> <img src="img/logo2.png" height="50" width="130"> </a>
                 <br>
             </div>
-            
+
             <!--Hola mundo -->
-            
+
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -79,11 +79,11 @@
         </div>
         <!-- /.container -->
     </nav>
-          
+
 
     <?php echo MostrarRevista($id); ?>
 
-          
+
     <div style="background:#fff; text-align:center;">
         <br>
             <h1 class="comic">¿Quieres más?</h1>
@@ -92,7 +92,7 @@
 
         <a href="registro.php"><img src="img/atascate.png" id="atascate"></a>
     </div>
-                
+
     <!--    -->
 <!-- Leyenda mayoria de edad -->
     <br><br>
@@ -106,7 +106,7 @@
         </div>
     </div>
     <br>
-    
+
     <!-- Modal -->
         <div id="Ingresar" class="modal fade" role="dialog">
           <div class="modal-dialog modal-lg">
@@ -115,7 +115,7 @@
             <div class="modal-content">
 
               <div class="modal-body">
-                    
+
                 <div class="col-md-7">
                     <img src="img/0.jpg" width="100%">
                 </div>
@@ -158,7 +158,7 @@
           </div>
         </div>
 
-    
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -172,16 +172,16 @@
          /*$('#modal-mayoriaEdad').modal({
             keyboard: false,
             backdrop: 'static'
-        }); 
+        });
 
         $('#modal-mayoriaEdad').modal('show');*/
-        
+
         $('.carousel').carousel({
             interval: 3000 //changes the speed
         });
 
     });
-    
+
     </script>
 
 </body>

@@ -1,4 +1,6 @@
 <?php
+$success = false;
+
 if(isset($_POST['customer_email'])){
 	require_once 'controladores/datos/ConexionBD.php';
     $pdo = ConexionBD::obtenerInstancia()->obtenerBD();
@@ -15,6 +17,7 @@ if(isset($_POST['customer_email'])){
 	if($correo != null){
 		enviarCorreo($correo,$contrasena);
 		$aviso = "Mensaje enviado, consulte su bandeja de correo electrónico.";
+		$success = true;
 		
 	}else{
 		$aviso = "No hay ningún registro con ese correo electrónico.";
@@ -22,7 +25,7 @@ if(isset($_POST['customer_email'])){
 	
 }else{
 	$aviso = "Un mensaje con su contraseña será enviado a ese correo";
-			
+    $success = true;
 }
 
 function enviarCorreo($email,$pass){
@@ -52,7 +55,7 @@ function enviarCorreo($email,$pass){
     <link href="css/full-slider.css" rel="stylesheet">
     <link href="css/comix.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
-
+    <link href="css/sweetalert.css" rel="stylesheet">
 </head>
 
 <body>
@@ -70,5 +73,22 @@ function enviarCorreo($email,$pass){
 	<p class="comix" align="center"><?php echo $aviso;?>
 	</p>
 
+    <script src="js/sweetalert.min.js"></script>
+
+    <?php
+        if ($aviso != null) {
+            ?>
+    <script>
+        swal({
+            title: "",
+            text: "<?php echo $aviso; ?>",
+            type: "<?php echo ($success) ? "success" : "error"; ?>",
+            timer: 3000,
+            showConfirmButton: false
+        });
+    </script>
+            <?php
+        }
+    ?>
 </body>
 </html>
