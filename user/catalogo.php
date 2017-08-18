@@ -130,11 +130,9 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
     <script>
-        /*
-        window.addEventListener( 'load', function() {
-            $('.main-carousel').flickity().resize();
+        jQuery(window).load( function() {
+            window.dispatchEvent(new Event('resize'));
         });
-        */
     </script>
 </body>
 </html>
